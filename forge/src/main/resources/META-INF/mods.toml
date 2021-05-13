@@ -1,0 +1,37 @@
+modLoader="kotlinforforge"
+loaderVersion="[1.12,)"
+#issueTrackerURL = ""
+license = "Apache-2.0"
+
+[[mods]]
+modId = "archskeleton"
+version = "${version}"
+displayName = "Architectury Skeleton"
+authors = "ReMod Studios"
+description = '''
+If you're seeing this, then someone in our team messed up and forgot
+to replace this text. Actually, I'm surprised that this boots up at all - leocth
+'''
+#logoFile = ""
+
+[[dependencies.archskeleton]]
+modId = "forge"
+mandatory = true
+versionRange = "[35,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.archskeleton]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.16.2,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.archskeleton]]
+modId = "architectury"
+mandatory = true
+versionRange = "[1.1.55,)"
+ordering = "AFTER"
+side = "BOTH"
+

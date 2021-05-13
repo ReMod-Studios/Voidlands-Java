@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "archskeleton",
+  "version": "${version}",
+  "name": "Architectury Skeleton",
+  "description": "If you're seeing this, then someone in our team messed up and forgot to replace this text. Actually, I'm surprised that this boots up at all - leocth",
+  "authors": [
+    "ReMod Studios"
+  ],
+  "license": "Apache-2.0",
+  "icon": "assets/archskeleton/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [{
+      "adapter": "kotlin",
+      "value": "com.remodstudios.archskeleton.fabric.ArchitecturySkeletonFabric"
+    }],
+    "client": [{
+      "adapter": "kotlin",
+      "value": "com.remodstudios.archskeleton.fabric.ArchitecturySkeletonFabricClient"
+    }]
+  },
+  "depends": {
+    "fabricloader": ">=0.11.1",
+    "fabric": "*",
+    "architectury": ">=1.1.55",
+    "fabric-language-kotlin": ">=1.6.0+kotlin.1.5.0"
+  }
+}
