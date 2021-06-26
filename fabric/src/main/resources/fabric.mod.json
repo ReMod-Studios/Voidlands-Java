@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "id": "archskeleton",
+  "id": "voidlands",
   "version": "${version}",
-  "name": "Architectury Skeleton",
-  "description": "If you're seeing this, then someone in our team messed up and forgot to replace this text. Actually, I'm surprised that this boots up at all - leocth",
+  "name": "Voidlands",
+  "description": "A Mod that aims to expand the surface beneath the Void!",
   "authors": [
     "ReMod Studios"
   ],
@@ -13,11 +13,11 @@
   "entrypoints": {
     "main": [{
       "adapter": "kotlin",
-      "value": "com.remodstudios.archskeleton.fabric.ArchitecturySkeletonFabric"
+      "value": "com.remodstudios.voidlands.fabric.VoidlandsFabric"
     }],
     "client": [{
       "adapter": "kotlin",
-      "value": "com.remodstudios.archskeleton.fabric.ArchitecturySkeletonFabricClient"
+      "value": "com.remodstudios.voidlands.fabric.VoidlandsFabricClient"
     }]
   },
   "depends": {

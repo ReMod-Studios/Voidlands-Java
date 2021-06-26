@@ -1,4 +1,4 @@
-package com.remodstudios.archskeleton.forge
+package com.remodstudios.voidlands.forge
 
 @Suppress("unused")
 object PlatformInterfaceImpl {

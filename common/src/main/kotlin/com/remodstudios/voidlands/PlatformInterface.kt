@@ -1,5 +1,5 @@
 @file:JvmName("PlatformInterface")
-package com.remodstudios.archskeleton
+package com.remodstudios.voidlands
 
 import dev.architectury.injectables.annotations.ExpectPlatform
 

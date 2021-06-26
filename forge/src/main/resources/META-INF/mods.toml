@@ -4,38 +4,37 @@ loaderVersion="[1.12,)"
 license = "Apache-2.0"
 
 [[mods]]
-modId = "archskeleton"
+modId = "voidlands"
 version = "${version}"
-displayName = "Architectury Skeleton"
+displayName = "Voidlands"
 authors = "ReMod Studios"
 description = '''
-If you're seeing this, then someone in our team messed up and forgot
-to replace this text. Actually, I'm surprised that this boots up at all - leocth
+A Mod that aims to expand the surface beneath the Void!
 '''
 #logoFile = ""
 
-[[dependencies.archskeleton]]
+[[dependencies.voidlands]]
 modId = "forge"
 mandatory = true
 versionRange = "[35,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.archskeleton]]
+[[dependencies.voidlands]]
 modId = "minecraft"
 mandatory = true
 versionRange = "[1.16.2,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.archskeleton]]
+[[dependencies.voidlands]]
 modId = "architectury"
 mandatory = true
 versionRange = "[1.1.55,)"
 ordering = "AFTER"
 side = "BOTH"
 
-[[dependencies.archskeleton]]
+[[dependencies.voidlands]]
 modId = "remodcore"
 mandatory = true
 versionRange = "[0.1.3,)"

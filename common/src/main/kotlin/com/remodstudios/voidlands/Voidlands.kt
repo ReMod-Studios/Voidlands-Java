@@ -1,13 +1,12 @@
-package com.remodstudios.archskeleton
+package com.remodstudios.voidlands
 
 import net.minecraft.util.Identifier
 
-object ArchitecturySkeleton {
-    const val MOD_ID = "archskeleton"
+object Voidlands {
+    const val MOD_ID = "voidlands"
 
     fun init() {
         printHelloWorld()
-        ArchSkeletonItems.register()
     }
 
     fun id(path: String): Identifier {
