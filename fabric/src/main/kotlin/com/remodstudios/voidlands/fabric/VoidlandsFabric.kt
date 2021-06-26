@@ -8,7 +8,7 @@ import net.fabricmc.api.Environment
 import net.fabricmc.api.ModInitializer
 
 @Suppress("unused")
-object ArchitecturySkeletonFabric: ModInitializer {
+object VoidlandsFabric: ModInitializer {
     override fun onInitialize() {
         Voidlands.init()
     }
@@ -16,7 +16,7 @@ object ArchitecturySkeletonFabric: ModInitializer {
 
 @Suppress("unused")
 @Environment(EnvType.CLIENT)
-object ArchitecturySkeletonFabricClient: ClientModInitializer {
+object VoidlandsFabricClient: ClientModInitializer {
     override fun onInitializeClient() {
         VoidlandsClient.init()
     }
