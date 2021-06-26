@@ -23,9 +23,10 @@ repositories {
 dependencies {
     forge "net.minecraftforge:forge:${rootProject.minecraft_version}-${rootProject.forge_version}"
     // Remove the next line if you don't want to depend on the API
-    modApi "me.shedaniel:architectury-forge:${rootProject.architectury_version}"
+    modApi "me.shedaniel:architectury-forge:${rootProject.archapi_version}"
 
     implementation "thedarkcolour:kotlinforforge:${rootProject.kotlinforforge_version}"
+    modImplementation("io.github.remod-studios:remod-core-forge:${rootProject.remodcore_version}")
 
     implementation(project(path: ":common")) {
         transitive = false

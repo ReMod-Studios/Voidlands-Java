@@ -7,6 +7,7 @@ object ArchitecturySkeleton {
 
     fun init() {
         printHelloWorld()
+        ArchSkeletonItems.register()
     }
 
     fun id(path: String): Identifier {

@@ -1,10 +1,15 @@
+repositories {
+    mavenCentral()
+}
 dependencies {
     // We depend on fabric loader here to use the fabric @Environment annotations and get the mixin dependencies
     // Do NOT use other classes from fabric loader
-    modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
+    modImplementation "net.fabricmc:fabric-loader:${rootProject.floader_version}"
     // Remove the next line if you don't want to depend on the API
-    modApi "me.shedaniel:architectury:${rootProject.architectury_version}"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    modApi "me.shedaniel:architectury:${rootProject.archapi_version}"
+
+    // Compile only to include the classes
+    modCompileOnly("io.github.remod-studios:remod-core-fabric:${rootProject.remodcore_version}")
 }
 
 architectury {
@@ -31,7 +36,4 @@ publishing {
     repositories {
         // Add repositories to publish to here.
     }
-}
-repositories {
-    mavenCentral()
 }
