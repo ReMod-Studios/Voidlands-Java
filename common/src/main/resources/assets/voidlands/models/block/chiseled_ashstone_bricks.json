@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "voidlands:block/chiseled_ashstone_bricks"
+    }
+}
