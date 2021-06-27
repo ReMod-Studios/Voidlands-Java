@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "voidlands:item/driedroot_stick"
+        "layer0": "voidlands:item/dried_root_stick"
     }
 }
