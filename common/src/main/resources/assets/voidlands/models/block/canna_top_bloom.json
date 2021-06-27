@@ -1,6 +1,6 @@
 {
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "voidlands:block/canna_top_bloom"
-    }
+  "parent": "minecraft:block/tinted_cross",
+  "textures": {
+    "cross": "minecraft:block/canna_top_bloom"
+  }
 }

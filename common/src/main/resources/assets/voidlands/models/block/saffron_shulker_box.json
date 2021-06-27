@@ -1,6 +1,5 @@
 {
-    "parent": "block/cube_all",
     "textures": {
-        "all": "voidlands:block/saffron_shulker_box"
+        "particle": "voidlands:block/saffron_shulker_box"
     }
 }
