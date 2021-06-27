@@ -1,7 +1,9 @@
 package com.remodstudios.voidlands.client
 
+import com.remodstudios.voidlands.block.VoidlandsBlocks
+
 object VoidlandsClient {
     fun init() {
-        // client initialization code here
+        VoidlandsBlocks.registerRenderTypes()
     }
 }

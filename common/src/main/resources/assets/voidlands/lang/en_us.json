@@ -28,5 +28,7 @@
   "item.voidlands.ashstone_rock": "Ashstone Rock",
   "item.voidlands.canna_leaf": "Canna Leaf",
   "item.voidlands.dried_root_stick": "Dried Root Stick",
-  "item.voidlands.void_berry": "Void Berry"
+  "item.voidlands.void_berry": "Void Berry",
+
+  "itemGroup.voidlands.group": "Voidlands"
 }
