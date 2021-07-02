@@ -1,10 +1,22 @@
 {
   "variants": {
-    "half=lower": {
+    "half=lower,age=0": {
       "model": "voidlands:block/canna_bottom"
     },
-    "half=upper": {
+    "half=lower,age=1": {
+      "model": "voidlands:block/canna_bottom"
+    },
+    "half=lower,age=2": {
+      "model": "voidlands:block/canna_bottom"
+    },
+    "half=upper,age=0": {
       "model": "voidlands:block/canna_top"
+    },
+    "half=upper,age=1": {
+      "model": "voidlands:block/canna_top"
+    },
+    "half=upper,age=2": {
+      "model": "voidlands:block/canna_top_bloom"
     }
   }
 }

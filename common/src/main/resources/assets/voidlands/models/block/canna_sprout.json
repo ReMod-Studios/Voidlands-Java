@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "voidlands:block/canna_sprout"
+    }
+}

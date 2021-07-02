@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "voidlands:block/canna_top"
+        "layer0": "voidlands:item/canna_bloom_in_a_bottle"
     }
 }
