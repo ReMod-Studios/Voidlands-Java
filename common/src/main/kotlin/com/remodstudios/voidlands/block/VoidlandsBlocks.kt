@@ -44,8 +44,7 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
 
     fun registerRenderTypes() {
         RenderTypes.register(RenderLayer.getCutout(),
-            CANNA, CANNA_SPROUT,
-            DRIED_ROOTS)
+            CANNA, CANNA_SPROUT)
         RenderTypes.register(RenderLayer.getTranslucent(),
             DARK_RED_STAINED_GLASS, DARK_RED_STAINED_GLASS_PANE,
             SAFFRON_STAINED_GLASS, SAFFRON_STAINED_GLASS_PANE,

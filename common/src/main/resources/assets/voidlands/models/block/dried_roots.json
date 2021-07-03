@@ -1,6 +1,6 @@
 {
-    "parent": "block/cross",
+    "parent": "block/cube_all",
     "textures": {
-        "cross": "voidlands:block/dried_roots"
+        "all": "voidlands:block/dried_roots"
     }
 }
