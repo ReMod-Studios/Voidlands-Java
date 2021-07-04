@@ -36,6 +36,8 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
 
     val ASHSTONE = addCopy("ashstone", Blocks.STONE)
     val ASHSTONE_BRICKS = addCopy("ashstone_bricks", Blocks.STONE_BRICKS)
+    val ASHSTONE_TILES = addCopy("ashstone_tiles", Blocks.STONE_BRICKS)
+    val POLISHED_ASHSTONE = addCopy("polished_ashstone", Blocks.STONE_BRICKS)
     val CHISELED_ASHSTONE_BRICKS = addCopy("chiseled_ashstone_bricks", Blocks.CHISELED_STONE_BRICKS)
     val DUST_CLOUD = addCopyWithInit("dust_cloud", Blocks.SNOW) { noCollision() }
     val DRIED_ROOTS = addCopy("dried_roots", Blocks.DEAD_BUSH)
