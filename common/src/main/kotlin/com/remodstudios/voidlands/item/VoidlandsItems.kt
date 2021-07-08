@@ -53,5 +53,8 @@ object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
     val SAFFRON_WOOL = add("saffron_wool", VoidlandsBlocks.SAFFRON_WOOL)
 
     val DUST_CLOUD = add("dust_cloud", VoidlandsBlocks.DUST_CLOUD)
+
+    val MARBLE = add("marble", VoidlandsBlocks.MARBLE)
+    val MARBLE_ROCKS = add("marble_rocks", VoidlandsBlocks.MARBLE_ROCKS)
     // endregion
 }

@@ -46,6 +46,9 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     val DRIED_ROOTS = addCopy("dried_roots", Blocks.DEAD_BUSH)
     val OSMIUM_BLOCK = addCopy("osmium_block", Blocks.IRON_BLOCK)
     val VOID_BERRY = addCopy("void_berry", VoidBerryBlock(BlockProperties.copy(Blocks.COCOA)))
+    val MARBLE = addCopy("marble", Blocks.STONE)
+    val MARBLE_ROCKS = add("marble_rocks",
+        MarbleRocksBlock(BlockProperties.copy(Blocks.STONE)))
 
     fun registerRenderTypes() {
         RenderTypes.register(RenderLayer.getCutout(),
