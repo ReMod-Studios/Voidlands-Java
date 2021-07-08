@@ -16,7 +16,8 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     val DARK_RED_CONCRETE = addCopy("dark_red_concrete", Blocks.BLACK_CONCRETE)
     val DARK_RED_CONCRETE_POWDER = add("dark_red_concrete_powder",
         ConcretePowderBlock(DARK_RED_CONCRETE, BlockProperties.copy(Blocks.BLACK_CONCRETE_POWDER)))
-    val DARK_RED_GLAZED_TERRACOTTA = addCopy("dark_red_glazed_terracotta", Blocks.BLACK_GLAZED_TERRACOTTA)
+    val DARK_RED_GLAZED_TERRACOTTA = add("dark_red_glazed_terracotta",
+        GlazedTerracottaBlock(BlockProperties.copy(Blocks.BLACK_GLAZED_TERRACOTTA)))
     val DARK_RED_SHULKER_BOX = add("dark_red_shulker_box", Block(BlockProperties.copy(Blocks.BLACK_SHULKER_BOX))) // TODO custom shulker box??
     val DARK_RED_STAINED_GLASS = addCopy("dark_red_stained_glass", Blocks.BLACK_STAINED_GLASS)
     val DARK_RED_STAINED_GLASS_PANE = add("dark_red_stained_glass_pane", ModPaneBlock(BlockProperties.copy(Blocks.BLACK_STAINED_GLASS_PANE)))
@@ -27,7 +28,8 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     val SAFFRON_CONCRETE = addCopy("saffron_concrete", Blocks.BLACK_CONCRETE)
     val SAFFRON_CONCRETE_POWDER = add("saffron_concrete_powder",
         ConcretePowderBlock(SAFFRON_CONCRETE, BlockProperties.copy(Blocks.BLACK_CONCRETE_POWDER)))
-    val SAFFRON_GLAZED_TERRACOTTA = addCopy("saffron_glazed_terracotta", Blocks.BLACK_GLAZED_TERRACOTTA)
+    val SAFFRON_GLAZED_TERRACOTTA = add("saffron_glazed_terracotta",
+        GlazedTerracottaBlock(BlockProperties.copy(Blocks.BLACK_GLAZED_TERRACOTTA)))
     val SAFFRON_SHULKER_BOX = add("saffron_shulker_box", Block(BlockProperties.copy(Blocks.BLACK_SHULKER_BOX))) // TODO custom shulker box??
     val SAFFRON_STAINED_GLASS = addCopy("saffron_stained_glass", Blocks.BLACK_STAINED_GLASS)
     val SAFFRON_STAINED_GLASS_PANE = add("saffron_stained_glass_pane", ModPaneBlock(BlockProperties.copy(Blocks.BLACK_STAINED_GLASS_PANE)))
@@ -39,7 +41,8 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     val ASHSTONE_TILES = addCopy("ashstone_tiles", Blocks.STONE_BRICKS)
     val POLISHED_ASHSTONE = addCopy("polished_ashstone", Blocks.STONE_BRICKS)
     val CHISELED_ASHSTONE_BRICKS = addCopy("chiseled_ashstone_bricks", Blocks.CHISELED_STONE_BRICKS)
-    val DUST_CLOUD = addCopyWithInit("dust_cloud", Blocks.SNOW) { noCollision() }
+    val DUST_CLOUD = add("dust_cloud",
+        DustCloudBlock(BlockProperties.copy(Blocks.WHITE_WOOL).noCollision().nonOpaque().strength(0.2f)))
     val DRIED_ROOTS = addCopy("dried_roots", Blocks.DEAD_BUSH)
     val OSMIUM_BLOCK = addCopy("osmium_block", Blocks.IRON_BLOCK)
     val VOID_BERRY = addCopy("void_berry", VoidBerryBlock(BlockProperties.copy(Blocks.COCOA)))

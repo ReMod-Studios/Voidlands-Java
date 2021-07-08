@@ -1,0 +1,32 @@
+{
+  "parent": "voidlands:recipes/root",
+  "rewards": {
+    "recipes": [
+      "voidlands:ashstone"
+    ]
+  },
+  "criteria": {
+    "has_ashstone_rock": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "voidlands:ashstone_rock"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "voidlands:ashstone"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_ashstone_rock",
+      "has_the_recipe"
+    ]
+  ]
+}

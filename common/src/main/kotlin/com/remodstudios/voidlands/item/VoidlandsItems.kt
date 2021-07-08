@@ -4,6 +4,7 @@ import com.remodstudios.voidlands.Voidlands
 import com.remodstudios.voidlands.block.VoidlandsBlocks
 import io.github.remodstudios.remodcore.registry.ItemRegistryHelper
 import me.shedaniel.architectury.registry.CreativeTabs
+import net.minecraft.item.FoodComponent
 import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
 
@@ -18,7 +19,7 @@ object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
     val CANNA_BLOOM_IN_A_BOTTLE = add("canna_bloom_in_a_bottle") { it.maxCount(1) }
     val CANNA_LEAF = add("canna_leaf")
     val DRIED_ROOT_STICK = add("dried_root_stick")
-    val VOID_BERRY = add("void_berry")
+    val VOID_BERRY = add("void_berry") { it.food(FoodComponent.Builder().hunger(4).build()) }
 
     // region Block Items
     val ASHSTONE = add("ashstone", VoidlandsBlocks.ASHSTONE)
