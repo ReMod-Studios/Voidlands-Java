@@ -6,14 +6,16 @@ dependencies {
     // Do NOT use other classes from fabric loader
     modImplementation "net.fabricmc:fabric-loader:${rootProject.floader_version}"
     // Remove the next line if you don't want to depend on the API
-    modApi "me.shedaniel:architectury:${rootProject.archapi_version}"
+    modApi "dev.architectury:architectury:${rootProject.archapi_version}"
 
     // Compile only to include the classes
-    modCompileOnly("io.github.remod-studios:remod-core-fabric:${rootProject.remodcore_version}")
+    modCompileOnly("io.github.remod-studios:remod-core-fabric:${rootProject.remodcore_version}") {
+        exclude(group: "me.shedaniel")
+    }
 }
 
 architectury {
-    common()
+    common(false) // FIXME remove false when Forge 1.17 is released and Arch supports it -ADCLeo
 }
 
 java {

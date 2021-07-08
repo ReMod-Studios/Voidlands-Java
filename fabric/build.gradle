@@ -19,9 +19,11 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${rootProject.floader_version}"
     modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fapi_version}"
     // Remove the next line if you don't want to depend on the API
-    modApi "me.shedaniel:architectury-fabric:${rootProject.archapi_version}"
+    modApi "dev.architectury:architectury-fabric:${rootProject.archapi_version}"
     modImplementation "net.fabricmc:fabric-language-kotlin:${rootProject.flk_version}+kotlin.${rootProject.kotlin_version}"
-    modImplementation("io.github.remod-studios:remod-core-fabric:${rootProject.remodcore_version}")
+    modImplementation("io.github.remod-studios:remod-core-fabric:${rootProject.remodcore_version}") {
+        exclude(group: "me.shedaniel")
+    }
 
 
     implementation(project(path: ":common")) {

@@ -24,6 +24,6 @@ pluginManagement {
 
 include("common")
 include("fabric")
-include("forge")
+//include("forge") // FIXME uncomment this once Forge 1.17 is released and Arch supports it -ADCLeo
 
 rootProject.name = "voidlands"

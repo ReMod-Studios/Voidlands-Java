@@ -58,7 +58,7 @@ class CannaPlantBlock(settings: Settings?) : TallPlantBlock(settings) {
                 SoundEvents.ITEM_BOTTLE_FILL, SoundCategory.NEUTRAL,
                 1f, 1f)
             stack.decrement(1)
-            player.inventory.offerOrDrop(world, ItemStack(VoidlandsItems.CANNA_BLOOM_IN_A_BOTTLE))
+            player.inventory.offerOrDrop(ItemStack(VoidlandsItems.CANNA_BLOOM_IN_A_BOTTLE))
             world.setBlockState(pos, state.with(AGE, 0), 3)
             return ActionResult.SUCCESS
         } else {
