@@ -8,7 +8,7 @@
     "ReMod Studios"
   ],
   "license": "Apache-2.0",
-  "icon": "assets/archskeleton/icon.png",
+  "icon": "assets/voidlands/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [{
