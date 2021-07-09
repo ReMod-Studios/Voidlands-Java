@@ -2,7 +2,7 @@ package com.remodstudios.voidlands.forge
 
 import com.remodstudios.voidlands.Voidlands
 import com.remodstudios.voidlands.client.VoidlandsClient
-import me.shedaniel.architectury.platform.forge.EventBuses
+import dev.architectury.platform.forge.EventBuses
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
 import thedarkcolour.kotlinforforge.forge.MOD_BUS

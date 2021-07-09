@@ -2,14 +2,14 @@ package com.remodstudios.voidlands.item
 
 import com.remodstudios.voidlands.Voidlands
 import com.remodstudios.voidlands.block.VoidlandsBlocks
+import dev.architectury.registry.CreativeTabRegistry
 import io.github.remodstudios.remodcore.registry.ItemRegistryHelper
-import me.shedaniel.architectury.registry.CreativeTabs
 import net.minecraft.item.FoodComponent
 import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
 
 object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
-    val GROUP = CreativeTabs.create(Voidlands.id("group")) { ItemStack(VOID_BERRY) }
+    val GROUP = CreativeTabRegistry.create(Voidlands.id("group")) { ItemStack(VOID_BERRY) }
 
     override fun defaultSettings(): Item.Settings {
         return Item.Settings().group(GROUP)

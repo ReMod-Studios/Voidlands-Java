@@ -2,8 +2,8 @@ package com.remodstudios.voidlands.block
 
 import com.remodstudios.voidlands.Voidlands
 import io.github.remodstudios.remodcore.registry.BlockRegistryHelper
-import me.shedaniel.architectury.registry.BlockProperties
-import me.shedaniel.architectury.registry.RenderTypes
+import dev.architectury.registry.block.BlockProperties
+import dev.architectury.registry.client.rendering.RenderTypeRegistry
 import net.minecraft.block.*
 import net.minecraft.client.render.RenderLayer
 
@@ -51,9 +51,9 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
         MarbleRocksBlock(BlockProperties.copy(Blocks.STONE)))
 
     fun registerRenderTypes() {
-        RenderTypes.register(RenderLayer.getCutout(),
+        RenderTypeRegistry.register(RenderLayer.getCutout(),
             CANNA, CANNA_SPROUT)
-        RenderTypes.register(RenderLayer.getTranslucent(),
+        RenderTypeRegistry.register(RenderLayer.getTranslucent(),
             DARK_RED_STAINED_GLASS, DARK_RED_STAINED_GLASS_PANE,
             SAFFRON_STAINED_GLASS, SAFFRON_STAINED_GLASS_PANE,
             DUST_CLOUD)
