@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "voidlands:block/crayola_candle_cake"
+    },
+    "lit=true": {
+      "model": "voidlands:block/crayola_candle_cake_lit"
+    }
+  }
+}

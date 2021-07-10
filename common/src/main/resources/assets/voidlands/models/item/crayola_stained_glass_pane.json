@@ -1,0 +1,6 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "voidlands:block/crayola_stained_glass"
+    }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "block/template_two_candles",
+  "textures": {
+    "all": "voidlands:block/crayola_candle",
+    "particle": "voidlands:block/crayola_candle"
+  }
+}

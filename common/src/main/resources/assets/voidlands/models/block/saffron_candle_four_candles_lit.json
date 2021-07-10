@@ -1,7 +1,0 @@
-{
-  "parent": "block/template_four_candles",
-  "textures": {
-    "all": "voidlands:block/saffron_candle_lit",
-    "particle": "voidlands:block/saffron_candle_lit"
-  }
-}
