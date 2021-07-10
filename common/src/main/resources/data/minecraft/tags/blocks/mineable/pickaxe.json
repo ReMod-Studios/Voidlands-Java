@@ -1,0 +1,13 @@
+{
+    "replace": "false",
+    "values": [
+        "voidlands:dark_red_concrete",
+        "voidlands:dark_red_glazed_terracotta",
+        "voidlands:dark_red_terracotta",
+        "voidlands:osmium_block",
+        "voidlands:crayola_concrete",
+        "voidlands:crayola_glazed_terracotta",
+        "voidlands:crayola_terracotta",
+        "voidlands:marble"
+    ]
+}
