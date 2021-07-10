@@ -10,8 +10,14 @@ jobs:
       - uses: actions/checkout@v2
       - uses: gradle/wrapper-validation-action@v1
       - run: ./gradlew build --stacktrace
-      - name: Upload artifacts
+      - name: Upload Fabric artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: Artifacts
-          path: build/libs/
+          name: Artifacts (Fabric)
+          path: ./fabric/build/libs/
+      # re-enable this when Forge 1.17 is out and Arch supports it
+#      - name: Upload Forge artifacts
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: Artifacts (Forge)
+#          path: ./forge/build/libs/
