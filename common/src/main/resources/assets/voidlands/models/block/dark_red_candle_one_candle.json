@@ -1,0 +1,7 @@
+{
+  "parent": "block/template_candle",
+  "textures": {
+    "all": "voidlands:block/dark_red_candle",
+    "particle": "voidlands:block/dark_red_candle"
+  }
+}

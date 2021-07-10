@@ -29,7 +29,7 @@ object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
     val CANNA = add("canna", VoidlandsBlocks.CANNA)
     val CANNA_SPROUT = add("canna_sprout", VoidlandsBlocks.CANNA_SPROUT)
 
-    //val DARK_RED_CANDLE = add("dark_red_candle", VoidlandsBlocks.DARK_RED_CANDLE)
+    val DARK_RED_CANDLE = add("dark_red_candle", VoidlandsBlocks.DARK_RED_CANDLE)
     val DARK_RED_CONCRETE = add("dark_red_concrete", VoidlandsBlocks.DARK_RED_CONCRETE)
     val DARK_RED_CONCRETE_POWDER = add("dark_red_concrete_powder", VoidlandsBlocks.DARK_RED_CONCRETE_POWDER)
     val DARK_RED_GLAZED_TERRACOTTA = add("dark_red_glazed_terracotta", VoidlandsBlocks.DARK_RED_GLAZED_TERRACOTTA)
@@ -42,7 +42,7 @@ object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
     val DRIED_ROOTS = add("dried_roots", VoidlandsBlocks.DRIED_ROOTS)
     val OSMIUM_BLOCK = add("osmium_block", VoidlandsBlocks.OSMIUM_BLOCK)
 
-    //val SAFFRON_CANDLE = add("saffron_candle", VoidlandsBlocks.SAFFRON_CANDLE)
+    val SAFFRON_CANDLE = add("saffron_candle", VoidlandsBlocks.SAFFRON_CANDLE)
     val SAFFRON_CONCRETE = add("saffron_concrete", VoidlandsBlocks.SAFFRON_CONCRETE)
     val SAFFRON_CONCRETE_POWDER = add("saffron_concrete_powder", VoidlandsBlocks.SAFFRON_CONCRETE_POWDER)
     val SAFFRON_GLAZED_TERRACOTTA = add("saffron_glazed_terracotta", VoidlandsBlocks.SAFFRON_GLAZED_TERRACOTTA)

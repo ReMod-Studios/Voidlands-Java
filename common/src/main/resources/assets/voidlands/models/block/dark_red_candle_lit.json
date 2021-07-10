@@ -1,6 +1,0 @@
-{
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "voidlands:block/dark_red_candle_lit"
-    }
-}

@@ -1,6 +1,6 @@
 {
-    "parent": "block/cube_all",
+    "parent": "block/template_glazed_terracotta",
     "textures": {
-        "all": "voidlands:block/saffron_glazed_terracotta"
+        "pattern": "voidlands:block/saffron_glazed_terracotta"
     }
 }

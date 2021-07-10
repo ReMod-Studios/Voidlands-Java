@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "voidlands:block/saffron_candle_cake"
+    },
+    "lit=true": {
+      "model": "voidlands:block/saffron_candle_cake_lit"
+    }
+  }
+}

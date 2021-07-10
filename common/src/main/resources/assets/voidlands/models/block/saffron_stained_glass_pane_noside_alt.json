@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/template_glass_pane_noside_alt",
+  "parent": "block/template_glass_pane_noside_alt",
   "textures": {
     "pane": "voidlands:block/saffron_stained_glass"
   }

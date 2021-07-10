@@ -1,3 +1,6 @@
 {
-    "parent": "voidlands:block/dark_red_candle"
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "voidlands:item/dark_red_candle"
+    }
 }

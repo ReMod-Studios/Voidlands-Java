@@ -1,3 +1,6 @@
 {
-    "parent": "voidlands:block/saffron_candle"
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "voidlands:item/saffron_candle"
+    }
 }
