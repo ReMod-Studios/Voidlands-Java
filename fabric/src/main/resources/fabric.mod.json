@@ -20,10 +20,6 @@
       "value": "com.remodstudios.voidlands.fabric.VoidlandsFabricClient"
     }]
   },
-  "mixins": [
-    "voidlands.common.mixins.json"
-  ],
-  "accessWidener": "voidlands.accesswidener",
   "depends": {
     "fabricloader": ">=0.11.1",
     "fabric": "*",

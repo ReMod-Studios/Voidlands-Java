@@ -11,10 +11,6 @@ architectury {
     fabric()
 }
 
-loom {
-    accessWidener = file("src/main/resources/voidlands.accesswidener")
-}
-
 repositories {
     mavenCentral()
 }
