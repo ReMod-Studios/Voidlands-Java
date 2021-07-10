@@ -18,6 +18,10 @@ architectury {
     common(false) // FIXME remove false when Forge 1.17 is released and Arch supports it -ADCLeo
 }
 
+loom {
+    accessWidener = file("src/main/resources/voidlands.accesswidener")
+}
+
 java {
     withSourcesJar()
 }
