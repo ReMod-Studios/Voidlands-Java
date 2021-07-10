@@ -52,7 +52,7 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     val VOID_BERRY = addCopy("void_berry", VoidBerryBlock(BlockProperties.copy(Blocks.COCOA)))
     val MARBLE = addCopy("marble", Blocks.DEEPSLATE)
     val MARBLE_ROCKS = add("marble_rocks",
-        MarbleRocksBlock(BlockProperties.copy(Blocks.DEEPSLATE).dropsNothing()))
+        MarbleRocksBlock(BlockProperties.copy(Blocks.DEEPSLATE).nonOpaque().dropsNothing()))
 
     fun registerRenderTypes() {
         RenderTypeRegistry.register(RenderLayer.getCutout(),
