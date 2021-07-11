@@ -14,7 +14,7 @@ object VoidlandsEarlyRiser : Runnable {
         val mapColor = mr.mapClassName("intermediary", "net.minecraft.class_3620")
 
         val adder =
-            ClassTinkerers.enumBuilder(dyeColor, Int::class.java, String::class.java, Int::class.java, mapColor, Int::class.java, Int::class.java)
+            ClassTinkerers.enumBuilder(dyeColor, Int::class.java, String::class.java, Int::class.java, "L$mapColor;", Int::class.java, Int::class.java)
         addDyeColorEnum(adder, VoidlandsDyeColors.Payloads.CRAYOLA)
         addDyeColorEnum(adder, VoidlandsDyeColors.Payloads.DARK_RED)
         adder.build()

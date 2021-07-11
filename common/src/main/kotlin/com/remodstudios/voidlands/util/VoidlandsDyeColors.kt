@@ -15,11 +15,11 @@ object VoidlandsDyeColors {
             val fireworkColor: Color, val signColor: Color
         )
 
-        // TODO color values
+        // TODO actual color values
         val CRAYOLA =
             DyeColorPayload("CRAYOLA", "crayola", Color(0), 0, Color(0), Color(0))
         val DARK_RED =
-            DyeColorPayload("DARK_RED", "dark_red", Color(0), 0, Color(0), Color(0))
+            DyeColorPayload("DARK_RED", "dark_red", Color(0), 0, Color(1), Color(0))
     }
 
     // if you're wondering "why bother", shulker boxes require a dye color to render with the correct color
