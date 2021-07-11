@@ -59,14 +59,11 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
         createStainedGlassBlock(CRAYOLA))
     @JvmField
     val CRAYOLA_STAINED_GLASS_PANE = add("crayola_stained_glass_pane",
-        StainedGlassPaneBlock(
-            CRAYOLA,
-            BlockProperties.of(Material.GLASS, CRAYOLA).strength(0.3f).sounds(BlockSoundGroup.GLASS).nonOpaque()
-        ))
+        createStainedGlassPaneBlock(CRAYOLA))
     @JvmField
-    val CRAYOLA_TERRACOTTA = add("crayola_terracotta", BlockProperties.of(Material.STONE, CRAYOLA))
+    val CRAYOLA_TERRACOTTA = add("crayola_terracotta", BlockProperties.of(Material.STONE, CRAYOLA).requiresTool().strength(1.25F, 4.2F))
     @JvmField
-    val CRAYOLA_WOOL = add("crayola_wool", BlockProperties.of(Material.WOOL, CRAYOLA))
+    val CRAYOLA_WOOL = add("crayola_wool", BlockProperties.of(Material.WOOL, CRAYOLA).strength(0.8F).sounds(BlockSoundGroup.WOOL))
 
     @JvmField
     val DARK_RED_BED = add("dark_red_bed", createBedBlock(DARK_RED))
@@ -96,14 +93,11 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
         createStainedGlassBlock(DARK_RED))
     @JvmField
     val DARK_RED_STAINED_GLASS_PANE = add("dark_red_stained_glass_pane",
-        StainedGlassPaneBlock(
-            DARK_RED,
-            BlockProperties.of(Material.GLASS, DARK_RED).strength(0.3f).sounds(BlockSoundGroup.GLASS).nonOpaque()
-        ))
+        createStainedGlassPaneBlock(DARK_RED))
     @JvmField
-    val DARK_RED_TERRACOTTA = add("dark_red_terracotta", BlockProperties.of(Material.STONE, DARK_RED))
+    val DARK_RED_TERRACOTTA = add("dark_red_terracotta", BlockProperties.of(Material.STONE, DARK_RED).requiresTool().strength(1.25F, 4.2F))
     @JvmField
-    val DARK_RED_WOOL = add("dark_red_wool", BlockProperties.of(Material.WOOL, DARK_RED))
+    val DARK_RED_WOOL = add("dark_red_wool", BlockProperties.of(Material.WOOL, DARK_RED).strength(0.8F).sounds(BlockSoundGroup.WOOL))
 
     @JvmField
     val ASHSTONE = addCopy("ashstone", Blocks.NETHER_BRICKS)
@@ -131,10 +125,22 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
         MarbleRocksBlock(BlockProperties.of(MARBLE_ROCKS_MATERIAL).nonOpaque().dropsNothing()))
 
     // region Utility methods
-    private val NEVER_TYPED =
-        TypedContextPredicate<EntityType<*>> { _, _, _, _ -> false }
-    private val NEVER =
-        ContextPredicate { _, _, _ -> false }
+    object ContextPredicates {
+        object Never : ContextPredicate, TypedContextPredicate<EntityType<*>> {
+            override fun test(state: BlockState?, world: BlockView?, pos: BlockPos?) = false
+            override fun test(state: BlockState?, world: BlockView?, pos: BlockPos?, entityType: EntityType<*>?) = false
+        }
+
+        object ShulkerBox : ContextPredicate {
+            override fun test(state: BlockState?, world: BlockView?, pos: BlockPos?): Boolean {
+                val entity = world!!.getBlockEntity(pos)
+                return if (entity !is ShulkerBoxBlockEntity)
+                    true
+                else
+                    entity.suffocates()
+            }
+        }
+    }
 
     private fun createBedBlock(dyeColor: DyeColor): BedBlock {
         return BedBlock(dyeColor, BlockProperties.of(Material.WOOL)
@@ -150,22 +156,22 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
         return StainedGlassBlock(
             dyeColor,
             AbstractBlock.Settings.of(Material.GLASS, dyeColor).strength(0.3f).sounds(BlockSoundGroup.GLASS).nonOpaque()
-                .allowsSpawning(NEVER_TYPED).solidBlock(NEVER).suffocates(NEVER).blockVision(NEVER))
+                .allowsSpawning(ContextPredicates.Never).solidBlock(ContextPredicates.Never)
+                .suffocates(ContextPredicates.Never).blockVision(ContextPredicates.Never))
+    }
+
+    private fun createStainedGlassPaneBlock(dyeColor: DyeColor): StainedGlassPaneBlock {
+        return StainedGlassPaneBlock(
+            dyeColor,
+            AbstractBlock.Settings.of(Material.GLASS, dyeColor).strength(0.3f).sounds(BlockSoundGroup.GLASS).nonOpaque()
+                .allowsSpawning(ContextPredicates.Never).solidBlock(ContextPredicates.Never)
+                .suffocates(ContextPredicates.Never).blockVision(ContextPredicates.Never))
     }
 
     private fun createShulkerBoxBlock(dyeColor: DyeColor, settings: AbstractBlock.Settings): ShulkerBoxBlock {
-        val contextPredicate =
-            ContextPredicate { _: BlockState?, world: BlockView, pos: BlockPos? ->
-                val entity = world.getBlockEntity(pos)
-                if (entity !is ShulkerBoxBlockEntity) {
-                    return@ContextPredicate true
-                } else {
-                    return@ContextPredicate entity.suffocates()
-                }
-            }
         return ShulkerBoxBlock(dyeColor,
-            settings.strength(2.0f).dynamicBounds().nonOpaque().suffocates(contextPredicate)
-                .blockVision(contextPredicate))
+            settings.strength(2.0f).dynamicBounds().nonOpaque()
+                .suffocates(ContextPredicates.ShulkerBox).blockVision(ContextPredicates.ShulkerBox))
     }
     // endregion
 
