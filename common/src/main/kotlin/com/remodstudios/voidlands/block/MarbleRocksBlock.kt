@@ -1,15 +1,13 @@
 package com.remodstudios.voidlands.block
 
-import net.minecraft.block.Block
-import net.minecraft.block.BlockState
-import net.minecraft.block.HorizontalFacingBlock
-import net.minecraft.block.ShapeContext
+import net.minecraft.block.*
 import net.minecraft.item.ItemPlacementContext
 import net.minecraft.state.StateManager
 import net.minecraft.util.math.BlockPos
 import net.minecraft.util.math.Direction
 import net.minecraft.util.shape.VoxelShape
 import net.minecraft.world.BlockView
+import net.minecraft.world.WorldView
 
 class MarbleRocksBlock(settings: Settings?) : HorizontalFacingBlock(settings) {
     companion object {
@@ -20,8 +18,12 @@ class MarbleRocksBlock(settings: Settings?) : HorizontalFacingBlock(settings) {
         defaultState = defaultState.with(FACING, Direction.NORTH)
     }
 
-    override fun getPlacementState(itemPlacementContext: ItemPlacementContext): BlockState {
-        return defaultState.with(FACING, itemPlacementContext.playerFacing.opposite) as BlockState
+    override fun canPlaceAt(state: BlockState?, world: WorldView?, pos: BlockPos?): Boolean {
+        return world!!.getBlockState(pos!!.down()).material.isSolid
+    }
+
+    override fun getPlacementState(ctx: ItemPlacementContext): BlockState {
+        return defaultState.with(FACING, ctx.playerFacing.opposite)
     }
 
     override fun appendProperties(builder: StateManager.Builder<Block?, BlockState?>) {

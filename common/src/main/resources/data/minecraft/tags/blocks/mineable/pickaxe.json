@@ -1,6 +1,11 @@
 {
     "replace": "false",
     "values": [
+        "voidlands:ashstone",
+        "voidlands:polished_ashstone",
+        "voidlands:ashstone_bricks",
+        "voidlands:ashstone_tiles",
+        "voidlands:chiseled_ashstone_bricks",
         "voidlands:dark_red_concrete",
         "voidlands:dark_red_glazed_terracotta",
         "voidlands:dark_red_terracotta",
@@ -8,6 +13,7 @@
         "voidlands:crayola_concrete",
         "voidlands:crayola_glazed_terracotta",
         "voidlands:crayola_terracotta",
-        "voidlands:marble"
+        "voidlands:marble",
+        "voidlands:marble_rocks"
     ]
 }

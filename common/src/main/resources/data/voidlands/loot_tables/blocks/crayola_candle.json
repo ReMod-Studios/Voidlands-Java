@@ -1,18 +1,62 @@
 {
-    "type": "block",
-    "pools": {
-        "rolls": "1.0",
-        "bonus_rolls": "0.0",
-        "entries": [
-          {
-            "type": "item",
-            "name": "voidlands:crayola_candle"
-          }
-        ],
-        "conditions": [
-          {
-            "condition": "survives_explosion"
-          }
-        ]
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "voidlands:crayola_candle",
+                  "properties": {
+                    "candles": "2"
+                  }
+                }
+              ],
+              "count": 2.0,
+              "add": false
+            },
+            {
+              "function": "minecraft:set_count",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "voidlands:crayola_candle",
+                  "properties": {
+                    "candles": "3"
+                  }
+                }
+              ],
+              "count": 3.0,
+              "add": false
+            },
+            {
+              "function": "minecraft:set_count",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "voidlands:crayola_candle",
+                  "properties": {
+                    "candles": "4"
+                  }
+                }
+              ],
+              "count": 4.0,
+              "add": false
+            },
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "voidlands:crayola_candle"
+        }
+      ]
     }
+  ]
 }

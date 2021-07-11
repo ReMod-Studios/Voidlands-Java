@@ -23,7 +23,9 @@ object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
 
     // region Block Items
     val ASHSTONE = add("ashstone", VoidlandsBlocks.ASHSTONE)
+    val POLISHED_ASHSTONE = add("polished_ashstone", VoidlandsBlocks.POLISHED_ASHSTONE)
     val ASHSTONE_BRICKS = add("ashstone_bricks", VoidlandsBlocks.ASHSTONE_BRICKS)
+    val ASHSTONE_TILES = add("ashstone_tiles", VoidlandsBlocks.ASHSTONE_TILES)
     val CHISELED_ASHSTONE_BRICKS = add("chiseled_ashstone_bricks", VoidlandsBlocks.CHISELED_ASHSTONE_BRICKS)
 
     val CANNA = add("canna", VoidlandsBlocks.CANNA)

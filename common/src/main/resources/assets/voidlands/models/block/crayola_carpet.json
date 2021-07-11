@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/carpet",
+  "textures": {
+    "wool": "voidlands:block/crayola_wool"
+  }
+}

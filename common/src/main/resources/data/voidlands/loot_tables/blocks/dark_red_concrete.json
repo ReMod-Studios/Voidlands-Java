@@ -1,18 +1,20 @@
 {
-    "type": "block",
-    "pools": {
-        "rolls": "1.0",
-        "bonus_rolls": "0.0",
-        "entries": [
-          {
-            "type": "item",
-            "name": "voidlands:dark_red_concrete"
-          }
-        ],
-        "conditions": [
-          {
+  "type": "block",
+  "pools": [
+    {
+      "rolls": "1.0",
+      "bonus_rolls": "0.0",
+      "entries": [
+        {
+          "type": "item",
+          "name": "voidlands:dark_red_concrete"
+        }
+      ],
+      "conditions": [
+        {
             "condition": "survives_explosion"
-          }
-        ]
+        }
+      ]
     }
+  ]
 }
