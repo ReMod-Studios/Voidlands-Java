@@ -13,6 +13,10 @@ architectury {
 
 repositories {
     mavenCentral()
+    maven {
+        name = 'JitPack'
+        url = 'https://jitpack.io'
+    }
 }
 
 dependencies {
@@ -24,6 +28,8 @@ dependencies {
     modImplementation("io.github.remod-studios:remod-core-fabric:${rootProject.remodcore_version}") {
         exclude(group: "me.shedaniel")
     }
+    // platform-specific dependencies
+    include(modImplementation('com.github.Chocohead:Fabric-ASM:v2.3'))
 
 
     implementation(project(path: ":common")) {

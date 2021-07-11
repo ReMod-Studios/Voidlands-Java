@@ -18,6 +18,10 @@
     "client": [{
       "adapter": "kotlin",
       "value": "com.remodstudios.voidlands.fabric.VoidlandsFabricClient"
+    }],
+    "mm:early_risers": [{
+      "adapter": "kotlin",
+      "value": "com.remodstudios.voidlands.fabric.VoidlandsEarlyRiser"
     }]
   },
   "depends": {
