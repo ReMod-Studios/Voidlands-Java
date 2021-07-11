@@ -1,0 +1,20 @@
+{
+  "type": "block",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "item",
+          "name": "voidlands:ashstone_tiles"
+        }
+      ],
+      "conditions": [
+        {
+            "condition": "survives_explosion"
+        }
+      ]
+    }
+  ]
+}
