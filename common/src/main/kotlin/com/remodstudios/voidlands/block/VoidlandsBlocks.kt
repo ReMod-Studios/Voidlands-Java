@@ -122,7 +122,7 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     val MARBLE = addCopy("marble", Blocks.DEEPSLATE)
     @JvmField
     val MARBLE_ROCKS = add("marble_rocks",
-        MarbleRocksBlock(BlockProperties.of(MARBLE_ROCKS_MATERIAL).nonOpaque().dropsNothing()))
+        MarbleRocksBlock(BlockProperties.of(MARBLE_ROCKS_MATERIAL).nonOpaque().strength(0.2F)))
 
     // region Utility methods
     object ContextPredicates {

@@ -1,18 +1,28 @@
 {
-  "type": "block",
+  "type": "minecraft:block",
   "pools": [
     {
       "rolls": 1.0,
       "bonus_rolls": 0.0,
       "entries": [
         {
-          "type": "item",
+          "type": "minecraft:item",
           "name": "voidlands:crayola_stained_glass_pane"
         }
       ],
       "conditions": [
         {
-            "condition": "survives_explosion"
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "enchantments": [
+              {
+                "enchantment": "minecraft:silk_touch",
+                "levels": {
+                  "min": 1
+                }
+              }
+            ]
+          }
         }
       ]
     }
