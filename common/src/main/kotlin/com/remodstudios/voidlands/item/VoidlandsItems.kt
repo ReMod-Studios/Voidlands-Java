@@ -45,6 +45,33 @@ object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
     val CANNA_SPROUT = add("canna_sprout", VoidlandsBlocks.CANNA_SPROUT)
 
     @JvmField
+    val CRAYOLA_BED = add("crayola_bed", VoidlandsBlocks.CRAYOLA_BED)
+    @JvmField
+    val CRAYOLA_CARPET = add("crayola_carpet", VoidlandsBlocks.CRAYOLA_CARPET)
+    @JvmField
+    val CRAYOLA_CANDLE = add("crayola_candle", VoidlandsBlocks.CRAYOLA_CANDLE)
+    @JvmField
+    val CRAYOLA_CONCRETE = add("crayola_concrete", VoidlandsBlocks.CRAYOLA_CONCRETE)
+    @JvmField
+    val CRAYOLA_CONCRETE_POWDER = add("crayola_concrete_powder", VoidlandsBlocks.CRAYOLA_CONCRETE_POWDER)
+    @JvmField
+    val CRAYOLA_GLAZED_TERRACOTTA = add("crayola_glazed_terracotta", VoidlandsBlocks.CRAYOLA_GLAZED_TERRACOTTA)
+    @JvmField
+    val CRAYOLA_SHULKER_BOX = add("crayola_shulker_box", VoidlandsBlocks.CRAYOLA_SHULKER_BOX)
+    @JvmField
+    val CRAYOLA_STAINED_GLASS = add("crayola_stained_glass", VoidlandsBlocks.CRAYOLA_STAINED_GLASS)
+    @JvmField
+    val CRAYOLA_STAINED_GLASS_PANE = add("crayola_stained_glass_pane", VoidlandsBlocks.CRAYOLA_STAINED_GLASS_PANE)
+    @JvmField
+    val CRAYOLA_TERRACOTTA = add("crayola_terracotta", VoidlandsBlocks.CRAYOLA_TERRACOTTA)
+    @JvmField
+    val CRAYOLA_WOOL = add("crayola_wool", VoidlandsBlocks.CRAYOLA_WOOL)
+
+    @JvmField
+    val DARK_RED_BED = add("dark_red_bed", VoidlandsBlocks.DARK_RED_BED)
+    @JvmField
+    val DARK_RED_CARPET = add("dark_red_carpet", VoidlandsBlocks.DARK_RED_CARPET)
+    @JvmField
     val DARK_RED_CANDLE = add("dark_red_candle", VoidlandsBlocks.DARK_RED_CANDLE)
     @JvmField
     val DARK_RED_CONCRETE = add("dark_red_concrete", VoidlandsBlocks.DARK_RED_CONCRETE)
@@ -67,25 +94,6 @@ object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
     val DRIED_ROOTS = add("dried_roots", VoidlandsBlocks.DRIED_ROOTS)
     @JvmField
     val OSMIUM_BLOCK = add("osmium_block", VoidlandsBlocks.OSMIUM_BLOCK)
-
-    @JvmField
-    val CRAYOLA_CANDLE = add("crayola_candle", VoidlandsBlocks.CRAYOLA_CANDLE)
-    @JvmField
-    val CRAYOLA_CONCRETE = add("crayola_concrete", VoidlandsBlocks.CRAYOLA_CONCRETE)
-    @JvmField
-    val CRAYOLA_CONCRETE_POWDER = add("crayola_concrete_powder", VoidlandsBlocks.CRAYOLA_CONCRETE_POWDER)
-    @JvmField
-    val CRAYOLA_GLAZED_TERRACOTTA = add("crayola_glazed_terracotta", VoidlandsBlocks.CRAYOLA_GLAZED_TERRACOTTA)
-    @JvmField
-    val CRAYOLA_SHULKER_BOX = add("crayola_shulker_box", VoidlandsBlocks.CRAYOLA_SHULKER_BOX)
-    @JvmField
-    val CRAYOLA_STAINED_GLASS = add("crayola_stained_glass", VoidlandsBlocks.CRAYOLA_STAINED_GLASS)
-    @JvmField
-    val CRAYOLA_STAINED_GLASS_PANE = add("crayola_stained_glass_pane", VoidlandsBlocks.CRAYOLA_STAINED_GLASS_PANE)
-    @JvmField
-    val CRAYOLA_TERRACOTTA = add("crayola_terracotta", VoidlandsBlocks.CRAYOLA_TERRACOTTA)
-    @JvmField
-    val CRAYOLA_WOOL = add("crayola_wool", VoidlandsBlocks.CRAYOLA_WOOL)
 
     @JvmField
     val DUST_CLOUD = add("dust_cloud", VoidlandsBlocks.DUST_CLOUD)

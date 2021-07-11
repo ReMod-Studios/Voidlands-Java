@@ -10,6 +10,7 @@ import net.minecraft.block.*
 import net.minecraft.block.AbstractBlock.ContextPredicate
 import net.minecraft.block.AbstractBlock.TypedContextPredicate
 import net.minecraft.block.entity.ShulkerBoxBlockEntity
+import net.minecraft.block.enums.BedPart
 import net.minecraft.block.piston.PistonBehavior
 import net.minecraft.client.render.RenderLayer
 import net.minecraft.entity.EntityType
@@ -30,6 +31,8 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     @JvmField
     val CANNA_SPROUT = add("canna_sprout", CannaSproutBlock(BlockProperties.copy(Blocks.GRASS)))
 
+    @JvmField
+    val CRAYOLA_BED = add("crayola_bed", createBedBlock(CRAYOLA))
     @JvmField
     val CRAYOLA_CARPET = add("crayola_carpet",
         ModDyedCarpetBlock(CRAYOLA, BlockProperties.of(Material.WOOL, CRAYOLA).strength(0.1F).sounds(BlockSoundGroup.WOOL)))
@@ -65,6 +68,8 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     @JvmField
     val CRAYOLA_WOOL = add("crayola_wool", BlockProperties.of(Material.WOOL, CRAYOLA))
 
+    @JvmField
+    val DARK_RED_BED = add("dark_red_bed", createBedBlock(DARK_RED))
     @JvmField
     val DARK_RED_CARPET = add("dark_red_carpet",
         ModDyedCarpetBlock(DARK_RED, BlockProperties.of(Material.WOOL, DARK_RED).strength(0.1F).sounds(BlockSoundGroup.WOOL)))
@@ -129,7 +134,17 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     private val NEVER_TYPED =
         TypedContextPredicate<EntityType<*>> { _, _, _, _ -> false }
     private val NEVER =
-        ContextPredicate { _: BlockState, _: BlockView, _: BlockPos -> false }
+        ContextPredicate { _, _, _ -> false }
+
+    private fun createBedBlock(dyeColor: DyeColor): BedBlock {
+        return BedBlock(dyeColor, BlockProperties.of(Material.WOOL)
+        { state ->
+            if (state.get(BedBlock.PART) == BedPart.FOOT)
+                dyeColor.mapColor
+            else
+                MapColor.WHITE_GRAY
+        }.sounds(BlockSoundGroup.WOOD).strength(0.2f).nonOpaque())
+    }
 
     private fun createStainedGlassBlock(dyeColor: DyeColor): StainedGlassBlock {
         return StainedGlassBlock(

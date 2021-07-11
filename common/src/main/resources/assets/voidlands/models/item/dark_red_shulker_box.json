@@ -1,3 +1,6 @@
 {
-    "parent": "voidlands:block/dark_red_shulker_box"
+    "parent": "minecraft:item/template_shulker_box",
+    "textures": {
+        "particle": "voidlands:block/dark_red_shulker_box"
+    }
 }

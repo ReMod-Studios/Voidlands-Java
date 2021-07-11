@@ -33,6 +33,11 @@ object VoidlandsDyeColors {
     }
 
     // if you're wondering "why bother", shulker boxes require a dye color to render with the correct color
-    val CRAYOLA by lazy(::getCrayolaDyeColor)
-    val DARK_RED by lazy(::getDarkRedDyeColor)
+    @JvmField
+    val CRAYOLA = getCrayolaDyeColor()
+    @JvmField
+    val DARK_RED = getDarkRedDyeColor()
+
+    @JvmField
+    val VALUES = arrayOf(CRAYOLA, DARK_RED)
 }

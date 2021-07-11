@@ -4,9 +4,11 @@
   "package": "com.remodstudios.voidlands.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "BlockEntityTypeMixin",
     "EntityMixin"
   ],
   "client": [
+    "client.TexturedRenderLayersMixin"
   ],
   "injectors": {
     "defaultRequire": 1

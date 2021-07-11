@@ -24,8 +24,8 @@ object VoidlandsEarlyRiser : Runnable {
     private var id = 16 // id of last value of DyeColor (BLACK) + 1
 
     private fun addDyeColorEnum(adder: EnumAdder, payload: VoidlandsDyeColors.Payloads.DyeColorPayload) {
-        adder.addEnum(payload.fieldName) { arrayOf(id, payload.name, payload.color.value, MapColor.COLORS[payload.mapColorId],
+        val myId = id++
+        adder.addEnum(payload.fieldName) { arrayOf(myId, payload.name, payload.color.value, MapColor.COLORS[payload.mapColorId],
             payload.signColor.value, payload.fireworkColor.value) }
-        id++
     }
 }
