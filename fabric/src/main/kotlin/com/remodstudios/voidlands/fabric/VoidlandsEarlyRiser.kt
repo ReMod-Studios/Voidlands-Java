@@ -20,12 +20,8 @@ object VoidlandsEarlyRiser : Runnable {
         adder.build()
     }
 
-    // FIXME hardcoded IDs!! this will break with any other mod insane enough to add a DyeColor -ADCLeo
-    private var id = 16 // id of last value of DyeColor (BLACK) + 1
-
     private fun addDyeColorEnum(adder: EnumAdder, payload: VoidlandsDyeColors.Payloads.DyeColorPayload) {
-        val myId = id++
-        adder.addEnum(payload.fieldName) { arrayOf(myId, payload.name, payload.color.value, MapColor.COLORS[payload.mapColorId],
+        adder.addEnum(payload.fieldName) { arrayOf(-1, payload.name, payload.color.value, MapColor.COLORS[payload.mapColorId],
             payload.signColor.value, payload.fireworkColor.value) }
     }
 }
