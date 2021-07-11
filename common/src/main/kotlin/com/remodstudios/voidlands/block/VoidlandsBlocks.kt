@@ -1,16 +1,27 @@
 package com.remodstudios.voidlands.block
 
 import com.remodstudios.voidlands.Voidlands
-import io.github.remodstudios.remodcore.registry.BlockRegistryHelper
+import com.remodstudios.voidlands.util.VoidlandsDyeColors.CRAYOLA
+import com.remodstudios.voidlands.util.VoidlandsDyeColors.DARK_RED
 import dev.architectury.registry.block.BlockProperties
 import dev.architectury.registry.client.rendering.RenderTypeRegistry
+import io.github.remodstudios.remodcore.registry.BlockRegistryHelper
 import net.minecraft.block.*
+import net.minecraft.block.AbstractBlock.ContextPredicate
+import net.minecraft.block.AbstractBlock.TypedContextPredicate
+import net.minecraft.block.entity.ShulkerBoxBlockEntity
 import net.minecraft.block.piston.PistonBehavior
 import net.minecraft.client.render.RenderLayer
+import net.minecraft.entity.EntityType
 import net.minecraft.sound.BlockSoundGroup
+import net.minecraft.util.DyeColor
+import net.minecraft.util.math.BlockPos
+import net.minecraft.world.BlockView
 
-// TODO unfuck map colors probably
 object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
+    private fun add(id: String, props: AbstractBlock.Settings): Block
+        = add(id, Block(props))
+
     @JvmField
     val MARBLE_ROCKS_MATERIAL = Material(Material.STONE.color, false, false, true, false, false, false, PistonBehavior.DESTROY)
 
@@ -20,56 +31,74 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     val CANNA_SPROUT = add("canna_sprout", CannaSproutBlock(BlockProperties.copy(Blocks.GRASS)))
 
     @JvmField
-    val CRAYOLA_CARPET = add("crayola_carpet", CarpetBlock(BlockProperties.copy(Blocks.BLACK_CARPET)))
+    val CRAYOLA_CARPET = add("crayola_carpet",
+        ModDyedCarpetBlock(CRAYOLA, BlockProperties.of(Material.WOOL, CRAYOLA).strength(0.1F).sounds(BlockSoundGroup.WOOL)))
     @JvmField
-    val CRAYOLA_CANDLE = add("crayola_candle", CandleBlock(BlockProperties.copy(Blocks.CANDLE)))
+    val CRAYOLA_CANDLE = add("crayola_candle",
+        CandleBlock(BlockProperties.of(Material.DECORATION, CRAYOLA).nonOpaque().strength(0.1F).sounds(BlockSoundGroup.CANDLE).luminance(CandleBlock.STATE_TO_LUMINANCE)))
     @JvmField
     val CRAYOLA_CANDLE_CAKE = add("crayola_candle_cake",
         ModCandleCakeBlock(CRAYOLA_CANDLE, BlockProperties.copy(Blocks.CANDLE_CAKE)))
     @JvmField
-    val CRAYOLA_CONCRETE = addCopy("crayola_concrete", Blocks.BLACK_CONCRETE)
+    val CRAYOLA_CONCRETE = add("crayola_concrete",
+        BlockProperties.of(Material.STONE, CRAYOLA).requiresTool().strength(1.8F))
     @JvmField
     val CRAYOLA_CONCRETE_POWDER = add("crayola_concrete_powder",
-        ConcretePowderBlock(CRAYOLA_CONCRETE, BlockProperties.copy(Blocks.BLACK_CONCRETE_POWDER)))
+        ConcretePowderBlock(CRAYOLA_CONCRETE, BlockProperties.of(Material.AGGREGATE, CRAYOLA).strength(0.5F).sounds(BlockSoundGroup.SAND)))
     @JvmField
     val CRAYOLA_GLAZED_TERRACOTTA = add("crayola_glazed_terracotta",
-        GlazedTerracottaBlock(BlockProperties.copy(Blocks.BLACK_GLAZED_TERRACOTTA)))
+        GlazedTerracottaBlock(BlockProperties.of(Material.STONE, CRAYOLA).requiresTool().strength(1.4F)))
     @JvmField
-    val CRAYOLA_SHULKER_BOX = add("crayola_shulker_box", Block(BlockProperties.copy(Blocks.BLACK_SHULKER_BOX))) // TODO custom shulker box??
+    val CRAYOLA_SHULKER_BOX = add("crayola_shulker_box",
+        createShulkerBoxBlock(CRAYOLA, BlockProperties.of(Material.SHULKER_BOX, CRAYOLA)))
     @JvmField
-    val CRAYOLA_STAINED_GLASS = add("crayola_stained_glass", GlassBlock(BlockProperties.copy(Blocks.BLACK_STAINED_GLASS)))
+    val CRAYOLA_STAINED_GLASS = add("crayola_stained_glass",
+        createStainedGlassBlock(CRAYOLA))
     @JvmField
-    val CRAYOLA_STAINED_GLASS_PANE = add("crayola_stained_glass_pane", ModPaneBlock(BlockProperties.copy(Blocks.BLACK_STAINED_GLASS_PANE)))
+    val CRAYOLA_STAINED_GLASS_PANE = add("crayola_stained_glass_pane",
+        StainedGlassPaneBlock(
+            CRAYOLA,
+            BlockProperties.of(Material.GLASS, CRAYOLA).strength(0.3f).sounds(BlockSoundGroup.GLASS).nonOpaque()
+        ))
     @JvmField
-    val CRAYOLA_TERRACOTTA = addCopy("crayola_terracotta", Blocks.BLACK_TERRACOTTA)
+    val CRAYOLA_TERRACOTTA = add("crayola_terracotta", BlockProperties.of(Material.STONE, CRAYOLA))
     @JvmField
-    val CRAYOLA_WOOL = addCopy("crayola_wool", Blocks.BLACK_WOOL)
+    val CRAYOLA_WOOL = add("crayola_wool", BlockProperties.of(Material.WOOL, CRAYOLA))
 
     @JvmField
-    val DARK_RED_CARPET = add("dark_red_carpet", CarpetBlock(BlockProperties.copy(Blocks.BLACK_CARPET)))
+    val DARK_RED_CARPET = add("dark_red_carpet",
+        ModDyedCarpetBlock(DARK_RED, BlockProperties.of(Material.WOOL, DARK_RED).strength(0.1F).sounds(BlockSoundGroup.WOOL)))
     @JvmField
-    val DARK_RED_CANDLE = add("dark_red_candle", CandleBlock(BlockProperties.copy(Blocks.CANDLE)))
+    val DARK_RED_CANDLE = add("dark_red_candle",
+        CandleBlock(BlockProperties.of(Material.DECORATION, DARK_RED).nonOpaque().strength(0.1F).sounds(BlockSoundGroup.CANDLE).luminance(CandleBlock.STATE_TO_LUMINANCE)))
     @JvmField
     val DARK_RED_CANDLE_CAKE = add("dark_red_candle_cake",
         ModCandleCakeBlock(DARK_RED_CANDLE, BlockProperties.copy(Blocks.CANDLE_CAKE)))
     @JvmField
-    val DARK_RED_CONCRETE = addCopy("dark_red_concrete", Blocks.BLACK_CONCRETE)
+    val DARK_RED_CONCRETE = add("dark_red_concrete",
+        BlockProperties.of(Material.STONE, DARK_RED).requiresTool().strength(1.8F))
     @JvmField
     val DARK_RED_CONCRETE_POWDER = add("dark_red_concrete_powder",
-        ConcretePowderBlock(DARK_RED_CONCRETE, BlockProperties.copy(Blocks.BLACK_CONCRETE_POWDER)))
+        ConcretePowderBlock(DARK_RED_CONCRETE, BlockProperties.of(Material.AGGREGATE, DARK_RED).strength(0.5F).sounds(BlockSoundGroup.SAND)))
     @JvmField
     val DARK_RED_GLAZED_TERRACOTTA = add("dark_red_glazed_terracotta",
-        GlazedTerracottaBlock(BlockProperties.copy(Blocks.BLACK_GLAZED_TERRACOTTA)))
+        GlazedTerracottaBlock(BlockProperties.of(Material.STONE, DARK_RED).requiresTool().strength(1.4F)))
     @JvmField
-    val DARK_RED_SHULKER_BOX = add("dark_red_shulker_box", Block(BlockProperties.copy(Blocks.BLACK_SHULKER_BOX))) // TODO custom shulker box??
+    val DARK_RED_SHULKER_BOX = add("dark_red_shulker_box", 
+        createShulkerBoxBlock(DARK_RED, BlockProperties.of(Material.SHULKER_BOX, DARK_RED)))
     @JvmField
-    val DARK_RED_STAINED_GLASS = add("dark_red_stained_glass", GlassBlock(BlockProperties.copy(Blocks.BLACK_STAINED_GLASS)))
+    val DARK_RED_STAINED_GLASS = add("dark_red_stained_glass",
+        createStainedGlassBlock(DARK_RED))
     @JvmField
-    val DARK_RED_STAINED_GLASS_PANE = add("dark_red_stained_glass_pane", ModPaneBlock(BlockProperties.copy(Blocks.BLACK_STAINED_GLASS_PANE)))
+    val DARK_RED_STAINED_GLASS_PANE = add("dark_red_stained_glass_pane",
+        StainedGlassPaneBlock(
+            DARK_RED,
+            BlockProperties.of(Material.GLASS, DARK_RED).strength(0.3f).sounds(BlockSoundGroup.GLASS).nonOpaque()
+        ))
     @JvmField
-    val DARK_RED_TERRACOTTA = addCopy("dark_red_terracotta", Blocks.BLACK_TERRACOTTA)
+    val DARK_RED_TERRACOTTA = add("dark_red_terracotta", BlockProperties.of(Material.STONE, DARK_RED))
     @JvmField
-    val DARK_RED_WOOL = addCopy("dark_red_wool", Blocks.BLACK_WOOL)
+    val DARK_RED_WOOL = add("dark_red_wool", BlockProperties.of(Material.WOOL, DARK_RED))
 
     @JvmField
     val ASHSTONE = addCopy("ashstone", Blocks.NETHER_BRICKS)
@@ -95,6 +124,35 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     @JvmField
     val MARBLE_ROCKS = add("marble_rocks",
         MarbleRocksBlock(BlockProperties.of(MARBLE_ROCKS_MATERIAL).nonOpaque().dropsNothing()))
+
+    // region Utility methods
+    private val NEVER_TYPED =
+        TypedContextPredicate<EntityType<*>> { _, _, _, _ -> false }
+    private val NEVER =
+        ContextPredicate { _: BlockState, _: BlockView, _: BlockPos -> false }
+
+    private fun createStainedGlassBlock(dyeColor: DyeColor): StainedGlassBlock {
+        return StainedGlassBlock(
+            dyeColor,
+            AbstractBlock.Settings.of(Material.GLASS, dyeColor).strength(0.3f).sounds(BlockSoundGroup.GLASS).nonOpaque()
+                .allowsSpawning(NEVER_TYPED).solidBlock(NEVER).suffocates(NEVER).blockVision(NEVER))
+    }
+
+    private fun createShulkerBoxBlock(dyeColor: DyeColor, settings: AbstractBlock.Settings): ShulkerBoxBlock {
+        val contextPredicate =
+            ContextPredicate { _: BlockState?, world: BlockView, pos: BlockPos? ->
+                val entity = world.getBlockEntity(pos)
+                if (entity !is ShulkerBoxBlockEntity) {
+                    return@ContextPredicate true
+                } else {
+                    return@ContextPredicate entity.suffocates()
+                }
+            }
+        return ShulkerBoxBlock(dyeColor,
+            settings.strength(2.0f).dynamicBounds().nonOpaque().suffocates(contextPredicate)
+                .blockVision(contextPredicate))
+    }
+    // endregion
 
     fun registerRenderTypes() {
         RenderTypeRegistry.register(RenderLayer.getCutout(),
