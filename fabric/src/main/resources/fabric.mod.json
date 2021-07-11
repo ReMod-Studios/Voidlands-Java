@@ -24,6 +24,9 @@
       "value": "com.remodstudios.voidlands.fabric.VoidlandsEarlyRiser"
     }]
   },
+  "mixins": [
+    "voidlands.common.mixins.json"
+  ],
   "depends": {
     "fabricloader": ">=0.11.1",
     "fabric": "*",
