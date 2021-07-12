@@ -6,18 +6,29 @@ import com.remodstudios.voidlands.util.VoidlandsDyeColors.DARK_RED
 import dev.architectury.registry.block.BlockProperties
 import dev.architectury.registry.client.rendering.RenderTypeRegistry
 import io.github.remodstudios.remodcore.registry.BlockRegistryHelper
+import net.fabricmc.api.EnvType
+import net.fabricmc.api.Environment
 import net.minecraft.block.*
 import net.minecraft.block.AbstractBlock.ContextPredicate
 import net.minecraft.block.AbstractBlock.TypedContextPredicate
+import net.minecraft.block.dispenser.BlockPlacementDispenserBehavior
+import net.minecraft.block.dispenser.FallibleItemDispenserBehavior
 import net.minecraft.block.entity.ShulkerBoxBlockEntity
 import net.minecraft.block.enums.BedPart
 import net.minecraft.block.piston.PistonBehavior
 import net.minecraft.client.render.RenderLayer
+import net.minecraft.entity.Entity
 import net.minecraft.entity.EntityType
+import net.minecraft.entity.passive.HorseBaseEntity
+import net.minecraft.item.ItemStack
 import net.minecraft.sound.BlockSoundGroup
 import net.minecraft.util.DyeColor
+import net.minecraft.util.math.BlockPointer
 import net.minecraft.util.math.BlockPos
+import net.minecraft.util.math.Box
+import net.minecraft.util.math.Direction
 import net.minecraft.world.BlockView
+import net.minecraft.world.World
 
 object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     private fun add(id: String, props: AbstractBlock.Settings): Block
@@ -53,7 +64,7 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
         GlazedTerracottaBlock(BlockProperties.of(Material.STONE, CRAYOLA).requiresTool().strength(1.4F)))
     @JvmField
     val CRAYOLA_SHULKER_BOX = add("crayola_shulker_box",
-        createShulkerBoxBlock(CRAYOLA, BlockProperties.of(Material.SHULKER_BOX, CRAYOLA)))
+        createShulkerBoxBlock(CRAYOLA))
     @JvmField
     val CRAYOLA_STAINED_GLASS = add("crayola_stained_glass",
         createStainedGlassBlock(CRAYOLA))
@@ -87,7 +98,7 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
         GlazedTerracottaBlock(BlockProperties.of(Material.STONE, DARK_RED).requiresTool().strength(1.4F)))
     @JvmField
     val DARK_RED_SHULKER_BOX = add("dark_red_shulker_box", 
-        createShulkerBoxBlock(DARK_RED, BlockProperties.of(Material.SHULKER_BOX, DARK_RED)))
+        createShulkerBoxBlock(DARK_RED))
     @JvmField
     val DARK_RED_STAINED_GLASS = add("dark_red_stained_glass",
         createStainedGlassBlock(DARK_RED))
@@ -124,8 +135,8 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     val MARBLE_ROCKS = add("marble_rocks",
         MarbleRocksBlock(BlockProperties.of(MARBLE_ROCKS_MATERIAL).nonOpaque().strength(0.2F)))
 
-    // region Utility methods
-    object ContextPredicates {
+    // region Private stuff
+    private object ContextPredicates {
         object Never : ContextPredicate, TypedContextPredicate<EntityType<*>> {
             override fun test(state: BlockState?, world: BlockView?, pos: BlockPos?) = false
             override fun test(state: BlockState?, world: BlockView?, pos: BlockPos?, entityType: EntityType<*>?) = false
@@ -142,39 +153,59 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
         }
     }
 
-    private fun createBedBlock(dyeColor: DyeColor): BedBlock {
-        return BedBlock(dyeColor, BlockProperties.of(Material.WOOL)
+    private fun createBedBlock(dyeColor: DyeColor) =
+        BedBlock(dyeColor, BlockProperties.of(Material.WOOL)
         { state ->
             if (state.get(BedBlock.PART) == BedPart.FOOT)
                 dyeColor.mapColor
             else
                 MapColor.WHITE_GRAY
         }.sounds(BlockSoundGroup.WOOD).strength(0.2f).nonOpaque())
-    }
 
-    private fun createStainedGlassBlock(dyeColor: DyeColor): StainedGlassBlock {
-        return StainedGlassBlock(
-            dyeColor,
-            AbstractBlock.Settings.of(Material.GLASS, dyeColor).strength(0.3f).sounds(BlockSoundGroup.GLASS).nonOpaque()
+    private fun createStainedGlassBlock(dyeColor: DyeColor) =
+        StainedGlassBlock(dyeColor,
+            BlockProperties.of(Material.GLASS, dyeColor).strength(0.3f).sounds(BlockSoundGroup.GLASS).nonOpaque()
                 .allowsSpawning(ContextPredicates.Never).solidBlock(ContextPredicates.Never)
                 .suffocates(ContextPredicates.Never).blockVision(ContextPredicates.Never))
-    }
 
-    private fun createStainedGlassPaneBlock(dyeColor: DyeColor): StainedGlassPaneBlock {
-        return StainedGlassPaneBlock(
-            dyeColor,
-            AbstractBlock.Settings.of(Material.GLASS, dyeColor).strength(0.3f).sounds(BlockSoundGroup.GLASS).nonOpaque()
+    private fun createStainedGlassPaneBlock(dyeColor: DyeColor) =
+        StainedGlassPaneBlock(dyeColor,
+            BlockProperties.of(Material.GLASS, dyeColor).strength(0.3f).sounds(BlockSoundGroup.GLASS).nonOpaque()
                 .allowsSpawning(ContextPredicates.Never).solidBlock(ContextPredicates.Never)
                 .suffocates(ContextPredicates.Never).blockVision(ContextPredicates.Never))
-    }
 
-    private fun createShulkerBoxBlock(dyeColor: DyeColor, settings: AbstractBlock.Settings): ShulkerBoxBlock {
-        return ShulkerBoxBlock(dyeColor,
-            settings.strength(2.0f).dynamicBounds().nonOpaque()
+    private fun createShulkerBoxBlock(dyeColor: DyeColor) =
+        ShulkerBoxBlock(dyeColor,
+            BlockProperties.of(Material.SHULKER_BOX, dyeColor).strength(2.0f).dynamicBounds().nonOpaque()
                 .suffocates(ContextPredicates.ShulkerBox).blockVision(ContextPredicates.ShulkerBox))
+
+    private object DispenserBehaviors {
+        object EquipOnHorse : FallibleItemDispenserBehavior() {
+            override fun dispenseSilently(ptr: BlockPointer, stack: ItemStack): ItemStack? {
+                val blockPos = ptr.pos.offset(ptr.blockState.get(DispenserBlock.FACING) as Direction)
+                for (horse in ptr.world.getEntities<HorseBaseEntity>(Box(blockPos)) { it.isAlive && it.hasArmorSlot() }) {
+                    if (!horse.isHorseArmor(stack) || horse.hasArmorInSlot() || !horse.isTame)
+                        continue
+                    horse.getStackReference(401).set(stack.split(1))
+                    isSuccess = true
+                    return stack
+                }
+                return super.dispenseSilently(ptr, stack)
+            }
+        }
+
+        object PlaceBlock : BlockPlacementDispenserBehavior()
     }
     // endregion
 
+    fun registerDispenserBehaviors() {
+        DispenserBlock.registerBehavior(CRAYOLA_CARPET, DispenserBehaviors.EquipOnHorse)
+        DispenserBlock.registerBehavior(DARK_RED_CARPET, DispenserBehaviors.EquipOnHorse)
+        DispenserBlock.registerBehavior(CRAYOLA_SHULKER_BOX, DispenserBehaviors.PlaceBlock)
+        DispenserBlock.registerBehavior(DARK_RED_SHULKER_BOX, DispenserBehaviors.PlaceBlock)
+    }
+
+    @Environment(EnvType.CLIENT)
     fun registerRenderTypes() {
         RenderTypeRegistry.register(RenderLayer.getCutout(),
             CANNA, CANNA_SPROUT)

@@ -1,0 +1,6 @@
+{
+  "required": true,
+  "package": "com.remodstudios.voidlands.fabric.why",
+  "compatibilityLevel": "JAVA_16",
+  "plugin": "com.remodstudios.voidlands.fabric.why.BadMixinPlugin"
+}

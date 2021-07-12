@@ -8,8 +8,9 @@ object Voidlands {
     const val MOD_ID = "voidlands"
 
     fun init() {
-        VoidlandsBlocks.register();
-        VoidlandsItems.register();
+        VoidlandsBlocks.register()
+        VoidlandsItems.register()
+        VoidlandsBlocks.registerDispenserBehaviors()
         printHelloWorld()
     }
 
