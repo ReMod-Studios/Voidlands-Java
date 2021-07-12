@@ -74,6 +74,7 @@ class DispenserBehaviorClassVisitor(cv: ClassVisitor, val registerDefaults: Stri
                             hookDesc,
                             false
                         )
+                        super.visitInsn(Opcodes.ICONST_0)
                         super.visitJumpInsn(Opcodes.IFEQ, continueLabel)
                         super.visitIincInsn(6, 1)
                         // unless some other shmuck already modified this method,
