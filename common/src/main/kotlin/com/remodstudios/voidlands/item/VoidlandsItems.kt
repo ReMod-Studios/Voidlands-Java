@@ -4,6 +4,7 @@ import com.remodstudios.voidlands.Voidlands
 import com.remodstudios.voidlands.block.VoidlandsBlocks
 import dev.architectury.registry.CreativeTabRegistry
 import io.github.remodstudios.remodcore.registry.ItemRegistryHelper
+import net.minecraft.item.BannerItem
 import net.minecraft.item.FoodComponent
 import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
@@ -45,6 +46,9 @@ object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
     val CANNA_SPROUT = add("canna_sprout", VoidlandsBlocks.CANNA_SPROUT)
 
     @JvmField
+    val CRAYOLA_BANNER = addWithFactory("crayola_banner")
+    { BannerItem(VoidlandsBlocks.CRAYOLA_BANNER, VoidlandsBlocks.CRAYOLA_WALL_BANNER, it) }
+    @JvmField
     val CRAYOLA_BED = add("crayola_bed", VoidlandsBlocks.CRAYOLA_BED)
     @JvmField
     val CRAYOLA_CARPET = add("crayola_carpet", VoidlandsBlocks.CRAYOLA_CARPET)
@@ -67,6 +71,9 @@ object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
     @JvmField
     val CRAYOLA_WOOL = add("crayola_wool", VoidlandsBlocks.CRAYOLA_WOOL)
 
+    @JvmField
+    val DARK_RED_BANNER = addWithFactory("dark_red_banner")
+    { BannerItem(VoidlandsBlocks.DARK_RED_BANNER, VoidlandsBlocks.DARK_RED_WALL_BANNER, it) }
     @JvmField
     val DARK_RED_BED = add("dark_red_bed", VoidlandsBlocks.DARK_RED_BED)
     @JvmField

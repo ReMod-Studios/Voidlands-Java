@@ -2,6 +2,7 @@ package com.remodstudios.voidlands.mixin;
 
 import com.remodstudios.voidlands.block.VoidlandsBlocks;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.entity.BannerBlockEntity;
 import net.minecraft.block.entity.BedBlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.entity.ShulkerBoxBlockEntity;
@@ -17,14 +18,21 @@ public abstract class BlockEntityTypeMixin {
     @Shadow @Final public static BlockEntityType<ShulkerBoxBlockEntity> SHULKER_BOX;
     @Shadow @Final public static BlockEntityType<BedBlockEntity> BED;
 
+    @Shadow @Final public static BlockEntityType<BannerBlockEntity> BANNER;
+
     @SuppressWarnings("ConstantConditions")
     @Inject(method = "supports", at = @At("RETURN"), cancellable = true)
     public void supportCustomBlocks(BlockState state, CallbackInfoReturnable<Boolean> cir) {
-        if (((Object) this) == SHULKER_BOX) {
+        final BlockEntityType<?> type = ((BlockEntityType<?>) (Object) this);
+        if (type == SHULKER_BOX) {
             if (state.isOf(VoidlandsBlocks.CRAYOLA_SHULKER_BOX) || state.isOf(VoidlandsBlocks.DARK_RED_SHULKER_BOX))
                 cir.setReturnValue(true);
-        } else if (((Object) this) == BED) {
+        } else if (type == BED) {
             if (state.isOf(VoidlandsBlocks.CRAYOLA_BED) || state.isOf(VoidlandsBlocks.DARK_RED_BED))
+                cir.setReturnValue(true);
+        } else if (type == BANNER) {
+            if (state.isOf(VoidlandsBlocks.CRAYOLA_BANNER) || state.isOf(VoidlandsBlocks.CRAYOLA_WALL_BANNER)
+             || state.isOf(VoidlandsBlocks.DARK_RED_BANNER) || state.isOf(VoidlandsBlocks.DARK_RED_WALL_BANNER))
                 cir.setReturnValue(true);
         }
     }

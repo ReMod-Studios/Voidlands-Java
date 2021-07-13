@@ -17,7 +17,6 @@ import net.minecraft.block.entity.ShulkerBoxBlockEntity
 import net.minecraft.block.enums.BedPart
 import net.minecraft.block.piston.PistonBehavior
 import net.minecraft.client.render.RenderLayer
-import net.minecraft.entity.Entity
 import net.minecraft.entity.EntityType
 import net.minecraft.entity.passive.HorseBaseEntity
 import net.minecraft.item.ItemStack
@@ -28,7 +27,6 @@ import net.minecraft.util.math.BlockPos
 import net.minecraft.util.math.Box
 import net.minecraft.util.math.Direction
 import net.minecraft.world.BlockView
-import net.minecraft.world.World
 
 object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     private fun add(id: String, props: AbstractBlock.Settings): Block
@@ -42,6 +40,10 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     @JvmField
     val CANNA_SPROUT = add("canna_sprout", CannaSproutBlock(BlockProperties.copy(Blocks.GRASS)))
 
+    @JvmField
+    val CRAYOLA_BANNER = add("crayola_banner", createBannerBlock(CRAYOLA))
+    @JvmField
+    val CRAYOLA_WALL_BANNER = add("crayola_wall_banner", createWallBannerBlock(CRAYOLA, CRAYOLA_BANNER))
     @JvmField
     val CRAYOLA_BED = add("crayola_bed", createBedBlock(CRAYOLA))
     @JvmField
@@ -76,6 +78,10 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     @JvmField
     val CRAYOLA_WOOL = add("crayola_wool", BlockProperties.of(Material.WOOL, CRAYOLA).strength(0.8F).sounds(BlockSoundGroup.WOOL))
 
+    @JvmField
+    val DARK_RED_BANNER = add("dark_red_banner", createBannerBlock(DARK_RED))
+    @JvmField
+    val DARK_RED_WALL_BANNER = add("dark_red_wall_banner", createWallBannerBlock(DARK_RED, DARK_RED_BANNER))
     @JvmField
     val DARK_RED_BED = add("dark_red_bed", createBedBlock(DARK_RED))
     @JvmField
@@ -153,31 +159,41 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
         }
     }
 
-    private fun createBedBlock(dyeColor: DyeColor) =
-        BedBlock(dyeColor, BlockProperties.of(Material.WOOL)
+    private fun createBedBlock(color: DyeColor) =
+        BedBlock(color, BlockProperties.of(Material.WOOL)
         { state ->
             if (state.get(BedBlock.PART) == BedPart.FOOT)
-                dyeColor.mapColor
+                color.mapColor
             else
                 MapColor.WHITE_GRAY
         }.sounds(BlockSoundGroup.WOOD).strength(0.2f).nonOpaque())
 
-    private fun createStainedGlassBlock(dyeColor: DyeColor) =
-        StainedGlassBlock(dyeColor,
-            BlockProperties.of(Material.GLASS, dyeColor).strength(0.3f).sounds(BlockSoundGroup.GLASS).nonOpaque()
+    private fun createStainedGlassBlock(color: DyeColor) =
+        StainedGlassBlock(color,
+            BlockProperties.of(Material.GLASS, color).strength(0.3f).sounds(BlockSoundGroup.GLASS).nonOpaque()
                 .allowsSpawning(ContextPredicates.Never).solidBlock(ContextPredicates.Never)
                 .suffocates(ContextPredicates.Never).blockVision(ContextPredicates.Never))
 
-    private fun createStainedGlassPaneBlock(dyeColor: DyeColor) =
-        StainedGlassPaneBlock(dyeColor,
-            BlockProperties.of(Material.GLASS, dyeColor).strength(0.3f).sounds(BlockSoundGroup.GLASS).nonOpaque()
+    private fun createStainedGlassPaneBlock(color: DyeColor) =
+        StainedGlassPaneBlock(color,
+            BlockProperties.of(Material.GLASS, color).strength(0.3f).sounds(BlockSoundGroup.GLASS).nonOpaque()
                 .allowsSpawning(ContextPredicates.Never).solidBlock(ContextPredicates.Never)
                 .suffocates(ContextPredicates.Never).blockVision(ContextPredicates.Never))
 
-    private fun createShulkerBoxBlock(dyeColor: DyeColor) =
-        ShulkerBoxBlock(dyeColor,
-            BlockProperties.of(Material.SHULKER_BOX, dyeColor).strength(2.0f).dynamicBounds().nonOpaque()
+    private fun createShulkerBoxBlock(color: DyeColor) =
+        ShulkerBoxBlock(color,
+            BlockProperties.of(Material.SHULKER_BOX, color).strength(2.0f).dynamicBounds().nonOpaque()
                 .suffocates(ContextPredicates.ShulkerBox).blockVision(ContextPredicates.ShulkerBox))
+    
+    private fun createBannerBlock(color: DyeColor) =
+        BannerBlock(
+            color, 
+            BlockProperties.of(Material.WOOD).noCollision().strength(1.0f).sounds(BlockSoundGroup.WOOD))
+
+    private fun createWallBannerBlock(color: DyeColor, banner: BannerBlock) =
+        WallBannerBlock(
+            color,
+            BlockProperties.of(Material.WOOD).noCollision().strength(1.0f).sounds(BlockSoundGroup.WOOD).dropsLike(banner))
 
     private object DispenserBehaviors {
         object EquipOnHorse : FallibleItemDispenserBehavior() {
