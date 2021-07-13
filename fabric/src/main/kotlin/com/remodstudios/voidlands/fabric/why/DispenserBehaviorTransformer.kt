@@ -7,7 +7,7 @@ import org.objectweb.asm.Opcodes
 import org.objectweb.asm.tree.*
 
 object DispenserBehaviorTransformer {
-    private val LOGGER = LogManager.getLogger("${Voidlands.MOD_ID}.DispenserBehaviorTransformer")
+    private val LOGGER = LogManager.getLogger("${Voidlands.MOD_ID}:DispenserBehaviorTransformer")
 
     private const val NAMESPACE = "intermediary"
 
@@ -19,9 +19,9 @@ object DispenserBehaviorTransformer {
     private const val DYE_COLOR = "net.minecraft.class_1767"
     private const val BLOCK = "net.minecraft.class_2248"
     private const val GET = "method_10525"
-    private val GET_DESC = "(${DYE_COLOR.toBinaryName()};)L${BLOCK.toBinaryName()};"
+    private val GET_DESC = "(L${DYE_COLOR.toBinaryName()};)L${BLOCK.toBinaryName()};"
 
-    fun String.toBinaryName() = replace('.', '/')
+    private fun String.toBinaryName() = replace('.', '/')
 
     data class RemappedNames(val shulkerBoxBlock: String, val dyeColor: String,
                              val get: String, val getDesc: String, val hookDesc: String) {
