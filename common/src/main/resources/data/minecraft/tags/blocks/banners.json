@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "voidlands:crayola_banner",
+    "voidlands:dark_red_banner",
+    "voidlands:crayola_wall_banner",
+    "voidlands:dark_red_wall_banner"
+  ]
+}
