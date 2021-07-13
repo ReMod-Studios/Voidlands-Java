@@ -1,6 +1,12 @@
 {
   "required": true,
-  "package": "com.remodstudios.voidlands.fabric.why",
+  "package": "com.remodstudios.voidlands.fabric.why.mixin",
   "compatibilityLevel": "JAVA_16",
-  "plugin": "com.remodstudios.voidlands.fabric.why.BadMixinPlugin"
+  "plugin": "com.remodstudios.voidlands.fabric.why.mixin.TransformerMixinPlugin",
+  "mixins": [
+    "DispenserBehaviorMarker"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
 }

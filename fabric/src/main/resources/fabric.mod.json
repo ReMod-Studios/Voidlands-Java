@@ -25,7 +25,8 @@
     }]
   },
   "mixins": [
-    "voidlands.common.mixins.json"
+    "voidlands.common.mixins.json",
+    "voidlands.fabric.why.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.11.1",
