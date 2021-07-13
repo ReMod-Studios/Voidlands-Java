@@ -2,12 +2,10 @@ package com.remodstudios.voidlands.item
 
 import com.remodstudios.voidlands.Voidlands
 import com.remodstudios.voidlands.block.VoidlandsBlocks
+import com.remodstudios.voidlands.util.VoidlandsDyeColors
 import dev.architectury.registry.CreativeTabRegistry
 import io.github.remodstudios.remodcore.registry.ItemRegistryHelper
-import net.minecraft.item.BannerItem
-import net.minecraft.item.FoodComponent
-import net.minecraft.item.Item
-import net.minecraft.item.ItemStack
+import net.minecraft.item.*
 
 object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
     @JvmField
@@ -27,6 +25,11 @@ object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
     val DRIED_ROOT_STICK = add("dried_root_stick")
     @JvmField
     val VOID_BERRY = add("void_berry") { it.food(FoodComponent.Builder().hunger(4).build()) }
+
+    @JvmField
+    val CRAYOLA_DYE = addWithFactory("crayola_dye") { DyeItem(VoidlandsDyeColors.CRAYOLA, it) }
+    @JvmField
+    val DARK_RED_DYE = addWithFactory("dark_red_dye") { DyeItem(VoidlandsDyeColors.DARK_RED, it) }
 
     // region Block Items
     @JvmField

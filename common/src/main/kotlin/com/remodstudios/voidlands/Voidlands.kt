@@ -2,6 +2,7 @@ package com.remodstudios.voidlands
 
 import com.remodstudios.voidlands.block.VoidlandsBlocks
 import com.remodstudios.voidlands.item.VoidlandsItems
+import com.remodstudios.voidlands.util.VoidlandsDyeColors
 import net.minecraft.util.Identifier
 
 object Voidlands {
@@ -12,9 +13,8 @@ object Voidlands {
         VoidlandsItems.register()
         VoidlandsBlocks.registerDispenserBehaviors()
         printHelloWorld()
+        println("CRAYOLA.id = ${VoidlandsDyeColors.CRAYOLA.id}")
     }
 
-    fun id(path: String): Identifier {
-        return Identifier(MOD_ID, path)
-    }
+    @JvmStatic fun id(path: String) = Identifier(MOD_ID, path)
 }
