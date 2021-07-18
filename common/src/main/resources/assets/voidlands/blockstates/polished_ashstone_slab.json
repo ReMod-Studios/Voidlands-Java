@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "voidlands:block/polished_ashstone_slab"
+    },
+    "type=top": {
+      "model": "voidlands:block/polished_ashstone_slab_top"
+    },
+    "type=double": {
+      "model": "voidlands:block/polished_ashstone"
+    }
+  }
+}

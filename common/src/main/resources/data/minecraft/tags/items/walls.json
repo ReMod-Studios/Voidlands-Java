@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "voidlands:ashstone_wall",
+    "voidlands:polished_ashstone_wall",
+    "voidlands:ashstone_brick_wall",
+    "voidlands:ashstone_tile_wall",
+    "voidlands:chiseled_ashstone_brick_wall",
+    "voidlands:cracked_ashstone_brick_wall"
+  ]
+}

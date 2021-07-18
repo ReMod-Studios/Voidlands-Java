@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_wall_post",
   "textures": {
-    "wall": "voidlands:block/chiseled_ashstone_brick_wall"
+    "wall": "voidlands:block/chiseled_ashstone_bricks"
   }
 }
