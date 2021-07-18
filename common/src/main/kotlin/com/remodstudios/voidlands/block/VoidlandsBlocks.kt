@@ -125,7 +125,7 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     @JvmField
     val ASHSTONE_TILES = addCopy("ashstone_tiles", Blocks.NETHER_BRICKS)
     @JvmField
-    val ASHSTONE_PILLAR = addCopy("ashstone_pillar", Blocks.NETHER_BRICKS)
+    val ASHSTONE_PILLAR = add("ashstone_pillar", PillarBlock(BlockProperties.copy(Blocks.NETHER_BRICKS)))
     @JvmField
     val CHISELED_ASHSTONE_BRICKS = addCopy("chiseled_ashstone_bricks", Blocks.NETHER_BRICKS)
     @JvmField
