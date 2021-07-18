@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "voidlands:block/cracked_ashstone_bricks"
+  }
+}

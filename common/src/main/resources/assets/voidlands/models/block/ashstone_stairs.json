@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "voidlands:block/ashstone",
+    "top": "voidlands:block/ashstone",
+    "side": "voidlands:block/ashstone"
+  }
+}

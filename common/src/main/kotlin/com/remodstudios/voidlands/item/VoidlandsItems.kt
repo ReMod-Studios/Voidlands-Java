@@ -1,10 +1,15 @@
 package com.remodstudios.voidlands.item
 
 import com.remodstudios.voidlands.Voidlands
+import com.remodstudios.voidlands.block.ModStairsBlock
 import com.remodstudios.voidlands.block.VoidlandsBlocks
 import com.remodstudios.voidlands.util.VoidlandsDyeColors
 import dev.architectury.registry.CreativeTabRegistry
+import dev.architectury.registry.block.BlockProperties
 import io.github.remodstudios.remodcore.registry.ItemRegistryHelper
+import net.minecraft.block.Blocks
+import net.minecraft.block.SlabBlock
+import net.minecraft.block.WallBlock
 import net.minecraft.item.*
 
 object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
@@ -48,6 +53,45 @@ object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
     val CHISELED_ASHSTONE_BRICKS = add("chiseled_ashstone_bricks", VoidlandsBlocks.CHISELED_ASHSTONE_BRICKS)
     @JvmField
     val CRACKED_ASHSTONE_BRICKS = add("cracked_ashstone_bricks", VoidlandsBlocks.CHISELED_ASHSTONE_BRICKS)
+    
+    @JvmField
+    val ASHSTONE_SLAB = add("ashstone_slab", VoidlandsBlocks.ASHSTONE_SLAB)
+    @JvmField
+    val POLISHED_ASHSTONE_SLAB = add("polished_ashstone_slab", VoidlandsBlocks.POLISHED_ASHSTONE_SLAB)
+    @JvmField
+    val ASHSTONE_BRICK_SLAB = add("ashstone_brick_slab", VoidlandsBlocks.ASHSTONE_BRICK_SLAB)
+    @JvmField
+    val ASHSTONE_TILE_SLAB = add("ashstone_tile_slab", VoidlandsBlocks.ASHSTONE_TILE_SLAB)
+    @JvmField
+    val CHISELED_ASHSTONE_BRICK_SLAB = add("chiseled_ashstone_brick_slab", VoidlandsBlocks.CHISELED_ASHSTONE_BRICK_SLAB)
+    @JvmField
+    val CRACKED_ASHSTONE_BRICK_SLAB = add("cracked_ashstone_brick_slab", VoidlandsBlocks.CRACKED_ASHSTONE_BRICK_SLAB)
+
+    @JvmField
+    val ASHSTONE_STAIRS = add("ashstone_stairs", VoidlandsBlocks.ASHSTONE_STAIRS)
+    @JvmField
+    val POLISHED_ASHSTONE_STAIRS = add("polished_ashstone_stairs", VoidlandsBlocks.POLISHED_ASHSTONE_STAIRS)
+    @JvmField
+    val ASHSTONE_BRICK_STAIRS = add("ashstone_brick_stairs", VoidlandsBlocks.ASHSTONE_BRICK_STAIRS)
+    @JvmField
+    val ASHSTONE_TILE_STAIRS = add("ashstone_tile_stairs", VoidlandsBlocks.ASHSTONE_TILE_STAIRS)
+    @JvmField
+    val CHISELED_ASHSTONE_BRICK_STAIRS = add("chiseled_ashstone_brick_stairs", VoidlandsBlocks.CHISELED_ASHSTONE_BRICK_STAIRS)
+    @JvmField
+    val CRACKED_ASHSTONE_BRICK_STAIRS = add("cracked_ashstone_brick_stairs", VoidlandsBlocks.CRACKED_ASHSTONE_BRICK_STAIRS)
+
+    @JvmField
+    val ASHSTONE_WALL = add("ashstone_wall", VoidlandsBlocks.ASHSTONE_WALL)
+    @JvmField
+    val POLISHED_ASHSTONE_WALL = add("polished_ashstone_wall", VoidlandsBlocks.POLISHED_ASHSTONE_WALL)
+    @JvmField
+    val ASHSTONE_BRICK_WALL = add("ashstone_brick_wall", VoidlandsBlocks.ASHSTONE_BRICK_WALL)
+    @JvmField
+    val ASHSTONE_TILE_WALL = add("ashstone_tile_wall", VoidlandsBlocks.ASHSTONE_TILE_WALL)
+    @JvmField
+    val CHISELED_ASHSTONE_BRICK_WALL = add("chiseled_ashstone_brick_wall", VoidlandsBlocks.CHISELED_ASHSTONE_BRICK_WALL)
+    @JvmField
+    val CRACKED_ASHSTONE_BRICK_WALL = add("cracked_ashstone_brick_wall", VoidlandsBlocks.CRACKED_ASHSTONE_BRICK_WALL)
 
     @JvmField
     val CANNA = add("canna", VoidlandsBlocks.CANNA)
@@ -116,6 +160,12 @@ object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
 
     @JvmField
     val MARBLE = add("marble", VoidlandsBlocks.MARBLE)
+    @JvmField
+    val MARBLE_SLAB = add("marble_slab", VoidlandsBlocks.MARBLE_SLAB)
+    @JvmField
+    val MARBLE_STAIRS = add("marble_stairs", VoidlandsBlocks.MARBLE_STAIRS)
+    @JvmField
+    val MARBLE_WALL = add("marble_wall", VoidlandsBlocks.MARBLE_WALL)
     @JvmField
     val MARBLE_ROCKS = add("marble_rocks", VoidlandsBlocks.MARBLE_ROCKS)
     // endregion

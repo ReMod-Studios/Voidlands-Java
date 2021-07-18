@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "voidlands:block/chiseled_ashstone_bricks",
+    "top": "voidlands:block/chiseled_ashstone_bricks",
+    "side": "voidlands:block/chiseled_ashstone_bricks"
+  }
+}

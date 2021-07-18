@@ -130,6 +130,52 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     val CHISELED_ASHSTONE_BRICKS = addCopy("chiseled_ashstone_bricks", Blocks.NETHER_BRICKS)
     @JvmField
     val CRACKED_ASHSTONE_BRICKS = addCopy("cracked_ashstone_bricks", Blocks.NETHER_BRICKS)
+
+    @JvmField
+    val ASHSTONE_SLAB = add("ashstone_slab", SlabBlock(BlockProperties.copy(Blocks.NETHER_BRICK_SLAB)))
+    @JvmField
+    val POLISHED_ASHSTONE_SLAB = add("polished_ashstone_slab", SlabBlock(BlockProperties.copy(Blocks.NETHER_BRICK_SLAB)))
+    @JvmField
+    val ASHSTONE_BRICK_SLAB = add("ashstone_brick_slab", SlabBlock(BlockProperties.copy(Blocks.NETHER_BRICK_SLAB)))
+    @JvmField
+    val ASHSTONE_TILE_SLAB = add("ashstone_tile_slab", SlabBlock(BlockProperties.copy(Blocks.NETHER_BRICK_SLAB)))
+    @JvmField
+    val CHISELED_ASHSTONE_BRICK_SLAB = add("chiseled_ashstone_brick_slab", SlabBlock(BlockProperties.copy(Blocks.NETHER_BRICK_SLAB)))
+    @JvmField
+    val CRACKED_ASHSTONE_BRICK_SLAB = add("cracked_ashstone_brick_slab", SlabBlock(BlockProperties.copy(Blocks.NETHER_BRICK_SLAB)))
+
+    @JvmField
+    val ASHSTONE_STAIRS =
+        add("ashstone_stairs", ModStairsBlock(ASHSTONE.defaultState, BlockProperties.copy(Blocks.NETHER_BRICK_STAIRS)))
+    @JvmField
+    val POLISHED_ASHSTONE_STAIRS =
+        add("polished_ashstone_stairs", ModStairsBlock(POLISHED_ASHSTONE.defaultState, BlockProperties.copy(Blocks.NETHER_BRICK_STAIRS)))
+    @JvmField
+    val ASHSTONE_BRICK_STAIRS =
+        add("ashstone_brick_stairs", ModStairsBlock(ASHSTONE_BRICKS.defaultState, BlockProperties.copy(Blocks.NETHER_BRICK_STAIRS)))
+    @JvmField
+    val ASHSTONE_TILE_STAIRS =
+        add("ashstone_tile_stairs", ModStairsBlock(ASHSTONE_TILES.defaultState, BlockProperties.copy(Blocks.NETHER_BRICK_STAIRS)))
+    @JvmField
+    val CHISELED_ASHSTONE_BRICK_STAIRS =
+        add("chiseled_ashstone_brick_stairs", ModStairsBlock(CHISELED_ASHSTONE_BRICKS.defaultState, BlockProperties.copy(Blocks.NETHER_BRICK_STAIRS)))
+    @JvmField
+    val CRACKED_ASHSTONE_BRICK_STAIRS =
+        add("cracked_ashstone_brick_stairs", ModStairsBlock(CRACKED_ASHSTONE_BRICKS.defaultState, BlockProperties.copy(Blocks.NETHER_BRICK_STAIRS)))
+
+    @JvmField
+    val ASHSTONE_WALL = add("ashstone_wall", WallBlock(BlockProperties.copy(Blocks.NETHER_BRICK_WALL)))
+    @JvmField
+    val POLISHED_ASHSTONE_WALL = add("polished_ashstone_wall", WallBlock(BlockProperties.copy(Blocks.NETHER_BRICK_WALL)))
+    @JvmField
+    val ASHSTONE_BRICK_WALL = add("ashstone_brick_wall", WallBlock(BlockProperties.copy(Blocks.NETHER_BRICK_WALL)))
+    @JvmField
+    val ASHSTONE_TILE_WALL = add("ashstone_tile_wall", WallBlock(BlockProperties.copy(Blocks.NETHER_BRICK_WALL)))
+    @JvmField
+    val CHISELED_ASHSTONE_BRICK_WALL = add("chiseled_ashstone_brick_wall", WallBlock(BlockProperties.copy(Blocks.NETHER_BRICK_WALL)))
+    @JvmField
+    val CRACKED_ASHSTONE_BRICK_WALL = add("cracked_ashstone_brick_wall", WallBlock(BlockProperties.copy(Blocks.NETHER_BRICK_WALL)))
+    
     @JvmField
     val DUST_CLOUD = add("dust_cloud",
         DustCloudBlock(BlockProperties.copy(Blocks.WHITE_WOOL).noCollision().nonOpaque().strength(0.2f)))
@@ -139,8 +185,15 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     val OSMIUM_BLOCK = addCopy("osmium_block", Blocks.IRON_BLOCK)
     @JvmField
     val VOID_BERRY = addCopy("void_berry", VoidBerryBlock(BlockProperties.copy(Blocks.COCOA)))
+
     @JvmField
     val MARBLE = addCopy("marble", Blocks.DEEPSLATE)
+    @JvmField
+    val MARBLE_SLAB = add("marble_slab", SlabBlock(BlockProperties.copy(Blocks.DEEPSLATE)))
+    @JvmField
+    val MARBLE_STAIRS = add("marble_stairs", ModStairsBlock(MARBLE.defaultState, BlockProperties.copy(Blocks.DEEPSLATE)))
+    @JvmField
+    val MARBLE_WALL = add("marble_wall", WallBlock(BlockProperties.copy(Blocks.DEEPSLATE)))
     @JvmField
     val MARBLE_ROCKS = add("marble_rocks",
         MarbleRocksBlock(BlockProperties.of(MARBLE_ROCKS_MATERIAL).nonOpaque().strength(0.2F)))
