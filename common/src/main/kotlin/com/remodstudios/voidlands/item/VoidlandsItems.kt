@@ -1,15 +1,10 @@
 package com.remodstudios.voidlands.item
 
 import com.remodstudios.voidlands.Voidlands
-import com.remodstudios.voidlands.block.ModStairsBlock
 import com.remodstudios.voidlands.block.VoidlandsBlocks
 import com.remodstudios.voidlands.util.VoidlandsDyeColors
 import dev.architectury.registry.CreativeTabRegistry
-import dev.architectury.registry.block.BlockProperties
 import io.github.remodstudios.remodcore.registry.ItemRegistryHelper
-import net.minecraft.block.Blocks
-import net.minecraft.block.SlabBlock
-import net.minecraft.block.WallBlock
 import net.minecraft.item.*
 
 object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
