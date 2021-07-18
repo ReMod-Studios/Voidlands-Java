@@ -41,7 +41,11 @@ object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
     @JvmField
     val ASHSTONE_TILES = add("ashstone_tiles", VoidlandsBlocks.ASHSTONE_TILES)
     @JvmField
+    val ASHSTONE_PILLAR = add("ashstone_pillar", VoidlandsBlocks.ASHSTONE_PILLAR)
+    @JvmField
     val CHISELED_ASHSTONE_BRICKS = add("chiseled_ashstone_bricks", VoidlandsBlocks.CHISELED_ASHSTONE_BRICKS)
+    @JvmField
+    val CRACKED_ASHSTONE_BRICKS = add("cracked_ashstone_bricks", VoidlandsBlocks.CHISELED_ASHSTONE_BRICKS)
 
     @JvmField
     val CANNA = add("canna", VoidlandsBlocks.CANNA)

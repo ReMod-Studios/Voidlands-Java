@@ -125,7 +125,11 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     @JvmField
     val ASHSTONE_TILES = addCopy("ashstone_tiles", Blocks.NETHER_BRICKS)
     @JvmField
+    val ASHSTONE_PILLAR = addCopy("ashstone_pillar", Blocks.NETHER_BRICKS)
+    @JvmField
     val CHISELED_ASHSTONE_BRICKS = addCopy("chiseled_ashstone_bricks", Blocks.NETHER_BRICKS)
+    @JvmField
+    val CRACKED_ASHSTONE_BRICKS = addCopy("cracked_ashstone_bricks", Blocks.NETHER_BRICKS)
     @JvmField
     val DUST_CLOUD = add("dust_cloud",
         DustCloudBlock(BlockProperties.copy(Blocks.WHITE_WOOL).noCollision().nonOpaque().strength(0.2f)))
