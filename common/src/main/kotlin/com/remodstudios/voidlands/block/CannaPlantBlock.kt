@@ -13,6 +13,7 @@ import net.minecraft.server.world.ServerWorld
 import net.minecraft.sound.SoundCategory
 import net.minecraft.sound.SoundEvents
 import net.minecraft.state.StateManager
+import net.minecraft.state.property.EnumProperty
 import net.minecraft.state.property.IntProperty
 import net.minecraft.state.property.Properties
 import net.minecraft.util.ActionResult
@@ -25,6 +26,7 @@ import java.util.*
 
 class CannaPlantBlock(settings: Settings?) : TallPlantBlock(settings), Fertilizable {
     companion object {
+        val HALF: EnumProperty<DoubleBlockHalf> = TallPlantBlock.HALF
         val AGE: IntProperty = Properties.AGE_2
     }
 
@@ -95,7 +97,7 @@ class CannaPlantBlock(settings: Settings?) : TallPlantBlock(settings), Fertiliza
     override fun grow(world: ServerWorld, random: Random, pos: BlockPos, state: BlockState) {
         if (state[HALF] == DoubleBlockHalf.UPPER) {
             var age = state[AGE]
-            age += if (random.nextBoolean()) 1 else 0
+            age += if (random.nextInt(3) == 0) 1 else 0
             if (age > 2)
                 age = 2
             world.setBlockState(pos, state.with(AGE, age), 3)

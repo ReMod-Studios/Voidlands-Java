@@ -38,7 +38,7 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     @JvmField
     val CANNA = add("canna", CannaPlantBlock(BlockProperties.of(Material.PLANT).noCollision().strength(0.5F).ticksRandomly()))
     @JvmField
-    val CANNA_SPROUT = add("canna_sprout", CannaSproutBlock(BlockProperties.of(Material.PLANT).noCollision().strength(0.5F)))
+    val CANNA_SPROUT = add("canna_sprout", CannaSproutBlock(BlockProperties.of(Material.PLANT).noCollision().strength(0.5F).ticksRandomly()))
 
     @JvmField
     val CRAYOLA_BANNER = add("crayola_banner", createBannerBlock(CRAYOLA))
