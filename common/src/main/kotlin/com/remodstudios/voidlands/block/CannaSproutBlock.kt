@@ -13,11 +13,11 @@ class CannaSproutBlock(settings: Settings?) : PlantBlock(settings) {
     }
 
     override fun getOutlineShape(
-        blockState: BlockState?,
-        blockView: BlockView?,
-        blockPos: BlockPos?,
-        shapeContext: ShapeContext?
-    ): VoxelShape? {
+        state: BlockState,
+        world: BlockView,
+        pos: BlockPos,
+        ctx: ShapeContext
+    ): VoxelShape {
         return SHAPE
     }
 }
