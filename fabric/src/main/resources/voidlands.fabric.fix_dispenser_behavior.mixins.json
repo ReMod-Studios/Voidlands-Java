@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "com.remodstudios.voidlands.fabric.fix_dispenser_behavior.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "plugin": "com.remodstudios.voidlands.fabric.fix_dispenser_behavior.mixin.TransformerMixinPlugin",
+  "mixins": [
+    "DispenserBehaviorMarker"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

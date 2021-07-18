@@ -1,4 +1,4 @@
-package com.remodstudios.voidlands.mixin;
+package com.remodstudios.voidlands.fabric.mixin;
 
 import net.minecraft.block.MapColor;
 import net.minecraft.util.DyeColor;

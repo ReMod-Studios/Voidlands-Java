@@ -1,8 +1,8 @@
-package com.remodstudios.voidlands.fabric.why.mixin;
+package com.remodstudios.voidlands.fabric.fix_dispenser_behavior.mixin;
 
 import com.google.common.collect.ImmutableList;
 import com.remodstudios.voidlands.Voidlands;
-import com.remodstudios.voidlands.fabric.why.DispenserBehaviorTransformer;
+import com.remodstudios.voidlands.fabric.fix_dispenser_behavior.DispenserBehaviorTransformer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.objectweb.asm.tree.ClassNode;

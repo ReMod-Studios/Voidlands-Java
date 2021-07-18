@@ -26,7 +26,8 @@
   },
   "mixins": [
     "voidlands.common.mixins.json",
-    "voidlands.fabric.why.mixins.json"
+    "voidlands.fabric.fix_dispenser_behavior.mixins.json",
+    "voidlands.fabric.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.11.1",

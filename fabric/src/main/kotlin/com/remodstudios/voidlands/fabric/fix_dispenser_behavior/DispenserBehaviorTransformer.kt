@@ -1,4 +1,4 @@
-package com.remodstudios.voidlands.fabric.why
+package com.remodstudios.voidlands.fabric.fix_dispenser_behavior
 
 import com.remodstudios.voidlands.Voidlands
 import net.fabricmc.loader.api.FabricLoader
