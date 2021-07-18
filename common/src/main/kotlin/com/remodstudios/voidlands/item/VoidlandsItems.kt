@@ -25,6 +25,8 @@ object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
     val DRIED_ROOT_STICK = add("dried_root_stick")
     @JvmField
     val VOID_BERRY = add("void_berry") { it.food(FoodComponent.Builder().hunger(4).build()) }
+    @JvmField
+    val OSMIUM_INGOT = add("osmium_ingot")
 
     @JvmField
     val CRAYOLA_DYE = addWithFactory("crayola_dye") { DyeItem(VoidlandsDyeColors.CRAYOLA, it) }
