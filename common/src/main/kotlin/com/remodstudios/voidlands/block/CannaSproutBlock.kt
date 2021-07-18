@@ -34,7 +34,7 @@ class CannaSproutBlock(settings: Settings?) : PlantBlock(settings), Fertilizable
             if (!canGrowIntoCanna(world, pos))
                 return
             val pos2 = pos.up()
-            world.setBlockState(pos, VoidlandsBlocks.CANNA.defaultState.with(CannaPlantBlock.HALF, DoubleBlockHalf.LOWER), 0)
+            world.setBlockState(pos, VoidlandsBlocks.CANNA.defaultState.with(CannaPlantBlock.HALF, DoubleBlockHalf.LOWER), 3)
             world.setBlockState(pos2, VoidlandsBlocks.CANNA.defaultState.with(CannaPlantBlock.HALF, DoubleBlockHalf.UPPER), 3)
         }
     }
