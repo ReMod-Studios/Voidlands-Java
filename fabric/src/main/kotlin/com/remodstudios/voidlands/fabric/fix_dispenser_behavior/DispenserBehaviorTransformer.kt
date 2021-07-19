@@ -29,7 +29,7 @@ object DispenserBehaviorTransformer {
     }
 
     @JvmStatic fun transform(classNode: ClassNode): Boolean {
-        val mr = FabricLoader.getInstance().mappingResolver;
+        val mr = FabricLoader.getInstance().mappingResolver
 
         val registerDefaults = mr.mapMethodName(NAMESPACE, DISPENSER_BEHAVIOR, REGISTER_DEFAULTS, "()V").toBinaryName()
         val shulkerBoxBlock = mr.mapClassName(NAMESPACE, SHULKER_BOX_BLOCK).toBinaryName()
@@ -96,7 +96,7 @@ object DispenserBehaviorTransformer {
         LOGGER.trace("injecting!!!")
         val toInsert = InsnList()
         toInsert.add(MethodInsnNode(Opcodes.INVOKESTATIC,
-            "com/remodstudios/voidlands/fabric/why/TransformerHooks",
+            "com.remodstudios.voidlands.fabric.fix_dispenser_behavior.TransformerHooks".toBinaryName(),
             "isCustomDyeColor",
             remappedNames.hookDesc))
         toInsert.add(JumpInsnNode(Opcodes.IFNE, advanceLabel))
