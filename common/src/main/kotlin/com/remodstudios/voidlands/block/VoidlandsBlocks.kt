@@ -153,8 +153,6 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     val ASHSTONE_TILE_SLAB = add("ashstone_tile_slab", SlabBlock(BlockProperties.copy(Blocks.NETHER_BRICK_SLAB)))
     @JvmField
     val CHISELED_ASHSTONE_BRICK_SLAB = add("chiseled_ashstone_brick_slab", SlabBlock(BlockProperties.copy(Blocks.NETHER_BRICK_SLAB)))
-    @JvmField
-    val CRACKED_ASHSTONE_BRICK_SLAB = add("cracked_ashstone_brick_slab", SlabBlock(BlockProperties.copy(Blocks.NETHER_BRICK_SLAB)))
 
     @JvmField
     val ASHSTONE_STAIRS =
@@ -171,9 +169,6 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     @JvmField
     val CHISELED_ASHSTONE_BRICK_STAIRS =
         add("chiseled_ashstone_brick_stairs", ModStairsBlock(CHISELED_ASHSTONE_BRICKS.defaultState, BlockProperties.copy(Blocks.NETHER_BRICK_STAIRS)))
-    @JvmField
-    val CRACKED_ASHSTONE_BRICK_STAIRS =
-        add("cracked_ashstone_brick_stairs", ModStairsBlock(CRACKED_ASHSTONE_BRICKS.defaultState, BlockProperties.copy(Blocks.NETHER_BRICK_STAIRS)))
 
     @JvmField
     val ASHSTONE_WALL = add("ashstone_wall", WallBlock(BlockProperties.copy(Blocks.NETHER_BRICK_WALL)))
@@ -190,10 +185,11 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     val DUST_CLOUD = add("dust_cloud",
         DustCloudBlock(BlockProperties.copy(Blocks.WHITE_WOOL).noCollision().nonOpaque().strength(0.2f)))
     @JvmField
-    val DRIED_ROOTS_BLOCK = addWoodlike("dried_roots_block") { Block(this.sounds(BlockSoundGroup.NETHER_STEM)) }
+    val SHADEWOOD_LOG = addWoodlike("shadewood_log") { PillarBlock(this.sounds(BlockSoundGroup.NETHER_STEM)) }
     @JvmField
-    val DRIED_ROOT_WALL = add("dried_root_wall", WallBlock(BlockProperties.copy(Blocks.STONE_BRICK_WALL)
-        .sounds(BlockSoundGroup.NETHER_STEM)))
+    val SHADEWOOD_ROOTS = addWoodlike("shadewood_roots") { Block(this.sounds(BlockSoundGroup.NETHER_STEM)) }
+    @JvmField
+    val SHADEWOOD_WALL = addWoodlike("shadewood_wall") { WallBlock(this.sounds(BlockSoundGroup.NETHER_STEM)) }
     @JvmField
     val OSMIUM_BLOCK = addCopy("osmium_block", Blocks.IRON_BLOCK)
     @JvmField

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_wall_side_tall",
   "textures": {
-    "wall": "voidlands:block/dried_roots_block"
+    "wall": "voidlands:block/shadewood_roots"
   }
 }

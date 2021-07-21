@@ -1,6 +1,8 @@
 {
     "replace": "false",
     "values": [
-        "voidlands:dried_roots"
+        "voidlands:shadewood_log",
+        "voidlands:shadewood_roots",
+        "voidlands:shadewood_wall"
     ]
 }

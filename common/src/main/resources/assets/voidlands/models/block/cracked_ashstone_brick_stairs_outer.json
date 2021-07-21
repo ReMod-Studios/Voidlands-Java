@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "voidlands:block/cracked_ashstone_bricks",
-    "top": "voidlands:block/cracked_ashstone_bricks",
-    "side": "voidlands:block/cracked_ashstone_bricks"
-  }
-}

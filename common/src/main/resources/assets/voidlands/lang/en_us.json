@@ -12,21 +12,18 @@
   "block.voidlands.ashstone_brick_slab": "Ashstone Brick Slab",
   "block.voidlands.ashstone_tile_slab": "Ashstone Tile Slab",
   "block.voidlands.chiseled_ashstone_brick_slab": "Chiseled Ashstone Brick Slab",
-  "block.voidlands.cracked_ashstone_brick_slab": "Cracked Ashstone Brick Slab",
 
   "block.voidlands.ashstone_stairs": "Ashstone Stairs",
   "block.voidlands.polished_ashstone_stairs": "Polished Ashstone Stairs",
   "block.voidlands.ashstone_brick_stairs": "Ashstone Brick Stairs",
   "block.voidlands.ashstone_tile_stairs": "Ashstone Tile Stairs",
   "block.voidlands.chiseled_ashstone_brick_stairs": "Chiseled Ashstone Brick Stairs",
-  "block.voidlands.cracked_ashstone_brick_stairs": "Cracked Ashstone Brick Stairs",
 
   "block.voidlands.ashstone_wall": "Ashstone Wall",
   "block.voidlands.polished_ashstone_wall": "Polished Ashstone Wall",
   "block.voidlands.ashstone_brick_wall": "Ashstone Brick Wall",
   "block.voidlands.ashstone_tile_wall": "Ashstone Tile Wall",
   "block.voidlands.chiseled_ashstone_brick_wall": "Chiseled Ashstone Brick Wall",
-  "block.voidlands.cracked_ashstone_brick_wall": "Cracked Ashstone Brick Wall",
 
   "block.voidlands.marble": "Marble",
   "block.voidlands.marble_slab": "Marble Slab",
@@ -38,7 +35,9 @@
   "block.voidlands.canna_sprout": "Canna Sprout",
 
   "block.voidlands.dust_cloud": "Dust Cloud",
-  "block.voidlands.dried_roots_block": "Block of Dried Roots",
+  "block.voidlands.shadewood_log": "Shadewood Log",
+  "block.voidlands.shadewood_roots": "Shadewood Roots",
+  "block.voidlands.shadewood_wall": "Shadewood Wall",
   "block.voidlands.osmium_block": "Osmium Block",
 
   "block.voidlands.crayola_banner": "Crayola Banner",
@@ -71,7 +70,7 @@
   "item.voidlands.dark_red_dye": "Dark Red Dye",
   "item.voidlands.ashstone_rock": "Ashstone Rock",
   "item.voidlands.canna_leaf": "Canna Leaf",
-  "item.voidlands.dried_root_stick": "Dried Root Stick",
+  "item.voidlands.shadewood_stick": "Shadewood Stick",
   "item.voidlands.void_berry": "Void Berry",
   "item.voidlands.canna_bloom_in_a_bottle": "Canna Bloom in a Bottle",
   "item.voidlands.osmium_ingot": "Osmium Ingot",

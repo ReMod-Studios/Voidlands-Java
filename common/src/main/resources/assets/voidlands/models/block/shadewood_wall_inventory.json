@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/wall_inventory",
   "textures": {
-    "wall": "voidlands:block/dried_roots_block"
+    "wall": "voidlands:block/shadewood_roots"
   }
 }
