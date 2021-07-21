@@ -192,7 +192,7 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     val DUST_CLOUD = add("dust_cloud",
         DustCloudBlock(BlockProperties.copy(Blocks.WHITE_WOOL).noCollision().nonOpaque().strength(0.2f)))
     @JvmField
-    val DRIED_ROOTS = addWoodlike("dried_roots") { Block(this.sounds(BlockSoundGroup.NETHER_STEM)) }
+    val DRIED_ROOTS_BLOCK = addWoodlike("dried_roots_block") { Block(this.sounds(BlockSoundGroup.NETHER_STEM)) }
     @JvmField
     val OSMIUM_BLOCK = addCopy("osmium_block", Blocks.IRON_BLOCK)
     @JvmField
