@@ -85,8 +85,6 @@ object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
     val ASHSTONE_TILE_WALL = add("ashstone_tile_wall", VoidlandsBlocks.ASHSTONE_TILE_WALL)
     @JvmField
     val CHISELED_ASHSTONE_BRICK_WALL = add("chiseled_ashstone_brick_wall", VoidlandsBlocks.CHISELED_ASHSTONE_BRICK_WALL)
-    @JvmField
-    val CRACKED_ASHSTONE_BRICK_WALL = add("cracked_ashstone_brick_wall", VoidlandsBlocks.CRACKED_ASHSTONE_BRICK_WALL)
 
     @JvmField
     val CANNA = add("canna", VoidlandsBlocks.CANNA)
@@ -146,7 +144,9 @@ object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
     val DARK_RED_WOOL = add("dark_red_wool", VoidlandsBlocks.DARK_RED_WOOL)
 
     @JvmField
-    val DRIED_ROOTS = add("dried_roots", VoidlandsBlocks.DRIED_ROOTS)
+    val DRIED_ROOTS_BLOCK = add("dried_roots_block", VoidlandsBlocks.DRIED_ROOTS_BLOCK)
+    @JvmField
+    val DRIED_ROOT_WALL = add("dried_root_wall", VoidlandsBlocks.DRIED_ROOT_WALL)
     @JvmField
     val OSMIUM_BLOCK = add("osmium_block", VoidlandsBlocks.OSMIUM_BLOCK)
 

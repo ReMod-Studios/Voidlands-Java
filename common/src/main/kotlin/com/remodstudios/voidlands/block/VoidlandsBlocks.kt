@@ -185,14 +185,15 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     val ASHSTONE_TILE_WALL = add("ashstone_tile_wall", WallBlock(BlockProperties.copy(Blocks.NETHER_BRICK_WALL)))
     @JvmField
     val CHISELED_ASHSTONE_BRICK_WALL = add("chiseled_ashstone_brick_wall", WallBlock(BlockProperties.copy(Blocks.NETHER_BRICK_WALL)))
-    @JvmField
-    val CRACKED_ASHSTONE_BRICK_WALL = add("cracked_ashstone_brick_wall", WallBlock(BlockProperties.copy(Blocks.NETHER_BRICK_WALL)))
     
     @JvmField
     val DUST_CLOUD = add("dust_cloud",
         DustCloudBlock(BlockProperties.copy(Blocks.WHITE_WOOL).noCollision().nonOpaque().strength(0.2f)))
     @JvmField
     val DRIED_ROOTS_BLOCK = addWoodlike("dried_roots_block") { Block(this.sounds(BlockSoundGroup.NETHER_STEM)) }
+    @JvmField
+    val DRIED_ROOT_WALL = add("dried_root_wall", WallBlock(BlockProperties.copy(Blocks.STONE_BRICK_WALL)
+        .sounds(BlockSoundGroup.NETHER_STEM)))
     @JvmField
     val OSMIUM_BLOCK = addCopy("osmium_block", Blocks.IRON_BLOCK)
     @JvmField
