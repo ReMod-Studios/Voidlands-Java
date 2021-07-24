@@ -11,8 +11,8 @@ object PlatformInterfaceImpl {
     }
 
     @JvmStatic fun getCrayolaDyeColor(): DyeColor =
-        ClassTinkerers.getEnum(DyeColor::class.java, VoidlandsDyeColors.ColorValues.CRAYOLA.fieldName)
+        ClassTinkerers.getEnum(DyeColor::class.java, VoidlandsDyeColors.Values.CRAYOLA.fieldName)
 
     @JvmStatic fun getDarkRedDyeColor(): DyeColor =
-        ClassTinkerers.getEnum(DyeColor::class.java, VoidlandsDyeColors.ColorValues.DARK_RED.fieldName)
+        ClassTinkerers.getEnum(DyeColor::class.java, VoidlandsDyeColors.Values.DARK_RED.fieldName)
 }

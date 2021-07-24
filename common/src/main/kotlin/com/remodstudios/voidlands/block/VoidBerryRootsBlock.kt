@@ -1,0 +1,91 @@
+package com.remodstudios.voidlands.block
+
+import com.remodstudios.voidlands.item.VoidlandsItems
+import net.minecraft.block.Block
+import net.minecraft.block.BlockState
+import net.minecraft.block.Fertilizable
+import net.minecraft.block.ShapeContext
+import net.minecraft.entity.player.PlayerEntity
+import net.minecraft.item.ItemStack
+import net.minecraft.server.world.ServerWorld
+import net.minecraft.state.StateManager
+import net.minecraft.state.property.IntProperty
+import net.minecraft.state.property.Properties
+import net.minecraft.util.ActionResult
+import net.minecraft.util.Hand
+import net.minecraft.util.hit.BlockHitResult
+import net.minecraft.util.math.BlockPos
+import net.minecraft.util.shape.VoxelShape
+import net.minecraft.util.shape.VoxelShapes
+import net.minecraft.world.BlockView
+import net.minecraft.world.World
+import java.util.*
+
+class VoidBerryRootsBlock(settings: Settings) : Block(settings), Fertilizable {
+    companion object {
+        private val SHAPE = createCuboidShape(0.0, 0.0, 0.0, 16.0, 1.0, 16.0)
+        private val SHAPE_WITH_BERRY = VoxelShapes.union(
+            createCuboidShape(0.0, 0.0, 0.0, 16.0, 1.0, 16.0),
+            createCuboidShape(6.0, 1.0, 6.0, 10.0, 5.0, 10.0)
+        )
+
+        @JvmField val AGE: IntProperty = Properties.AGE_2
+
+        @JvmStatic private fun doGrowth(world: ServerWorld, pos: BlockPos, state: BlockState) {
+            var age = state[AGE] + 1
+            if (age > 2)
+                age = 2
+            world.setBlockState(pos, state.with(AGE, age), 3);
+        }
+    }
+
+    init {
+        defaultState = defaultState.with(AGE, 0)
+    }
+
+    override fun appendProperties(builder: StateManager.Builder<Block, BlockState>) {
+        builder.add(AGE)
+    }
+
+    override fun onUse(
+        state: BlockState,
+        world: World,
+        pos: BlockPos,
+        player: PlayerEntity,
+        hand: Hand,
+        hitResult: BlockHitResult
+    ): ActionResult {
+        if (state.get(AGE) < 2)
+            return ActionResult.PASS
+        player.inventory.offerOrDrop(ItemStack(VoidlandsItems.VOID_BERRY))
+        world.setBlockState(pos, state.with(AGE, 0), 3)
+        return ActionResult.SUCCESS
+    }
+
+    override fun hasRandomTicks(state: BlockState): Boolean = state[AGE] < 2
+
+    override fun randomTick(state: BlockState, world: ServerWorld, pos: BlockPos, random: Random) {
+        if (random.nextInt(26) != 0)
+            return
+        doGrowth(world, pos, state)
+    }
+
+    override fun isFertilizable(
+        world: BlockView,
+        pos: BlockPos,
+        state: BlockState,
+        bl: Boolean
+    ): Boolean = state[AGE] < 2
+
+    override fun canGrow(world: World, random: Random, pos: BlockPos, state: BlockState): Boolean = true
+
+    override fun grow(world: ServerWorld, random: Random, pos: BlockPos, state: BlockState) =
+        doGrowth(world, pos, state)
+
+    override fun getOutlineShape(
+        state: BlockState,
+        world: BlockView,
+        pos: BlockPos,
+        shapeCtx: ShapeContext
+    ): VoxelShape = if (state[AGE] >= 2) SHAPE_WITH_BERRY else SHAPE
+}

@@ -1,6 +1,5 @@
 package com.remodstudios.voidlands.util
 
-import com.remodstudios.voidlands.Voidlands
 import com.remodstudios.voidlands.getCrayolaDyeColor
 import com.remodstudios.voidlands.getDarkRedDyeColor
 import io.github.remodstudios.remodcore.Color
@@ -8,7 +7,7 @@ import org.jetbrains.annotations.ApiStatus
 
 object VoidlandsDyeColors {
     @ApiStatus.Internal
-    data class ColorValues internal constructor(
+    data class Values internal constructor(
         val fieldName: String,
         val name: String, val color: Color, val mapColorId: Int,
         val fireworkColor: Color, val signColor: Color
@@ -16,7 +15,7 @@ object VoidlandsDyeColors {
         @ApiStatus.Internal
         companion object {
             val CRAYOLA =
-                ColorValues("CRAYOLA", "crayola",
+                Values("CRAYOLA", "crayola",
                     Color(r = 244, g = 194, b = 116),
                     13,
                     fireworkColor = Color(r = 255, g = 210, b = 128),
@@ -24,7 +23,7 @@ object VoidlandsDyeColors {
                 )
 
             val DARK_RED =
-                ColorValues("DARK_RED", "dark_red",
+                Values("DARK_RED", "dark_red",
                     Color(r = 112, g = 12, b = 23),
                     35,
                     fireworkColor = Color(r = 140, g = 7, b = 40),

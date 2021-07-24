@@ -24,8 +24,6 @@ object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
     @JvmField
     val SHADEWOOD_STICK = add("shadewood_stick")
     @JvmField
-    val VOID_BERRY = add("void_berry") { it.food(FoodComponent.Builder().hunger(4).build()) }
-    @JvmField
     val OSMIUM_INGOT = add("osmium_ingot")
 
     @JvmField
@@ -86,6 +84,11 @@ object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
     val CANNA = add("canna", VoidlandsBlocks.CANNA)
     @JvmField
     val CANNA_SPROUT = add("canna_sprout", VoidlandsBlocks.CANNA_SPROUT)
+
+    @JvmField
+    val VOID_BERRY = add("void_berry") { it.food(FoodComponent.Builder().hunger(4).build()) }
+    @JvmField
+    val VOID_BERRY_ROOTS = add("void_berry_roots", VoidlandsBlocks.VOID_BERRY_ROOTS)
 
     @JvmField
     val CRAYOLA_BANNER = addWithFactory("crayola_banner")

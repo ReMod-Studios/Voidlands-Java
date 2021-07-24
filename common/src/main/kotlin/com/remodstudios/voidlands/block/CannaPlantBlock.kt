@@ -26,8 +26,8 @@ import java.util.*
 
 class CannaPlantBlock(settings: Settings?) : TallPlantBlock(settings), Fertilizable {
     companion object {
-        val HALF: EnumProperty<DoubleBlockHalf> = TallPlantBlock.HALF
-        val AGE: IntProperty = Properties.AGE_2
+        @JvmField val HALF: EnumProperty<DoubleBlockHalf> = TallPlantBlock.HALF
+        @JvmField val AGE: IntProperty = Properties.AGE_2
     }
 
     init {

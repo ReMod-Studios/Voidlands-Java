@@ -186,7 +186,8 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     @JvmField
     val SHADEWOOD = addWoodlike("shadewood") { Block(this.sounds(BlockSoundGroup.NETHER_STEM)) }
     @JvmField
-    val SHADEWOOD_ROOTS = addWoodlike("shadewood_roots") { ModHangingRootsBlock(this.sounds(BlockSoundGroup.NETHER_STEM)) }
+    val SHADEWOOD_ROOTS = add("shadewood_roots", ModHangingRootsBlock(BlockProperties.copy(Blocks.HANGING_ROOTS)
+        .sounds(BlockSoundGroup.NETHER_STEM)))
     @JvmField
     val SHADEWOOD_WALL = addWoodlike("shadewood_wall") { WallBlock(this.sounds(BlockSoundGroup.NETHER_STEM)) }
 
@@ -208,7 +209,8 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     @JvmField
     val OSMIUM_BLOCK = addCopy("osmium_block", Blocks.IRON_BLOCK)
     @JvmField
-    val VOID_BERRY = addCopy("void_berry", VoidBerryBlock(BlockProperties.copy(Blocks.COCOA)))
+    val VOID_BERRY_ROOTS = add("void_berry_roots", VoidBerryRootsBlock(BlockProperties.of(Material.PLANT)
+        .ticksRandomly().strength(0.2F, 3.0F).sounds(BlockSoundGroup.NETHER_STEM).noCollision().nonOpaque()))
 
     // region Private stuff
     private object ContextPredicates {
@@ -293,7 +295,7 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     @Environment(EnvType.CLIENT)
     fun registerRenderTypes() {
         RenderTypeRegistry.register(RenderLayer.getCutout(),
-            CANNA, CANNA_SPROUT, SHADEWOOD_ROOTS)
+            CANNA, CANNA_SPROUT, SHADEWOOD_ROOTS, VOID_BERRY_ROOTS)
         RenderTypeRegistry.register(RenderLayer.getTranslucent(),
             DARK_RED_STAINED_GLASS, DARK_RED_STAINED_GLASS_PANE,
             CRAYOLA_STAINED_GLASS, CRAYOLA_STAINED_GLASS_PANE,

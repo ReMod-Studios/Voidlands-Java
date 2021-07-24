@@ -15,12 +15,12 @@ object VoidlandsEarlyRiser : Runnable {
 
         val adder =
             ClassTinkerers.enumBuilder(dyeColor, Int::class.java, String::class.java, Int::class.java, "L$mapColor;", Int::class.java, Int::class.java)
-        addDyeColorEnum(adder, VoidlandsDyeColors.ColorValues.CRAYOLA)
-        addDyeColorEnum(adder, VoidlandsDyeColors.ColorValues.DARK_RED)
+        addDyeColorEnum(adder, VoidlandsDyeColors.Values.CRAYOLA)
+        addDyeColorEnum(adder, VoidlandsDyeColors.Values.DARK_RED)
         adder.build()
     }
 
-    private fun addDyeColorEnum(adder: EnumAdder, values: VoidlandsDyeColors.ColorValues) {
+    private fun addDyeColorEnum(adder: EnumAdder, values: VoidlandsDyeColors.Values) {
         adder.addEnum(values.fieldName) { arrayOf(-1, values.name, values.color.value, MapColor.COLORS[values.mapColorId],
             values.signColor.value, values.fireworkColor.value) }
     }

@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "age=0": {
+            "model": "voidlands:block/void_berry_roots"
+        },
+        "age=1": {
+            "model": "voidlands:block/void_berry_roots"
+        },
+        "age=2": {
+            "model": "voidlands:block/void_berry"
+        }
+    }
+}

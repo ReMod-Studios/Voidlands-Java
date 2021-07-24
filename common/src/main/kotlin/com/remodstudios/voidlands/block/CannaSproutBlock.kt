@@ -16,7 +16,7 @@ class CannaSproutBlock(settings: Settings?) : PlantBlock(settings), Fertilizable
     companion object {
         private val SHAPE = createCuboidShape(2.0, 0.0, 2.0, 14.0, 13.0, 14.0)
 
-        val AGE: IntProperty = Properties.AGE_2
+        @JvmField val AGE: IntProperty = Properties.AGE_2
 
         @JvmStatic private fun doGrowth(world: ServerWorld, pos: BlockPos, state: BlockState) {
             val age = state[AGE]
@@ -57,7 +57,7 @@ class CannaSproutBlock(settings: Settings?) : PlantBlock(settings), Fertilizable
         return SHAPE
     }
 
-    override fun hasRandomTicks(state: BlockState): Boolean = true
+    override fun hasRandomTicks(state: BlockState): Boolean = state[VoidBerryRootsBlock.AGE] < 2
 
     override fun randomTick(state: BlockState, world: ServerWorld, pos: BlockPos, random: Random) {
         if (random.nextInt(26) != 0)
