@@ -70,8 +70,8 @@ object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
     val ASHSTONE_TILE_STAIRS = add("ashstone_tile_stairs", VoidlandsBlocks.ASHSTONE_TILE_STAIRS)
     @JvmField
     val CHISELED_ASHSTONE_BRICK_STAIRS = add("chiseled_ashstone_brick_stairs", VoidlandsBlocks.CHISELED_ASHSTONE_BRICK_STAIRS)
-    @JvmField
 
+    @JvmField
     val ASHSTONE_WALL = add("ashstone_wall", VoidlandsBlocks.ASHSTONE_WALL)
     @JvmField
     val POLISHED_ASHSTONE_WALL = add("polished_ashstone_wall", VoidlandsBlocks.POLISHED_ASHSTONE_WALL)
@@ -141,6 +141,8 @@ object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
 
     @JvmField
     val SHADEWOOD_LOG = add("shadewood_log", VoidlandsBlocks.SHADEWOOD_LOG)
+    @JvmField
+    val SHADEWOOD = add("shadewood", VoidlandsBlocks.SHADEWOOD)
     @JvmField
     val SHADEWOOD_ROOTS = add("shadewood_roots", VoidlandsBlocks.SHADEWOOD_ROOTS)
     @JvmField

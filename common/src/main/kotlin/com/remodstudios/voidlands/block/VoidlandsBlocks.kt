@@ -180,20 +180,15 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     val ASHSTONE_TILE_WALL = add("ashstone_tile_wall", WallBlock(BlockProperties.copy(Blocks.NETHER_BRICK_WALL)))
     @JvmField
     val CHISELED_ASHSTONE_BRICK_WALL = add("chiseled_ashstone_brick_wall", WallBlock(BlockProperties.copy(Blocks.NETHER_BRICK_WALL)))
-    
-    @JvmField
-    val DUST_CLOUD = add("dust_cloud",
-        DustCloudBlock(BlockProperties.copy(Blocks.WHITE_WOOL).noCollision().nonOpaque().strength(0.2f)))
+
     @JvmField
     val SHADEWOOD_LOG = addWoodlike("shadewood_log") { PillarBlock(this.sounds(BlockSoundGroup.NETHER_STEM)) }
     @JvmField
-    val SHADEWOOD_ROOTS = addWoodlike("shadewood_roots") { Block(this.sounds(BlockSoundGroup.NETHER_STEM)) }
+    val SHADEWOOD = addWoodlike("shadewood") { Block(this.sounds(BlockSoundGroup.NETHER_STEM)) }
+    @JvmField
+    val SHADEWOOD_ROOTS = addWoodlike("shadewood_roots") { ModHangingRootsBlock(this.sounds(BlockSoundGroup.NETHER_STEM)) }
     @JvmField
     val SHADEWOOD_WALL = addWoodlike("shadewood_wall") { WallBlock(this.sounds(BlockSoundGroup.NETHER_STEM)) }
-    @JvmField
-    val OSMIUM_BLOCK = addCopy("osmium_block", Blocks.IRON_BLOCK)
-    @JvmField
-    val VOID_BERRY = addCopy("void_berry", VoidBerryBlock(BlockProperties.copy(Blocks.COCOA)))
 
     @JvmField
     val MARBLE = addCopy("marble", Blocks.DEEPSLATE)
@@ -206,6 +201,14 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     @JvmField
     val MARBLE_ROCKS = add("marble_rocks",
         MarbleRocksBlock(BlockProperties.of(MARBLE_ROCKS_MATERIAL).nonOpaque().strength(0.2F)))
+
+    @JvmField
+    val DUST_CLOUD = add("dust_cloud",
+        DustCloudBlock(BlockProperties.copy(Blocks.WHITE_WOOL).noCollision().nonOpaque().strength(0.2f)))
+    @JvmField
+    val OSMIUM_BLOCK = addCopy("osmium_block", Blocks.IRON_BLOCK)
+    @JvmField
+    val VOID_BERRY = addCopy("void_berry", VoidBerryBlock(BlockProperties.copy(Blocks.COCOA)))
 
     // region Private stuff
     private object ContextPredicates {
@@ -290,7 +293,7 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     @Environment(EnvType.CLIENT)
     fun registerRenderTypes() {
         RenderTypeRegistry.register(RenderLayer.getCutout(),
-            CANNA, CANNA_SPROUT)
+            CANNA, CANNA_SPROUT, SHADEWOOD_ROOTS)
         RenderTypeRegistry.register(RenderLayer.getTranslucent(),
             DARK_RED_STAINED_GLASS, DARK_RED_STAINED_GLASS_PANE,
             CRAYOLA_STAINED_GLASS, CRAYOLA_STAINED_GLASS_PANE,
