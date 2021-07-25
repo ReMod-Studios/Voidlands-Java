@@ -1,3 +1,6 @@
 {
-    "parent": "voidlands:block/void_berry_roots"
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "voidlands:item/void_berry_roots"
+    }
 }
