@@ -1,27 +1,28 @@
 package com.remodstudios.voidlands.block
 
 import com.remodstudios.voidlands.item.VoidlandsItems
-import net.minecraft.block.Block
-import net.minecraft.block.BlockState
-import net.minecraft.block.Fertilizable
-import net.minecraft.block.ShapeContext
+import net.minecraft.block.*
 import net.minecraft.entity.player.PlayerEntity
+import net.minecraft.item.ItemPlacementContext
 import net.minecraft.item.ItemStack
 import net.minecraft.server.world.ServerWorld
 import net.minecraft.state.StateManager
+import net.minecraft.state.property.DirectionProperty
 import net.minecraft.state.property.IntProperty
 import net.minecraft.state.property.Properties
 import net.minecraft.util.ActionResult
 import net.minecraft.util.Hand
 import net.minecraft.util.hit.BlockHitResult
 import net.minecraft.util.math.BlockPos
+import net.minecraft.util.math.Direction
 import net.minecraft.util.shape.VoxelShape
 import net.minecraft.util.shape.VoxelShapes
 import net.minecraft.world.BlockView
 import net.minecraft.world.World
+import net.minecraft.world.WorldView
 import java.util.*
 
-class VoidBerryRootsBlock(settings: Settings) : Block(settings), Fertilizable {
+class VoidBerryRootsBlock(settings: Settings) : FacingBlock(settings), Fertilizable {
     companion object {
         private val SHAPE = createCuboidShape(0.0, 0.0, 0.0, 16.0, 1.0, 16.0)
         private val SHAPE_WITH_BERRY = VoxelShapes.union(
@@ -30,6 +31,7 @@ class VoidBerryRootsBlock(settings: Settings) : Block(settings), Fertilizable {
         )
 
         @JvmField val AGE: IntProperty = Properties.AGE_2
+        @JvmField val FACING: DirectionProperty = FacingBlock.FACING
 
         @JvmStatic private fun doGrowth(world: ServerWorld, pos: BlockPos, state: BlockState) {
             var age = state[AGE] + 1
@@ -40,11 +42,22 @@ class VoidBerryRootsBlock(settings: Settings) : Block(settings), Fertilizable {
     }
 
     init {
-        defaultState = defaultState.with(AGE, 0)
+        defaultState = defaultState.with(AGE, 0).with(FACING, Direction.UP)
     }
 
     override fun appendProperties(builder: StateManager.Builder<Block, BlockState>) {
-        builder.add(AGE)
+        builder.add(AGE, FACING)
+    }
+
+    override fun getPlacementState(context: ItemPlacementContext): BlockState {
+        return defaultState.with(FacingBlock.FACING, context.side.opposite)
+    }
+
+    override fun canPlaceAt(state: BlockState, world: WorldView, pos: BlockPos): Boolean {
+        val direction = state.get(WallTorchBlock.FACING)
+        val pos2 = pos.offset(direction.opposite)
+        val state2 = world.getBlockState(pos2)
+        return state2.isSideSolidFullSquare(world, pos2, direction)
     }
 
     override fun onUse(

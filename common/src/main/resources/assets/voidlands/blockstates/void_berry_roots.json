@@ -1,13 +1,82 @@
 {
     "variants": {
-        "age=0": {
+        "age=0,facing=down": {
+            "model": "voidlands:block/void_berry_roots",
+            "x": 180
+        },
+        "age=1,facing=down": {
+            "model": "voidlands:block/void_berry_roots",
+            "x": 180
+        },
+        "age=2,facing=down": {
+            "model": "voidlands:block/void_berry",
+            "x": 180
+        },
+        "age=0,facing=east": {
+            "model": "voidlands:block/void_berry_roots",
+            "x": 90,
+            "y": 90
+        },
+        "age=1,facing=east": {
+            "model": "voidlands:block/void_berry_roots",
+            "x": 90,
+            "y": 90
+        },
+        "age=2,facing=east": {
+            "model": "voidlands:block/void_berry",
+            "x": 90,
+            "y": 90
+        },
+        "age=0,facing=north": {
+            "model": "voidlands:block/void_berry_roots",
+            "x": 90
+        },
+        "age=1,facing=north": {
+            "model": "voidlands:block/void_berry_roots",
+            "x": 90
+        },
+        "age=2,facing=north": {
+            "model": "voidlands:block/void_berry",
+            "x": 90
+        },
+        "age=0,facing=south": {
+            "model": "voidlands:block/void_berry_roots",
+            "x": 90,
+            "y": 180
+        },
+        "age=1,facing=south": {
+            "model": "voidlands:block/void_berry_roots",
+            "x": 90,
+            "y": 180
+        },
+        "age=2,facing=south": {
+            "model": "voidlands:block/void_berry",
+            "x": 90,
+            "y": 180
+        },
+        "age=0,facing=up": {
             "model": "voidlands:block/void_berry_roots"
         },
-        "age=1": {
+        "age=1,facing=up": {
             "model": "voidlands:block/void_berry_roots"
         },
-        "age=2": {
+        "age=2,facing=up": {
             "model": "voidlands:block/void_berry"
+        },
+        "age=0,facing=west": {
+            "model": "voidlands:block/void_berry_roots",
+            "x": 90,
+            "y": 270
+        },
+        "age=1,facing=west": {
+            "model": "voidlands:block/void_berry_roots",
+            "x": 90,
+            "y": 270
+        },
+        "age=2,facing=west": {
+            "model": "voidlands:block/void_berry",
+            "x": 90,
+            "y": 270
         }
     }
 }
