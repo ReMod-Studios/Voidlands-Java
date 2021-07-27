@@ -30,6 +30,9 @@ class VoidBerryRootsBlock(settings: Settings) : FacingBlock(settings), Fertiliza
             createCuboidShape(6.0, 1.0, 6.0, 10.0, 5.0, 10.0)
         )
 
+        private val SHAPES = Direction.values().associateWith { SHAPE.rotate(Direction.UP, it) }
+        private val SHAPES_WITH_BERRY = Direction.values().associateWith { SHAPE_WITH_BERRY.rotate(Direction.UP, it) }
+
         @JvmField val AGE: IntProperty = Properties.AGE_2
         @JvmField val FACING: DirectionProperty = FacingBlock.FACING
 
@@ -101,5 +104,6 @@ class VoidBerryRootsBlock(settings: Settings) : FacingBlock(settings), Fertiliza
         world: BlockView,
         pos: BlockPos,
         shapeCtx: ShapeContext
-    ): VoxelShape = if (state[AGE] >= 2) SHAPE_WITH_BERRY else SHAPE
+    ): VoxelShape = (if (state[AGE] >= 2) SHAPES_WITH_BERRY[state[FACING]] else SHAPES[state[FACING]])
+        ?: throw AssertionError("Unhandled facing ${state[FACING]} in state $state!")
 }
