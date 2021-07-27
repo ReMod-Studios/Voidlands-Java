@@ -9,7 +9,7 @@ import net.minecraft.util.shape.VoxelShape
 import net.minecraft.world.BlockView
 import net.minecraft.world.WorldView
 
-class MarbleRocksBlock(settings: Settings?) : HorizontalFacingBlock(settings) {
+class MarbleRocksBlock(settings: Settings) : HorizontalFacingBlock(settings) {
     companion object {
         private val SHAPE = Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 3.0, 16.0)
     }

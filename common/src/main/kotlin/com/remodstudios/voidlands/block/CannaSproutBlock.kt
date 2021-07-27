@@ -12,7 +12,7 @@ import net.minecraft.world.BlockView
 import net.minecraft.world.World
 import java.util.*
 
-class CannaSproutBlock(settings: Settings?) : PlantBlock(settings), Fertilizable {
+class CannaSproutBlock(settings: Settings) : PlantBlock(settings), Fertilizable {
     companion object {
         private val SHAPE = createCuboidShape(2.0, 0.0, 2.0, 14.0, 13.0, 14.0)
 

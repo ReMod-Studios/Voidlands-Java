@@ -9,7 +9,7 @@ import net.minecraft.util.math.Vec3d
 import net.minecraft.world.BlockView
 import net.minecraft.world.World
 
-class DustCloudBlock(settings: Settings?) : Block(settings) {
+class DustCloudBlock(settings: Settings) : Block(settings) {
     companion object {
         private val SLOW_FACTOR = Vec3d(1.0, 0.05000000074505806, 1.0)
     }

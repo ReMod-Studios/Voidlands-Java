@@ -24,7 +24,7 @@ import net.minecraft.world.BlockView
 import net.minecraft.world.World
 import java.util.*
 
-class CannaPlantBlock(settings: Settings?) : TallPlantBlock(settings), Fertilizable {
+class CannaPlantBlock(settings: Settings) : TallPlantBlock(settings), Fertilizable {
     companion object {
         @JvmField val HALF: EnumProperty<DoubleBlockHalf> = TallPlantBlock.HALF
         @JvmField val AGE: IntProperty = Properties.AGE_2
