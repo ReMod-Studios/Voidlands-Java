@@ -53,7 +53,7 @@ class VoidBerryRootsBlock(settings: Settings) : FacingBlock(settings), Fertiliza
     }
 
     override fun getPlacementState(context: ItemPlacementContext): BlockState {
-        return defaultState.with(FACING, context.side.opposite)
+        return defaultState.with(FACING, context.side)
     }
 
     override fun canPlaceAt(state: BlockState, world: WorldView, pos: BlockPos): Boolean {
