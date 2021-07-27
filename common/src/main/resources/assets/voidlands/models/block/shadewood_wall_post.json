@@ -1,21 +1,22 @@
 {
-  "textures": {
-    "particle": "voidlands:block/shadewood_log",
-    "wall": "voidlands:block/shadewood_log",
-    "top": "voidlands:block/shadewood_wall_post_top"
-  },
-  "elements": [
-    {
-      "from": [ 4, 0, 4 ],
-      "to": [ 12, 16, 12 ],
-      "faces": {
-        "down":  { "texture": "#top", "cullface": "down" },
-        "up":    { "texture": "#top", "cullface": "up" },
-        "north": { "texture": "#wall" },
-        "south": { "texture": "#wall" },
-        "west":  { "texture": "#wall" },
-        "east":  { "texture": "#wall" }
-      }
-    }
-  ]
+	"credit": "Made with Blockbench",
+	"textures": {
+		"particle": "voidlands:block/shadewood_log",
+		"wall": "voidlands:block/shadewood_log",
+		"top": "voidlands:block/shadewood_wall_post_top"
+	},
+	"elements": [
+		{
+			"from": [4, 0, 4],
+			"to": [12, 16, 12],
+			"faces": {
+				"north": {"uv": [4, 0, 12, 16], "texture": "#wall"},
+				"east": {"uv": [4, 0, 12, 16], "texture": "#wall"},
+				"south": {"uv": [4, 0, 12, 16], "texture": "#wall"},
+				"west": {"uv": [4, 0, 12, 16], "texture": "#wall"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#top", "cullface": "up"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#top", "cullface": "down"}
+			}
+		}
+	]
 }
