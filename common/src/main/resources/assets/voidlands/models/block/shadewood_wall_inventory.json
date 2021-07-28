@@ -1,6 +1,47 @@
 {
-  "parent": "minecraft:block/wall_inventory",
-  "textures": {
-    "wall": "voidlands:block/shadewood_log"
-  }
+	"parent": "block/block",
+	"ambientocclusion": false,
+	"textures": {
+		"top": "voidlands:block/shadewood_wall_post_top",
+		"side": "voidlands:block/shadewood_log",
+		"particle": "voidlands:block/shadewood_wall_post_top"
+	},
+	"elements": [
+		{
+			"name": "Center post",
+			"from": [4, 0, 4],
+			"to": [12, 16, 12],
+			"faces": {
+				"north": {"uv": [4, 0, 12, 16], "texture": "#side"},
+				"east": {"uv": [4, 0, 12, 16], "texture": "#side"},
+				"south": {"uv": [4, 0, 12, 16], "texture": "#side"},
+				"west": {"uv": [4, 0, 12, 16], "texture": "#side"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#top"},
+				"down": {"uv": [4, 4, 12, 12], "texture": "#side", "cullface": "down"}
+			}
+		},
+		{
+			"name": "Full wall",
+			"from": [5, 0, 0],
+			"to": [11, 13, 16],
+			"faces": {
+				"north": {"uv": [5, 3, 11, 16], "texture": "#side", "cullface": "north"},
+				"east": {"uv": [0, 3, 16, 16], "texture": "#side"},
+				"south": {"uv": [5, 3, 11, 16], "texture": "#side", "cullface": "south"},
+				"west": {"uv": [0, 3, 16, 16], "texture": "#side"},
+				"up": {"uv": [5, 0, 11, 16], "texture": "#side"},
+				"down": {"uv": [5, 0, 11, 16], "texture": "#side", "cullface": "down"}
+			}
+		}
+	],
+	"display": {
+		"gui": {
+			"rotation": [30, 135, 0],
+			"scale": [0.625, 0.625, 0.625]
+		},
+		"fixed": {
+			"rotation": [0, 90, 0],
+			"scale": [0.5, 0.5, 0.5]
+		}
+	}
 }
