@@ -18,24 +18,15 @@ class MarbleRocksBlock(settings: Settings) : HorizontalFacingBlock(settings) {
         defaultState = defaultState.with(FACING, Direction.NORTH)
     }
 
-    override fun canPlaceAt(state: BlockState?, world: WorldView?, pos: BlockPos?): Boolean {
-        return world!!.getBlockState(pos!!.down()).material.isSolid
-    }
+    override fun canPlaceAt(state: BlockState, world: WorldView, pos: BlockPos): Boolean =
+        world.getBlockState(pos.down()).material.isSolid
 
-    override fun getPlacementState(ctx: ItemPlacementContext): BlockState {
-        return defaultState.with(FACING, ctx.playerFacing.opposite)
-    }
+    override fun getPlacementState(ctx: ItemPlacementContext): BlockState =
+        defaultState.with(FACING, ctx.playerFacing.opposite)
 
-    override fun appendProperties(builder: StateManager.Builder<Block?, BlockState?>) {
+    override fun appendProperties(builder: StateManager.Builder<Block, BlockState>) {
         builder.add(FACING)
     }
 
-    override fun getOutlineShape(
-        blockState: BlockState?,
-        blockView: BlockView?,
-        blockPos: BlockPos?,
-        shapeContext: ShapeContext?
-    ): VoxelShape {
-        return SHAPE
-    }
+    override fun getOutlineShape(state: BlockState, world: BlockView, pos: BlockPos, ctx: ShapeContext): VoxelShape = SHAPE
 }

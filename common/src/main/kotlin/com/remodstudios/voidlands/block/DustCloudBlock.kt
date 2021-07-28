@@ -26,10 +26,7 @@ class DustCloudBlock(settings: Settings) : TransparentBlock(settings) {
         world: BlockView,
         pos: BlockPos,
         navType: NavigationType
-    ): Boolean {
-        // pretend we're air
-        return true
-    }
+    ): Boolean = true
 
     override fun getCameraCollisionShape(state: BlockState, world: BlockView, pos: BlockPos, ctx: ShapeContext): VoxelShape =
         VoxelShapes.empty()

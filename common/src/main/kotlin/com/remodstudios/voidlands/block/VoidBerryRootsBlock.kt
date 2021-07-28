@@ -52,9 +52,8 @@ class VoidBerryRootsBlock(settings: Settings) : FacingBlock(settings), Fertiliza
         builder.add(AGE, FACING)
     }
 
-    override fun getPlacementState(context: ItemPlacementContext): BlockState {
-        return defaultState.with(FACING, context.side)
-    }
+    override fun getPlacementState(context: ItemPlacementContext): BlockState =
+        defaultState.with(FACING, context.side)
 
     override fun canPlaceAt(state: BlockState, world: WorldView, pos: BlockPos): Boolean {
         val direction = state.get(FACING)
@@ -98,7 +97,6 @@ class VoidBerryRootsBlock(settings: Settings) : FacingBlock(settings), Fertiliza
     override fun grow(world: ServerWorld, random: Random, pos: BlockPos, state: BlockState) =
         doGrowth(world, pos, state)
 
-    // FIXME rotate shape to match facing -ADCLeo
     override fun getOutlineShape(
         state: BlockState,
         world: BlockView,

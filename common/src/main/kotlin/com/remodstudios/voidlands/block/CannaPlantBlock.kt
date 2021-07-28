@@ -66,9 +66,7 @@ class CannaPlantBlock(settings: Settings) : TallPlantBlock(settings), Fertilizab
         }
     }
 
-    override fun hasRandomTicks(state: BlockState): Boolean {
-        return state[HALF] == DoubleBlockHalf.UPPER && state[AGE] < 2
-    }
+    override fun hasRandomTicks(state: BlockState): Boolean = state[HALF] == DoubleBlockHalf.UPPER && state[AGE] < 2
 
     override fun randomTick(state: BlockState, world: ServerWorld, pos: BlockPos, random: Random) {
         val age = state[AGE]

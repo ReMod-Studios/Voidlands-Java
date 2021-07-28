@@ -48,14 +48,8 @@ class CannaSproutBlock(settings: Settings) : PlantBlock(settings), Fertilizable 
         builder.add(CannaPlantBlock.AGE)
     }
 
-    override fun getOutlineShape(
-        state: BlockState,
-        world: BlockView,
-        pos: BlockPos,
-        ctx: ShapeContext
-    ): VoxelShape {
-        return SHAPE
-    }
+    override fun getOutlineShape(state: BlockState, world: BlockView, pos: BlockPos, ctx: ShapeContext): VoxelShape =
+        SHAPE
 
     override fun hasRandomTicks(state: BlockState): Boolean = state[VoidBerryRootsBlock.AGE] < 2
 
