@@ -8,4 +8,3 @@ import net.minecraft.util.DyeColor
 class ModDyedCarpetBlock(color: DyeColor, settings: Settings) : DyedCarpetBlock(color, settings)
 class ModCandleCakeBlock(block: Block, settings: Settings) : CandleCakeBlock(block, settings)
 class ModStairsBlock(baseBlock: BlockState, settings: Settings) : StairsBlock(baseBlock, settings)
-class ModHangingRootsBlock(settings: Settings) : HangingRootsBlock(settings)

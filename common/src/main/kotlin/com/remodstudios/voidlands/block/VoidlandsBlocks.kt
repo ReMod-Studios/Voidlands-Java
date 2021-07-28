@@ -186,7 +186,7 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     @JvmField
     val SHADEWOOD = addWoodlike("shadewood") { Block(this.sounds(BlockSoundGroup.NETHER_STEM)) }
     @JvmField
-    val SHADEWOOD_ROOTS = add("shadewood_roots", ModHangingRootsBlock(BlockProperties.copy(Blocks.HANGING_ROOTS)))
+    val SHADEWOOD_ROOTS = add("shadewood_roots", ShadewoodRootsBlock(BlockProperties.copy(Blocks.HANGING_ROOTS)))
     @JvmField
     val SHADEWOOD_WALL = addWoodlike("shadewood_wall") { WallBlock(this.sounds(BlockSoundGroup.NETHER_STEM)) }
 
