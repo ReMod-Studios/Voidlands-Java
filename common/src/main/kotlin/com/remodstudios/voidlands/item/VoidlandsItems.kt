@@ -5,7 +5,10 @@ import com.remodstudios.voidlands.block.VoidlandsBlocks
 import com.remodstudios.voidlands.util.VoidlandsDyeColors
 import dev.architectury.registry.CreativeTabRegistry
 import io.github.remodstudios.remodcore.registry.ItemRegistryHelper
+import net.minecraft.block.Block
+import net.minecraft.block.PillarBlock
 import net.minecraft.item.*
+import net.minecraft.sound.BlockSoundGroup
 
 object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
     @JvmField
@@ -166,5 +169,12 @@ object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
     val MARBLE_WALL = add("marble_wall", VoidlandsBlocks.MARBLE_WALL)
     @JvmField
     val MARBLE_ROCKS = add("marble_rocks", VoidlandsBlocks.MARBLE_ROCKS)
+
+    @JvmField
+    val IGNEOUS_LOG = add("igneous_log", VoidlandsBlocks.IGNEOUS_LOG)
+    @JvmField
+    val IGNEOUS_WOOD = add("igneous_wood", VoidlandsBlocks.IGNEOUS_WOOD)
+    @JvmField
+    val IGNEOUS_PLANKS = add("igneous_planks", VoidlandsBlocks.IGNEOUS_PLANKS)
     // endregion
 }

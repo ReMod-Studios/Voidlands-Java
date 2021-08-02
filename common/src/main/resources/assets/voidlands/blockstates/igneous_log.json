@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "axis=x": {
+            "model": "voidlands:block/igneous_log_horizontal",
+            "x": 90,
+            "y": 90
+        },
+        "axis=y": {
+            "model": "voidlands:block/igneous_log"
+        },
+        "axis=z": {
+            "model": "voidlands:block/igneous_log_horizontal",
+            "x": 90
+        }
+    }
+}

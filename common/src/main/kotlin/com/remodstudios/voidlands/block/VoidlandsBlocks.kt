@@ -203,6 +203,13 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
         MarbleRocksBlock(BlockProperties.of(MARBLE_ROCKS_MATERIAL).nonOpaque().strength(0.2F)))
 
     @JvmField
+    val IGNEOUS_LOG = addWoodlike("igneous_log") { PillarBlock(this.sounds(BlockSoundGroup.NETHER_STEM)) }
+    @JvmField
+    val IGNEOUS_WOOD = addWoodlike("igneous_wood") { Block(this.sounds(BlockSoundGroup.NETHER_STEM)) }
+    @JvmField
+    val IGNEOUS_PLANKS = addWoodlike("igneous_planks") { Block(this.sounds(BlockSoundGroup.NETHER_STEM)) }
+
+    @JvmField
     val DUST_CLOUD = add("dust_cloud",
         DustCloudBlock(BlockProperties.copy(Blocks.WHITE_WOOL).noCollision().nonOpaque().strength(0.2f)))
     @JvmField
