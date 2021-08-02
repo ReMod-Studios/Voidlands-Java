@@ -56,7 +56,7 @@ class VoidBerryRootsBlock(settings: Settings) : FacingBlock(settings), Fertiliza
         defaultState.with(FACING, context.side)
 
     override fun canPlaceAt(state: BlockState, world: WorldView, pos: BlockPos): Boolean {
-        val direction = state.get(FACING)
+        val direction = state.get(FACING).opposite
         val pos2 = pos.offset(direction)
         val state2 = world.getBlockState(pos2)
         return state2.isSideSolidFullSquare(world, pos2, direction)

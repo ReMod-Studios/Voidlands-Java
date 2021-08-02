@@ -14,6 +14,10 @@ architectury {
 repositories {
     mavenCentral()
     maven {
+        name = "dblsaiko"
+        url = "https://maven.dblsaiko.net/"
+    }
+    maven {
         name = 'JitPack'
         url = 'https://jitpack.io'
     }
@@ -30,6 +34,8 @@ dependencies {
     }
     // platform-specific dependencies
     include(modImplementation('com.github.Chocohead:Fabric-ASM:v2.3'))
+    include(modApi("grondag:frex-${project.mc_tag}:${project.frex_version}.+") { transitive = false })
+    include(modImplementation("grondag:jmx-${project.mc_tag}:${project.jmx_version}.+") { transitive = false })
 
 
     implementation(project(path: ":common")) {
