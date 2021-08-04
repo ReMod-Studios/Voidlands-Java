@@ -48,7 +48,7 @@
           "conditions": [
             {
               "condition": "minecraft:block_state_property",
-              "block": "voidlands:void_berry_bush",
+              "block": "voidlands:void_berry_roots",
               "properties": {
                 "age": 2
               }
