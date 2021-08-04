@@ -216,8 +216,9 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     val OSMIUM_BLOCK = addCopy("osmium_block", Blocks.IRON_BLOCK)
     @JvmField
     val VOID_BERRY_ROOTS = add("void_berry_roots", VoidBerryRootsBlock(BlockProperties.of(Material.PLANT)
-        .ticksRandomly().strength(0.2F, 3.0F).sounds(BlockSoundGroup.SWEET_BERRY_BUSH).noCollision().nonOpaque()
-        .emissiveLighting { state, _, _ -> state[VoidBerryRootsBlock.AGE] >= 2 }))
+        .ticksRandomly().strength(0.2F, 3.0F).noCollision().nonOpaque()
+        .emissiveLighting { state, _, _ -> state[VoidBerryRootsBlock.AGE] >= 2 }
+        .sounds(BlockSoundGroup.SWEET_BERRY_BUSH)))
 
     // region Private stuff
     private object ContextPredicates {

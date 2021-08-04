@@ -1,5 +1,6 @@
 package com.remodstudios.voidlands.block
 
+import com.remodstudios.voidlands.block.util.AxisShape
 import com.remodstudios.voidlands.item.VoidlandsItems
 import net.minecraft.block.*
 import net.minecraft.entity.player.PlayerEntity
@@ -24,14 +25,23 @@ import java.util.*
 
 class VoidBerryRootsBlock(settings: Settings) : FacingBlock(settings), Fertilizable {
     companion object {
-        private val SHAPE = createCuboidShape(0.0, 0.0, 0.0, 16.0, 1.0, 16.0)
-        private val SHAPE_WITH_BERRY = VoxelShapes.union(
-            createCuboidShape(0.0, 0.0, 0.0, 16.0, 1.0, 16.0),
-            createCuboidShape(6.0, 1.0, 6.0, 10.0, 5.0, 10.0)
-        )
+        private fun VoxelShape.offsetPixels(x: Int, y: Int, z: Int) =
+            offset(x.toDouble() / 16, y.toDouble() / 16, z.toDouble() / 16)
+        private fun VoxelShape.offsetPixels(dir: Direction, multiplier: Int = 1) =
+            offsetPixels(dir.offsetX * multiplier, dir.offsetY * multiplier, dir.offsetZ * multiplier)
 
-        private val SHAPES = Direction.values().associateWith { SHAPE.rotate(Direction.UP, it) }
-        private val SHAPES_WITH_BERRY = Direction.values().associateWith { SHAPE_WITH_BERRY.rotate(Direction.UP, it) }
+        private val SHAPES = AxisShape(0.0, 0.0, 16.0, 1.0).map
+        private val SHAPES_WITH_BERRY: Map<Direction, VoxelShape>
+
+        init {
+            val asBerry = AxisShape(6.0, 6.0, 10.0, 10.0)
+            val shapesWithBerry = HashMap<Direction, VoxelShape>()
+            for ((dir, base) in SHAPES) {
+                val berry = asBerry[dir].offsetPixels(dir, -5)
+                shapesWithBerry[dir] = VoxelShapes.union(base, berry)
+            }
+            SHAPES_WITH_BERRY = shapesWithBerry.toMap()
+        }
 
         @JvmField val AGE: IntProperty = Properties.AGE_2
         @JvmField val FACING: DirectionProperty = FacingBlock.FACING
