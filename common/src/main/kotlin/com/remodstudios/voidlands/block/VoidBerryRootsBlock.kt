@@ -7,6 +7,8 @@ import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.ItemPlacementContext
 import net.minecraft.item.ItemStack
 import net.minecraft.server.world.ServerWorld
+import net.minecraft.sound.SoundCategory
+import net.minecraft.sound.SoundEvents
 import net.minecraft.state.StateManager
 import net.minecraft.state.property.DirectionProperty
 import net.minecraft.state.property.IntProperty
@@ -83,6 +85,8 @@ class VoidBerryRootsBlock(settings: Settings) : FacingBlock(settings), Fertiliza
         if (state.get(AGE) < 2)
             return ActionResult.PASS
         player.inventory.offerOrDrop(ItemStack(VoidlandsItems.VOID_BERRY))
+        world.playSound(player.x, player.y, player.z, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.PLAYERS,
+            0.2F, (player.random.nextFloat() - player.random.nextFloat()) * 1.4F + 2.0F, false)
         world.setBlockState(pos, state.with(AGE, 0), 3)
         return ActionResult.SUCCESS
     }
