@@ -7,9 +7,11 @@
     "BlockEntityTypeMixin",
     "EntityMixin",
     "SheepEntityMixin",
-    "ShulkerBoxBlockMixin"
+    "ShulkerBoxBlockMixin",
+    "SignTypeAccessor"
   ],
   "client": [
+    "client.EntityModelLayersMixin",
     "client.TexturedRenderLayersMixin"
   ],
   "injectors": {

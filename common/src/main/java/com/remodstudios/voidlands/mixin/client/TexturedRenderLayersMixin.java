@@ -7,10 +7,16 @@ import net.minecraft.client.render.TexturedRenderLayers;
 import net.minecraft.client.util.SpriteIdentifier;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.SignType;
+
+import com.remodstudios.voidlands.util.VoidlandsSignTypes;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Mutable;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.List;
 
@@ -18,6 +24,7 @@ import java.util.List;
 public abstract class TexturedRenderLayersMixin {
     @Shadow @Final public static Identifier SHULKER_BOXES_ATLAS_TEXTURE;
     @Shadow @Final public static Identifier BEDS_ATLAS_TEXTURE;
+    @Shadow @Final public static Identifier SIGNS_ATLAS_TEXTURE;
 
     @Shadow @Final @Mutable public static List<SpriteIdentifier> COLORED_SHULKER_BOXES_TEXTURES;
     @Shadow @Final @Mutable public static SpriteIdentifier[] BED_TEXTURES;
@@ -33,5 +40,12 @@ public abstract class TexturedRenderLayersMixin {
                     new Identifier(Voidlands.MOD_ID, "entity/bed/" + value.getName()));
         }
         COLORED_SHULKER_BOXES_TEXTURES = shulkerBoxTexturesBuilder.build();
+    }
+
+    @Inject(method = "createSignTextureId", at = @At("RETURN"), cancellable = true)
+    private static void fixCustomSignTextureId(SignType signType, CallbackInfoReturnable<SpriteIdentifier> cir) {
+        if (VoidlandsSignTypes.VALUES.contains(signType))
+            cir.setReturnValue(new SpriteIdentifier(SIGNS_ATLAS_TEXTURE,
+                    new Identifier(Voidlands.MOD_ID, "entity/signs/" + signType.getName())));
     }
 }

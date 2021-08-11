@@ -159,6 +159,9 @@ object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
     val SHADEWOOD_PLANKS = add("shadewood_planks", VoidlandsBlocks.SHADEWOOD_PLANKS)
     @JvmField
     val SHADEWOOD_WALL = add("shadewood_wall", VoidlandsBlocks.SHADEWOOD_WALL)
+    @JvmField
+    val SHADEWOOD_SIGN = addWithFactory("shadewood_sign")
+    { SignItem(it, VoidlandsBlocks.SHADEWOOD_SIGN, VoidlandsBlocks.SHADEWOOD_WALL_SIGN) }
 
     @JvmField
     val OSMIUM_BLOCK = add("osmium_block", VoidlandsBlocks.OSMIUM_BLOCK)
@@ -187,5 +190,8 @@ object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
     val STRIPPED_IGNEOUS_WOOD = add("stripped_igneous_wood", VoidlandsBlocks.STRIPPED_IGNEOUS_WOOD)
     @JvmField
     val IGNEOUS_PLANKS = add("igneous_planks", VoidlandsBlocks.IGNEOUS_PLANKS)
+    @JvmField
+    val IGNEOUS_SIGN = addWithFactory("igneous_sign")
+    { SignItem(it.maxCount(16), VoidlandsBlocks.IGNEOUS_SIGN, VoidlandsBlocks.IGNEOUS_WALL_SIGN) }
     // endregion
 }
