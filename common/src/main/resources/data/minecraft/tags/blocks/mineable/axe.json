@@ -2,7 +2,16 @@
     "replace": "false",
     "values": [
         "voidlands:shadewood_log",
+        "voidlands:shadewood",
+        "voidlands:stripped_shadewood_log",
+        "voidlands:stripped_shadewood",
+        "voidlands:shadewood_sign",
         "voidlands:shadewood_roots",
-        "voidlands:shadewood_wall"
+        "voidlands:shadewood_wall",
+        "voidlands:igneous_log",
+        "voidlands:igneous_wood",
+        "voidlands:stripped_igneous_log",
+        "voidlands:stripped_igneous_wood",
+        "voidlands:igneous_sign"
     ]
 }
