@@ -1,15 +1,15 @@
 {
     "variants": {
         "axis=x": {
-            "model": "voidlands:block/shadewood_log_horizontal",
+            "model": "voidlands:block/stripped_shadewood_log_horizontal",
             "x": 90,
             "y": 90
         },
         "axis=y": {
-            "model": "voidlands:block/shadewood_log"
+            "model": "voidlands:block/stripped_shadewood_log"
         },
         "axis=z": {
-            "model": "voidlands:block/shadewood_log_horizontal",
+            "model": "voidlands:block/stripped_shadewood_log_horizontal",
             "x": 90
         }
     }
