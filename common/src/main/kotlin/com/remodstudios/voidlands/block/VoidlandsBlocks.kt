@@ -197,9 +197,11 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     @JvmField
     val SHADEWOOD_WALL = addWoodlike("shadewood_wall") { WallBlock(this.sounds(BlockSoundGroup.NETHER_STEM)) }
     @JvmField
-    val SHADEWOOD_SIGN = addWoodlike("shadewood_sign") { SignBlock(this.strength(1.0F).sounds(BlockSoundGroup.WOOD), VoidlandsSignTypes.SHADEWOOD) }
+    val SHADEWOOD_SIGN = addWoodlike("shadewood_sign")
+    { SignBlock(this.noCollision().strength(1.0F).sounds(BlockSoundGroup.WOOD), VoidlandsSignTypes.SHADEWOOD) }
     @JvmField
-    val SHADEWOOD_WALL_SIGN = addWoodlike("shadewood_wall_sign") { WallSignBlock(this.strength(1.0F).sounds(BlockSoundGroup.WOOD), VoidlandsSignTypes.SHADEWOOD) }
+    val SHADEWOOD_WALL_SIGN = addWoodlike("shadewood_wall_sign")
+    { WallSignBlock(this.noCollision().strength(1.0F).sounds(BlockSoundGroup.WOOD), VoidlandsSignTypes.SHADEWOOD) }
 
     @JvmField
     val MARBLE = addCopy("marble", Blocks.DEEPSLATE)
@@ -224,9 +226,11 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     @JvmField
     val IGNEOUS_PLANKS = addWoodlike("igneous_planks") { Block(this.sounds(BlockSoundGroup.WOOD)) }
     @JvmField
-    val IGNEOUS_SIGN = addWoodlike("igneous_sign") { SignBlock(this.strength(1.0F).sounds(BlockSoundGroup.WOOD), VoidlandsSignTypes.IGNEOUS) }
+    val IGNEOUS_SIGN = addWoodlike("igneous_sign")
+    { SignBlock(this.noCollision().strength(1.0F).sounds(BlockSoundGroup.WOOD), VoidlandsSignTypes.IGNEOUS) }
     @JvmField
-    val IGNEOUS_WALL_SIGN = addWoodlike("igneous_wall_sign") { WallSignBlock(this.strength(1.0F).sounds(BlockSoundGroup.WOOD), VoidlandsSignTypes.IGNEOUS) }
+    val IGNEOUS_WALL_SIGN = addWoodlike("igneous_wall_sign")
+    { WallSignBlock(this.noCollision().strength(1.0F).sounds(BlockSoundGroup.WOOD), VoidlandsSignTypes.IGNEOUS) }
 
     @JvmField
     val DUST_CLOUD = add("dust_cloud",
