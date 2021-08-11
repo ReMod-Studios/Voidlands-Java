@@ -22,6 +22,7 @@ import net.minecraft.util.shape.VoxelShape
 import net.minecraft.util.shape.VoxelShapes
 import net.minecraft.world.BlockView
 import net.minecraft.world.World
+import net.minecraft.world.WorldAccess
 import net.minecraft.world.WorldView
 import java.util.*
 
@@ -68,10 +69,24 @@ class VoidBerryRootsBlock(settings: Settings) : FacingBlock(settings), Fertiliza
         defaultState.with(FACING, context.side)
 
     override fun canPlaceAt(state: BlockState, world: WorldView, pos: BlockPos): Boolean {
-        val direction = state.get(FACING).opposite
-        val pos2 = pos.offset(direction)
+        val direction = state.get(FACING)
+        val pos2 = pos.offset(direction.opposite)
         val state2 = world.getBlockState(pos2)
         return state2.isSideSolidFullSquare(world, pos2, direction)
+    }
+
+    override fun getStateForNeighborUpdate(
+        state: BlockState,
+        direction: Direction,
+        state2: BlockState,
+        world: WorldAccess,
+        pos: BlockPos,
+        pos2: BlockPos,
+    ): BlockState {
+        return if (direction == state[FACING].opposite && !canPlaceAt(state, world, pos))
+            Blocks.AIR.defaultState
+        else
+            super.getStateForNeighborUpdate(state, direction, state2, world, pos, pos2)
     }
 
     override fun onUse(
@@ -80,7 +95,7 @@ class VoidBerryRootsBlock(settings: Settings) : FacingBlock(settings), Fertiliza
         pos: BlockPos,
         player: PlayerEntity,
         hand: Hand,
-        hitResult: BlockHitResult
+        hitResult: BlockHitResult,
     ): ActionResult {
         if (state.get(AGE) < 2)
             return ActionResult.PASS
@@ -103,7 +118,7 @@ class VoidBerryRootsBlock(settings: Settings) : FacingBlock(settings), Fertiliza
         world: BlockView,
         pos: BlockPos,
         state: BlockState,
-        bl: Boolean
+        bl: Boolean,
     ): Boolean = state[AGE] < 2
 
     override fun canGrow(world: World, random: Random, pos: BlockPos, state: BlockState): Boolean = true
@@ -115,7 +130,7 @@ class VoidBerryRootsBlock(settings: Settings) : FacingBlock(settings), Fertiliza
         state: BlockState,
         world: BlockView,
         pos: BlockPos,
-        shapeCtx: ShapeContext
+        shapeCtx: ShapeContext,
     ): VoxelShape = (if (state[AGE] >= 2) SHAPES_WITH_BERRY[state[FACING]] else SHAPES[state[FACING]])
         ?: throw AssertionError("Unhandled facing ${state[FACING]} in state $state!")
 }
