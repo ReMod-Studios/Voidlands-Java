@@ -1,0 +1,32 @@
+{
+  "parent": "voidlands:recipes/root",
+  "rewards": {
+    "recipes": [
+      "voidlands:shadewood_planks"
+    ]
+  },
+  "criteria": {
+    "has_shadewood_log": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "voidlands:shadewood_logs"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "voidlands:shadewood_planks"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_shadewood_log",
+      "has_the_recipe"
+    ]
+  ]
+}

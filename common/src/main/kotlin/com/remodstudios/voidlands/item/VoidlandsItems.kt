@@ -148,11 +148,18 @@ object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
     @JvmField
     val SHADEWOOD_LOG = add("shadewood_log", VoidlandsBlocks.SHADEWOOD_LOG)
     @JvmField
+    val STRIPPED_SHADEWOOD_LOG = add("stripped_shadewood_log", VoidlandsBlocks.STRIPPED_SHADEWOOD_LOG)
+    @JvmField
     val SHADEWOOD = add("shadewood", VoidlandsBlocks.SHADEWOOD)
+    @JvmField
+    val STRIPPED_SHADEWOOD = add("stripped_shadewood", VoidlandsBlocks.STRIPPED_SHADEWOOD)
     @JvmField
     val SHADEWOOD_ROOTS = add("shadewood_roots", VoidlandsBlocks.SHADEWOOD_ROOTS)
     @JvmField
+    val SHADEWOOD_PLANKS = add("shadewood_planks", VoidlandsBlocks.SHADEWOOD_PLANKS)
+    @JvmField
     val SHADEWOOD_WALL = add("shadewood_wall", VoidlandsBlocks.SHADEWOOD_WALL)
+
     @JvmField
     val OSMIUM_BLOCK = add("osmium_block", VoidlandsBlocks.OSMIUM_BLOCK)
 
@@ -173,7 +180,11 @@ object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
     @JvmField
     val IGNEOUS_LOG = add("igneous_log", VoidlandsBlocks.IGNEOUS_LOG)
     @JvmField
+    val STRIPPED_IGNEOUS_LOG = add("stripped_igneous_log", VoidlandsBlocks.STRIPPED_IGNEOUS_LOG)
+    @JvmField
     val IGNEOUS_WOOD = add("igneous_wood", VoidlandsBlocks.IGNEOUS_WOOD)
+    @JvmField
+    val STRIPPED_IGNEOUS_WOOD = add("stripped_igneous_wood", VoidlandsBlocks.STRIPPED_IGNEOUS_WOOD)
     @JvmField
     val IGNEOUS_PLANKS = add("igneous_planks", VoidlandsBlocks.IGNEOUS_PLANKS)
     // endregion

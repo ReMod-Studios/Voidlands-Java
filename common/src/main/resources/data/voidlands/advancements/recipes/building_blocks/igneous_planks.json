@@ -1,0 +1,32 @@
+{
+  "parent": "voidlands:recipes/root",
+  "rewards": {
+    "recipes": [
+      "voidlands:igneous_planks"
+    ]
+  },
+  "criteria": {
+    "has_igneous_log": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "voidlands:igneous_logs"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "voidlands:igneous_planks"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_igneous_log",
+      "has_the_recipe"
+    ]
+  ]
+}

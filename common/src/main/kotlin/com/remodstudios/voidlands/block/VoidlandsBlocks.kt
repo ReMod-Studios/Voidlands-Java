@@ -184,9 +184,15 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     @JvmField
     val SHADEWOOD_LOG = addWoodlike("shadewood_log") { PillarBlock(this.sounds(BlockSoundGroup.NETHER_STEM)) }
     @JvmField
+    val STRIPPED_SHADEWOOD_LOG = addWoodlike("stripped_shadewood_log") { PillarBlock(this.sounds(BlockSoundGroup.NETHER_STEM)) }
+    @JvmField
     val SHADEWOOD = addWoodlike("shadewood") { Block(this.sounds(BlockSoundGroup.NETHER_STEM)) }
     @JvmField
+    val STRIPPED_SHADEWOOD = addWoodlike("stripped_shadewood") { Block(this.sounds(BlockSoundGroup.NETHER_STEM)) }
+    @JvmField
     val SHADEWOOD_ROOTS = add("shadewood_roots", ShadewoodRootsBlock(BlockProperties.copy(Blocks.HANGING_ROOTS)))
+    @JvmField
+    val SHADEWOOD_PLANKS = addWoodlike("shadewood_planks") { Block(this.sounds(BlockSoundGroup.WOOD)) }
     @JvmField
     val SHADEWOOD_WALL = addWoodlike("shadewood_wall") { WallBlock(this.sounds(BlockSoundGroup.NETHER_STEM)) }
 
@@ -205,9 +211,13 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     @JvmField
     val IGNEOUS_LOG = addWoodlike("igneous_log") { PillarBlock(this.sounds(BlockSoundGroup.NETHER_STEM)) }
     @JvmField
+    val STRIPPED_IGNEOUS_LOG = addWoodlike("stripped_igneous_log") { PillarBlock(this.sounds(BlockSoundGroup.NETHER_STEM)) }
+    @JvmField
     val IGNEOUS_WOOD = addWoodlike("igneous_wood") { Block(this.sounds(BlockSoundGroup.NETHER_STEM)) }
     @JvmField
-    val IGNEOUS_PLANKS = addWoodlike("igneous_planks") { Block(this.sounds(BlockSoundGroup.NETHER_STEM)) }
+    val STRIPPED_IGNEOUS_WOOD = addWoodlike("stripped_igneous_wood") { Block(this.sounds(BlockSoundGroup.NETHER_STEM)) }
+    @JvmField
+    val IGNEOUS_PLANKS = addWoodlike("igneous_planks") { Block(this.sounds(BlockSoundGroup.WOOD)) }
 
     @JvmField
     val DUST_CLOUD = add("dust_cloud",

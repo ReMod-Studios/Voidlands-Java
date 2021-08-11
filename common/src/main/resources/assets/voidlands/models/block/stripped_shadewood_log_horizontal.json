@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "voidlands:block/stripped_shadewood_log_top",
+    "side": "voidlands:block/stripped_shadewood_log"
+  }
+}

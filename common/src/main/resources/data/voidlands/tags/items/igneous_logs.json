@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "voidlands:igneous_log",
+    "voidlands:igneous_wood",
+    "voidlands:stripped_igneous_log",
+    "voidlands:stripped_igneous_wood"
+  ]
+}

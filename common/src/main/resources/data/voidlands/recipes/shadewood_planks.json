@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "voidlands:shadewood_logs"
+    }
+  ],
+  "result": {
+    "item": "voidlands:shadewood_planks",
+    "count": 4
+  }
+}

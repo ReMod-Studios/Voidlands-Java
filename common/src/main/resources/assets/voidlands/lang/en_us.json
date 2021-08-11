@@ -32,12 +32,17 @@
   "block.voidlands.marble_rocks": "Marble Rocks",
 
   "block.voidlands.shadewood_log": "Shadewood Log",
+  "block.voidlands.stripped_shadewood_log": "Stripped Shadewood Log",
   "block.voidlands.shadewood": "Shadewood",
+  "block.voidlands.stripped_shadewood": "Stripped Shadewood",
   "block.voidlands.shadewood_roots": "Shadewood Roots",
+  "block.voidlands.shadewood_planks": "Shadewood Planks",
   "block.voidlands.shadewood_wall": "Shadewood Wall",
 
   "block.voidlands.igneous_log": "Igneous Log",
+  "block.voidlands.stripped_igneous_log": "Stripped Igneous Log",
   "block.voidlands.igneous_wood": "Igneous Wood",
+  "block.voidlands.stripped_igneous_wood": "Stripped Igneous Wood",
   "block.voidlands.igneous_planks": "Igneous Planks",
 
   "block.voidlands.canna": "Canna",
