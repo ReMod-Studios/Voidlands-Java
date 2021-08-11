@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "bark",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "voidlands:stripped_shadewood_log"
+    }
+  },
+  "result": {
+    "item": "voidlands:stripped_shadewood",
+    "count": 3
+  }
+}

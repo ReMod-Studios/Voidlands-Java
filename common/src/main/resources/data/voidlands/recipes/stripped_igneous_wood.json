@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "bark",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "voidlands:stripped_igneous_log"
+    }
+  },
+  "result": {
+    "item": "voidlands:stripped_igneous_wood",
+    "count": 3
+  }
+}
