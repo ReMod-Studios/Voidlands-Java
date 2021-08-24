@@ -183,6 +183,18 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     val CHISELED_ASHSTONE_BRICK_WALL = add("chiseled_ashstone_brick_wall", WallBlock(BlockProperties.copy(Blocks.NETHER_BRICK_WALL)))
 
     @JvmField
+    val MARBLE = addCopy("marble", Blocks.DEEPSLATE)
+    @JvmField
+    val MARBLE_SLAB = add("marble_slab", SlabBlock(BlockProperties.copy(Blocks.DEEPSLATE)))
+    @JvmField
+    val MARBLE_STAIRS = add("marble_stairs", ModStairsBlock(MARBLE.defaultState, BlockProperties.copy(Blocks.DEEPSLATE)))
+    @JvmField
+    val MARBLE_WALL = add("marble_wall", WallBlock(BlockProperties.copy(Blocks.DEEPSLATE)))
+    @JvmField
+    val MARBLE_ROCKS = add("marble_rocks",
+        MarbleRocksBlock(BlockProperties.of(MARBLE_ROCKS_MATERIAL).nonOpaque().strength(0.2F)))
+
+    @JvmField
     val SHADEWOOD_LOG = addWoodlike("shadewood_log") { PillarBlock(this.sounds(BlockSoundGroup.NETHER_STEM)) }
     @JvmField
     val STRIPPED_SHADEWOOD_LOG = addWoodlike("stripped_shadewood_log") { PillarBlock(this.sounds(BlockSoundGroup.NETHER_STEM)) }
@@ -202,18 +214,30 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     @JvmField
     val SHADEWOOD_WALL_SIGN = addWoodlike("shadewood_wall_sign")
     { WallSignBlock(this.noCollision().strength(1.0F).sounds(BlockSoundGroup.WOOD), VoidlandsSignTypes.SHADEWOOD) }
-
     @JvmField
-    val MARBLE = addCopy("marble", Blocks.DEEPSLATE)
+    val SHADEWOOD_SLAB = addWoodlike("shadewood_slab")
+    { SlabBlock(this.strength(2.0F, 3.0F)) }
     @JvmField
-    val MARBLE_SLAB = add("marble_slab", SlabBlock(BlockProperties.copy(Blocks.DEEPSLATE)))
+    val SHADEWOOD_STAIRS = addWoodlike("shadewood_stairs")
+    { ModStairsBlock(SHADEWOOD_PLANKS.defaultState, this) }
     @JvmField
-    val MARBLE_STAIRS = add("marble_stairs", ModStairsBlock(MARBLE.defaultState, BlockProperties.copy(Blocks.DEEPSLATE)))
+    val SHADEWOOD_BUTTON = addWoodlike("shadewood_button")
+    { ModWoodenButtonBlock(this.noCollision().strength(0.5F)) }
     @JvmField
-    val MARBLE_WALL = add("marble_wall", WallBlock(BlockProperties.copy(Blocks.DEEPSLATE)))
+    val SHADEWOOD_DOOR = addWoodlike("shadewood_door")
+    { ModDoorBlock(this.strength(3.0F).nonOpaque()) }
     @JvmField
-    val MARBLE_ROCKS = add("marble_rocks",
-        MarbleRocksBlock(BlockProperties.of(MARBLE_ROCKS_MATERIAL).nonOpaque().strength(0.2F)))
+    val SHADEWOOD_FENCE = addWoodlike("shadewood_fence")
+    { FenceBlock(this.strength(2.0F, 3.0F)) }
+    @JvmField
+    val SHADEWOOD_FENCE_GATE = addWoodlike("shadewood_fence_gate")
+    { FenceGateBlock(this.strength(2.0F, 3.0F)) }
+    @JvmField
+    val SHADEWOOD_PRESSURE_PLATE = addWoodlike("shadewood_pressure_plate")
+    { ModPressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, this.noCollision().strength(0.5F)) }
+    @JvmField
+    val SHADEWOOD_TRAPDOOR = addWoodlike("shadewood_trapdoor")
+    { ModTrapdoorBlock(this.nonOpaque().allowsSpawning(ContextPredicates.Never)) }
 
     @JvmField
     val IGNEOUS_LOG = addWoodlike("igneous_log") { PillarBlock(this.sounds(BlockSoundGroup.NETHER_STEM)) }
@@ -231,6 +255,30 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     @JvmField
     val IGNEOUS_WALL_SIGN = addWoodlike("igneous_wall_sign")
     { WallSignBlock(this.noCollision().strength(1.0F).sounds(BlockSoundGroup.WOOD), VoidlandsSignTypes.IGNEOUS) }
+    @JvmField
+    val IGNEOUS_SLAB = addWoodlike("igneous_slab")
+    { SlabBlock(this.strength(2.0F, 3.0F)) }
+    @JvmField
+    val IGNEOUS_STAIRS = addWoodlike("igneous_stairs")
+    { ModStairsBlock(IGNEOUS_PLANKS.defaultState, this) }
+    @JvmField
+    val IGNEOUS_BUTTON = addWoodlike("igneous_button")
+    { ModWoodenButtonBlock(this.noCollision().strength(0.5F)) }
+    @JvmField
+    val IGNEOUS_DOOR = addWoodlike("igneous_door")
+    { ModDoorBlock(this.strength(3.0F).nonOpaque()) }
+    @JvmField
+    val IGNEOUS_FENCE = addWoodlike("igneous_fence")
+    { FenceBlock(this.strength(2.0F, 3.0F)) }
+    @JvmField
+    val IGNEOUS_FENCE_GATE = addWoodlike("igneous_fence_gate")
+    { FenceGateBlock(this.strength(2.0F, 3.0F)) }
+    @JvmField
+    val IGNEOUS_PRESSURE_PLATE = addWoodlike("igneous_pressure_plate")
+    { ModPressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, this.noCollision().strength(0.5F)) }
+    @JvmField
+    val IGNEOUS_TRAPDOOR = addWoodlike("igneous_trapdoor")
+    { ModTrapdoorBlock(this.nonOpaque().allowsSpawning(ContextPredicates.Never)) }
 
     @JvmField
     val DUST_CLOUD = add("dust_cloud",
@@ -326,7 +374,9 @@ object VoidlandsBlocks : BlockRegistryHelper(Voidlands.MOD_ID) {
     @Environment(EnvType.CLIENT)
     fun registerRenderTypes() {
         RenderTypeRegistry.register(RenderLayer.getCutout(),
-            CANNA, CANNA_SPROUT, SHADEWOOD_ROOTS, VOID_BERRY_ROOTS)
+            CANNA, CANNA_SPROUT, SHADEWOOD_ROOTS, VOID_BERRY_ROOTS,
+            SHADEWOOD_DOOR, SHADEWOOD_TRAPDOOR,
+            IGNEOUS_DOOR, IGNEOUS_TRAPDOOR)
         RenderTypeRegistry.register(RenderLayer.getTranslucent(),
             DARK_RED_STAINED_GLASS, DARK_RED_STAINED_GLASS_PANE,
             CRAYOLA_STAINED_GLASS, CRAYOLA_STAINED_GLASS_PANE,

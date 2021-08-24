@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_rh",
+  "textures": {
+    "top": "voidlands:block/shadewood_door_top",
+    "bottom": "voidlands:block/shadewood_door_bottom"
+  }
+}

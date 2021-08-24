@@ -12,6 +12,20 @@
         "voidlands:igneous_wood",
         "voidlands:stripped_igneous_log",
         "voidlands:stripped_igneous_wood",
-        "voidlands:igneous_sign"
+        "voidlands:igneous_sign",
+        "voidlands:shadewood_button",
+        "voidlands:shadewood_door",
+        "voidlands:shadewood_fence",
+        "voidlands:shadewood_fence_gate",
+        "voidlands:shadewood_pressure_plate",
+        "voidlands:shadewood_stairs",
+        "voidlands:shadewood_trapdoor",
+        "voidlands:igneous_button",
+        "voidlands:shadewood_door",
+        "voidlands:igneous_fence",
+        "voidlands:igneous_fence_gate",
+        "voidlands:igneous_pressure_plate",
+        "voidlands:igneous_stairs",
+        "voidlands:igneous_trapdoor"
     ]
 }

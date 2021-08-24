@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "voidlands:block/igneous_slab"
+    },
+    "type=top": {
+      "model": "voidlands:block/igneous_slab_top"
+    },
+    "type=double": {
+      "model": "voidlands:block/igneous_planks"
+    }
+  }
+}

@@ -1,12 +1,11 @@
 package com.remodstudios.voidlands.item
 
 import com.remodstudios.voidlands.Voidlands
-import com.remodstudios.voidlands.block.VoidlandsBlocks
+import com.remodstudios.voidlands.block.*
 import com.remodstudios.voidlands.util.VoidlandsDyeColors
 import dev.architectury.registry.CreativeTabRegistry
 import io.github.remodstudios.remodcore.registry.ItemRegistryHelper
-import net.minecraft.block.Block
-import net.minecraft.block.PillarBlock
+import net.minecraft.block.*
 import net.minecraft.item.*
 import net.minecraft.sound.BlockSoundGroup
 
@@ -162,6 +161,52 @@ object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
     @JvmField
     val SHADEWOOD_SIGN = addWithFactory("shadewood_sign")
     { SignItem(it, VoidlandsBlocks.SHADEWOOD_SIGN, VoidlandsBlocks.SHADEWOOD_WALL_SIGN) }
+    @JvmField
+    val SHADEWOOD_SLAB = add("shadewood_slab", VoidlandsBlocks.SHADEWOOD_SLAB)
+    @JvmField
+    val SHADEWOOD_STAIRS = add("shadewood_stairs", VoidlandsBlocks.SHADEWOOD_STAIRS)
+    @JvmField
+    val SHADEWOOD_BUTTON = add("shadewood_button", VoidlandsBlocks.SHADEWOOD_BUTTON)
+    @JvmField
+    val SHADEWOOD_DOOR = add("shadewood_door", VoidlandsBlocks.SHADEWOOD_DOOR)
+    @JvmField
+    val SHADEWOOD_FENCE = add("shadewood_fence", VoidlandsBlocks.SHADEWOOD_FENCE)
+    @JvmField
+    val SHADEWOOD_FENCE_GATE = add("shadewood_fence_gate", VoidlandsBlocks.SHADEWOOD_FENCE_GATE)
+    @JvmField
+    val SHADEWOOD_PRESSURE_PLATE = add("shadewood_pressure_plate", VoidlandsBlocks.SHADEWOOD_PRESSURE_PLATE)
+    @JvmField
+    val SHADEWOOD_TRAPDOOR = add("shadewood_trapdoor", VoidlandsBlocks.SHADEWOOD_TRAPDOOR)
+
+    @JvmField
+    val IGNEOUS_LOG = add("igneous_log", VoidlandsBlocks.IGNEOUS_LOG)
+    @JvmField
+    val STRIPPED_IGNEOUS_LOG = add("stripped_igneous_log", VoidlandsBlocks.STRIPPED_IGNEOUS_LOG)
+    @JvmField
+    val IGNEOUS_WOOD = add("igneous_wood", VoidlandsBlocks.IGNEOUS_WOOD)
+    @JvmField
+    val STRIPPED_IGNEOUS_WOOD = add("stripped_igneous_wood", VoidlandsBlocks.STRIPPED_IGNEOUS_WOOD)
+    @JvmField
+    val IGNEOUS_PLANKS = add("igneous_planks", VoidlandsBlocks.IGNEOUS_PLANKS)
+    @JvmField
+    val IGNEOUS_SIGN = addWithFactory("igneous_sign")
+    { SignItem(it.maxCount(16), VoidlandsBlocks.IGNEOUS_SIGN, VoidlandsBlocks.IGNEOUS_WALL_SIGN) }
+    @JvmField
+    val IGNEOUS_SLAB = add("igneous_slab", VoidlandsBlocks.IGNEOUS_SLAB)
+    @JvmField
+    val IGNEOUS_STAIRS = add("igneous_stairs", VoidlandsBlocks.IGNEOUS_STAIRS)
+    @JvmField
+    val IGNEOUS_BUTTON = add("igneous_button", VoidlandsBlocks.IGNEOUS_BUTTON)
+    @JvmField
+    val IGNEOUS_DOOR = add("igneous_door", VoidlandsBlocks.IGNEOUS_DOOR)
+    @JvmField
+    val IGNEOUS_FENCE = add("igneous_fence", VoidlandsBlocks.IGNEOUS_FENCE)
+    @JvmField
+    val IGNEOUS_FENCE_GATE = add("igneous_fence_gate", VoidlandsBlocks.IGNEOUS_FENCE_GATE)
+    @JvmField
+    val IGNEOUS_PRESSURE_PLATE = add("igneous_pressure_plate", VoidlandsBlocks.IGNEOUS_PRESSURE_PLATE)
+    @JvmField
+    val IGNEOUS_TRAPDOOR = add("igneous_trapdoor", VoidlandsBlocks.IGNEOUS_TRAPDOOR)
 
     @JvmField
     val OSMIUM_BLOCK = add("osmium_block", VoidlandsBlocks.OSMIUM_BLOCK)
@@ -179,19 +224,5 @@ object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
     val MARBLE_WALL = add("marble_wall", VoidlandsBlocks.MARBLE_WALL)
     @JvmField
     val MARBLE_ROCKS = add("marble_rocks", VoidlandsBlocks.MARBLE_ROCKS)
-
-    @JvmField
-    val IGNEOUS_LOG = add("igneous_log", VoidlandsBlocks.IGNEOUS_LOG)
-    @JvmField
-    val STRIPPED_IGNEOUS_LOG = add("stripped_igneous_log", VoidlandsBlocks.STRIPPED_IGNEOUS_LOG)
-    @JvmField
-    val IGNEOUS_WOOD = add("igneous_wood", VoidlandsBlocks.IGNEOUS_WOOD)
-    @JvmField
-    val STRIPPED_IGNEOUS_WOOD = add("stripped_igneous_wood", VoidlandsBlocks.STRIPPED_IGNEOUS_WOOD)
-    @JvmField
-    val IGNEOUS_PLANKS = add("igneous_planks", VoidlandsBlocks.IGNEOUS_PLANKS)
-    @JvmField
-    val IGNEOUS_SIGN = addWithFactory("igneous_sign")
-    { SignItem(it.maxCount(16), VoidlandsBlocks.IGNEOUS_SIGN, VoidlandsBlocks.IGNEOUS_WALL_SIGN) }
     // endregion
 }

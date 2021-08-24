@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "voidlands:block/shadewood_slab"
+    },
+    "type=top": {
+      "model": "voidlands:block/shadewood_slab_top"
+    },
+    "type=double": {
+      "model": "voidlands:block/shadewood_planks"
+    }
+  }
+}
