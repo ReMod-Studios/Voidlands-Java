@@ -27,6 +27,8 @@ object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
     val SHADEWOOD_STICK = add("shadewood_stick")
     @JvmField
     val OSMIUM_INGOT = add("osmium_ingot")
+	@JvmField
+	val TOPAZ = add("topaz")
 
     @JvmField
     val CRAYOLA_DYE = addWithFactory("crayola_dye") { DyeItem(VoidlandsDyeColors.CRAYOLA, it) }
