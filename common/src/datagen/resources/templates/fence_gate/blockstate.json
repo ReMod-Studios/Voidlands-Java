@@ -1,0 +1,80 @@
+{
+  "variants": {
+    "facing=east,in_wall=false,open=false": {
+      "uvlock": true,
+      "y": 270,
+      "model": "MODID:block/MODEL"
+    },
+    "facing=east,in_wall=false,open=true": {
+      "uvlock": true,
+      "y": 270,
+      "model": "MODID:block/MODEL_open"
+    },
+    "facing=east,in_wall=true,open=false": {
+      "uvlock": true,
+      "y": 270,
+      "model": "MODID:block/MODEL_wall"
+    },
+    "facing=east,in_wall=true,open=true": {
+      "uvlock": true,
+      "y": 270,
+      "model": "MODID:block/MODEL_wall_open"
+    },
+    "facing=north,in_wall=false,open=false": {
+      "uvlock": true,
+      "y": 180,
+      "model": "MODID:block/MODEL"
+    },
+    "facing=north,in_wall=false,open=true": {
+      "uvlock": true,
+      "y": 180,
+      "model": "MODID:block/MODEL_open"
+    },
+    "facing=north,in_wall=true,open=false": {
+      "uvlock": true,
+      "y": 180,
+      "model": "MODID:block/MODEL_wall"
+    },
+    "facing=north,in_wall=true,open=true": {
+      "uvlock": true,
+      "y": 180,
+      "model": "MODID:block/MODEL_wall_open"
+    },
+    "facing=south,in_wall=false,open=false": {
+      "uvlock": true,
+      "model": "MODID:block/MODEL"
+    },
+    "facing=south,in_wall=false,open=true": {
+      "uvlock": true,
+      "model": "MODID:block/MODEL_open"
+    },
+    "facing=south,in_wall=true,open=false": {
+      "uvlock": true,
+      "model": "MODID:block/MODEL_wall"
+    },
+    "facing=south,in_wall=true,open=true": {
+      "uvlock": true,
+      "model": "MODID:block/MODEL_wall_open"
+    },
+    "facing=west,in_wall=false,open=false": {
+      "uvlock": true,
+      "y": 90,
+      "model": "MODID:block/MODEL"
+    },
+    "facing=west,in_wall=false,open=true": {
+      "uvlock": true,
+      "y": 90,
+      "model": "MODID:block/MODEL_open"
+    },
+    "facing=west,in_wall=true,open=false": {
+      "uvlock": true,
+      "y": 90,
+      "model": "MODID:block/MODEL_wall"
+    },
+    "facing=west,in_wall=true,open=true": {
+      "uvlock": true,
+      "y": 90,
+      "model": "MODID:block/MODEL_wall_open"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "MODID:block/MODEL"
+    },
+    "type=top": {
+      "model": "MODID:block/MODEL_top"
+    },
+    "type=double": {
+      "model": "MODID:block/MODEL_FULL"
+    }
+  }
+}

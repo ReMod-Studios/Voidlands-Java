@@ -1,3 +1,7 @@
+sourceSets {
+    datagen
+}
+
 repositories {
     mavenCentral()
 }
@@ -12,6 +16,8 @@ dependencies {
     modCompileOnly("io.github.remod-studios:remod-core-fabric:${rootProject.remodcore_version}") {
         exclude(group: "me.shedaniel")
     }
+
+    datagenImplementation("com.google.guava:guava:21.0")
 }
 
 architectury {
