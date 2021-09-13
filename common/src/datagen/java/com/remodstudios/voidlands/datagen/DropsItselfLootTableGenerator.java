@@ -15,6 +15,7 @@ public final class DropsItselfLootTableGenerator {
             "ashstone_bricks",
             "ashstone_tiles",
             "ashstone_pillar",
+            "ashstone_pillar_base",
             "cracked_ashstone_bricks",
             "chiseled_ashstone_bricks",
             "ashstone_stairs",

@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "axis=x": {
+            "model": "voidlands:block/ashstone_pillar_base_horizontal",
+            "x": 90,
+            "y": 90
+        },
+        "axis=y": {
+            "model": "voidlands:block/ashstone_pillar_base"
+        },
+        "axis=z": {
+            "model": "voidlands:block/ashstone_pillar_base_horizontal",
+            "x": 90
+        }
+    }
+}
