@@ -12,7 +12,7 @@ import java.util.Collection;
 import java.util.Map;
 
 public final class MineableTagGenerator {
-    private static final String DIR = "C:\\MCMods\\ReMod\\Voidlands-Java\\common\\src\\main\\resources\\data\\minecraft\\tags\\blocks\\mineable";
+    private static final String DIR = System.getProperty("user.dir") + "\\common\\src\\main\\resources\\data\\minecraft\\tags\\blocks\\mineable";
 
     private static final String MOD_ID = "voidlands";
     private static final String[] BLOCKS = new String[] {
@@ -38,6 +38,7 @@ public final class MineableTagGenerator {
             "ashstone_brick_wall:pickaxe",
             "ashstone_tile_wall:pickaxe",
             "chiseled_ashstone_brick_wall:pickaxe",
+            "ashstone_pillar_base:pickaxe",
             "dark_red_concrete:pickaxe",
             "dark_red_concrete_powder:shovel",
             "dark_red_glazed_terracotta:pickaxe",

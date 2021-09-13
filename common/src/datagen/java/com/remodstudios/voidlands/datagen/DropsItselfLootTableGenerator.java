@@ -7,7 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public final class DropsItselfLootTableGenerator {
-    private static final String DIR = "C:\\MCMods\\ReMod\\Voidlands-Java\\common\\src\\main\\resources\\data\\voidlands\\loot_tables\\blocks";
+    private static final String DIR = System.getProperty("user.dir") + "\\common\\src\\main\\resources\\data\\voidlands\\loot_tables\\blocks";
 
     private static final String MOD_ID = "voidlands";
     private static final String[] BLOCKS = new String[] {

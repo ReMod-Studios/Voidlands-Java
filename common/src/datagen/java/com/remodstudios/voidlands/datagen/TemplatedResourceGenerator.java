@@ -13,8 +13,8 @@ import java.util.Collections;
 import java.util.List;
 
 public final class TemplatedResourceGenerator {
-    private static final String ASSETS_DIR = "C:\\MCMods\\ReMod\\Voidlands-Java\\common\\src\\main\\resources\\assets\\voidlands";
-    private static final String DATA_DIR = "C:\\MCMods\\ReMod\\Voidlands-Java\\common\\src\\main\\resources\\data\\voidlands";
+    private static final String ASSETS_DIR = System.getProperty("user.dir") + "\\common\\src\\main\\resources\\assets\\voidlands";
+    private static final String DATA_DIR = System.getProperty("user.dir") + "\\common\\src\\main\\resources\\data\\voidlands";
     private static final String MOD_ID = "voidlands";
     
     @FunctionalInterface
