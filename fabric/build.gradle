@@ -14,8 +14,8 @@ architectury {
 repositories {
     mavenCentral()
     maven {
-        name = "dblsaiko"
-        url = "https://maven.dblsaiko.net/"
+        name = "vram"
+        url = "https://maven.vram.io/"
     }
     maven {
         name = 'JitPack'
@@ -34,8 +34,8 @@ dependencies {
     }
     // platform-specific dependencies
     include(modImplementation('com.github.Chocohead:Fabric-ASM:v2.3'))
-    include(modApi("grondag:frex-${project.mc_tag}:${project.frex_version}.+") { transitive = false })
-    include(modImplementation("grondag:jmx-${project.mc_tag}:${project.jmx_version}.+") { transitive = false })
+    include(modApi("io.vram:frex-fabric-${project.mc_tag}:${project.frex_version}.+") { transitive = false })
+    include(modImplementation("io.vram:jmx-fabric-${project.mc_tag}:${project.jmx_version}.+") { transitive = false })
 
 
     implementation(project(path: ":common")) {
