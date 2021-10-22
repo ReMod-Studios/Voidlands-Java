@@ -5,9 +5,7 @@ import com.remodstudios.voidlands.block.*
 import com.remodstudios.voidlands.util.VoidlandsDyeColors
 import dev.architectury.registry.CreativeTabRegistry
 import io.github.remodstudios.remodcore.registry.ItemRegistryHelper
-import net.minecraft.block.*
 import net.minecraft.item.*
-import net.minecraft.sound.BlockSoundGroup
 
 object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
     @JvmField
@@ -20,7 +18,7 @@ object VoidlandsItems : ItemRegistryHelper(Voidlands.MOD_ID) {
     @JvmField
     val ASHSTONE_ROCK = add("ashstone_rock")
     @JvmField
-    val CANNA_BLOOM_IN_A_BOTTLE = add("canna_bloom_in_a_bottle") { it.maxCount(1) }
+    val CANNA_BLOOM_IN_A_BOTTLE = add("canna_bloom_in_a_bottle") { it.maxCount(1).recipeRemainder(Items.GLASS_BOTTLE) }
     @JvmField
     val CANNA_LEAF = add("canna_leaf")
     @JvmField

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "voidlands:canna_bloom_in_a_bottle"
+    },
+    {
+      "item": "minecraft:black_dye"
+    }
+  ],
+  "result": {
+    "item": "voidlands:dark_red_dye",
+    "count": 2
+  }
+}

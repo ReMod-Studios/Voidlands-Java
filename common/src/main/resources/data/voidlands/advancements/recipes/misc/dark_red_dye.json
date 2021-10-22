@@ -1,0 +1,34 @@
+{
+  "parent": "voidlands:recipes/root",
+  "rewards": {
+    "recipes": [
+      "voidlands:dark_red_dye"
+    ]
+  },
+  "criteria": {
+    "has_canna_bloom": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "voidlands:canna_bloom_in_a_bottle"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "voidlands:dark_red_dye"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_canna_bloom",
+      "has_the_recipe"
+    ]
+  ]
+}
